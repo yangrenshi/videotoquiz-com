@@ -14,7 +14,7 @@ Functions encapsulate reusable logic, enabling modular decomposition and prevent
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const url = body.url;
+    const url = body.url || body.videoUrl;
 
     if (!url || typeof url !== 'string') {
       return NextResponse.json({ success: false, error: 'Please provide a valid YouTube video URL.' }, { status: 400 });
