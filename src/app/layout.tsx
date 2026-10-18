@@ -44,6 +44,9 @@ export const metadata: Metadata = {
     description: 'Paste any YouTube link, get a 5-question test & summary in 10 seconds. Free interactive test with instant scoring.',
     images: ['/og-preview.png'],
   },
+  verification: {
+    google: 'D3doHT8D4EjwaWIbUzan7mNmQr7dmlKjUPMXlXy-O0g',
+  },
 };
 
 export default function RootLayout({
