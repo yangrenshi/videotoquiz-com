@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Sparkles, CheckCircle2 } from 'lucide-react';
+import { Sparkles, CheckCircle2, AlertCircle, FileText, Lightbulb } from 'lucide-react';
 import VideoInput from '@/components/VideoInput';
 import TranscriptViewer from '@/components/TranscriptViewer';
 import QuizCard from '@/components/QuizCard';
@@ -18,6 +18,7 @@ import { useAuth } from '@/context/AuthContext';
 export default function HomePage() {
   const { t, lang } = useLanguage();
   const { user, openLoginModal, refreshUser } = useAuth();
+  const [inputMode, setInputMode] = useState<InputMode>('url');
   const [isLoading, setIsLoading] = useState(false);
   const [isExtractingTranscript, setIsExtractingTranscript] = useState(false);
   const [transcriptData, setTranscriptData] = useState<TranscriptResultData | null>(null);
@@ -212,16 +213,58 @@ export default function HomePage() {
       {/* 核心输入与出题区域 */}
       <section className="w-full max-w-2xl mx-auto mb-10">
         <VideoInput
+          externalMode={inputMode}
+          onExternalModeChange={setInputMode}
           onGenerate={handleGenerate}
           isLoading={isLoading}
           onExtractTranscript={handleExtractTranscript}
           isExtractingTranscript={isExtractingTranscript}
         />
 
-        {/* 错误提示横幅 */}
+        {/* 错误提示横幅与智能化补救指引 */}
         {errorMsg && (
-          <div className="mt-4 p-4 rounded-xl bg-rose-950/40 border border-rose-800 text-rose-200 text-xs sm:text-sm leading-relaxed">
-            <p className="font-semibold">{errorMsg}</p>
+          <div className="mt-4 p-4 rounded-xl bg-rose-950/40 border border-rose-800/80 text-rose-200 text-xs sm:text-sm leading-relaxed space-y-3 shadow-lg">
+            <div className="flex items-start gap-2.5">
+              <span className="text-base shrink-0">⚠️</span>
+              <div className="flex-1">
+                <p className="font-semibold text-rose-100">{errorMsg}</p>
+                
+                {/* 当属于字幕提取限制问题时，提供一键切换与3秒复制指引 */}
+                {(errorMsg.toLowerCase().includes('transcript') ||
+                  errorMsg.toLowerCase().includes('caption') ||
+                  errorMsg.includes('字幕')) && (
+                  <div className="mt-3 pt-3 border-t border-rose-800/60 space-y-2.5">
+                    <p className="text-zinc-300 text-xs leading-normal">
+                      💡 <strong>快速通杀方案</strong>：YouTube 网页端原生提供了文字记录。您只需复制讲义或字幕文本粘贴进来，DeepSeek 即可直接提炼知识点生成测验：
+                    </p>
+                    
+                    <div className="flex flex-wrap items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setInputMode('transcript');
+                          setErrorMsg(null);
+                        }}
+                        className="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs shadow-md transition-all flex items-center gap-1.5 active:scale-95"
+                      >
+                        <span>⚡ 一键切换到【粘贴讲义 / 文本出题】</span>
+                      </button>
+                    </div>
+
+                    <details className="text-[11px] text-zinc-400 bg-zinc-950/70 p-2.5 rounded-lg border border-zinc-800/80 cursor-pointer">
+                      <summary className="font-medium text-zinc-300 hover:text-white">
+                        👉 如何在 YouTube 3 秒复制文字记录？（展开查看）
+                      </summary>
+                      <ol className="list-decimal list-inside space-y-1 mt-2 text-zinc-400 pl-1 leading-relaxed">
+                        <li>在 YouTube 播放器下方点击右侧「...」（更多）按钮；</li>
+                        <li>点击「显示文字记录」(Show transcript)；</li>
+                        <li>在右侧展开的面板中全选复制文本，粘贴到上方输入框即可出题！</li>
+                      </ol>
+                    </details>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         )}
       </section>

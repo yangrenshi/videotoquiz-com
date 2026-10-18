@@ -19,6 +19,8 @@ interface VideoInputProps {
   isLoading: boolean;
   onExtractTranscript?: (url: string) => void;
   isExtractingTranscript?: boolean;
+  externalMode?: 'url' | 'transcript';
+  onExternalModeChange?: (mode: 'url' | 'transcript') => void;
 }
 
 export default function VideoInput({
@@ -26,10 +28,19 @@ export default function VideoInput({
   isLoading,
   onExtractTranscript,
   isExtractingTranscript = false,
+  externalMode,
+  onExternalModeChange,
 }: VideoInputProps) {
   const { t, lang } = useLanguage();
   const { user, openLoginModal } = useAuth();
-  const [mode, setMode] = useState<InputMode>('url');
+  const [internalMode, setInternalMode] = useState<InputMode>('url');
+  
+  const mode = externalMode !== undefined ? externalMode : internalMode;
+  const setMode = (m: InputMode) => {
+    setInternalMode(m);
+    if (onExternalModeChange) onExternalModeChange(m);
+  };
+  
   const [url, setUrl] = useState('');
   const [transcript, setTranscript] = useState('');
   const [title, setTitle] = useState('');
