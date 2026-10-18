@@ -3,18 +3,28 @@ import { WaffoPancake } from '@waffo/pancake-ts';
 // 懒加载单例模式初始化 Waffo Pancake 客户端
 let waffoClientInstance: WaffoPancake | null = null;
 
+function formatPrivateKey(rawKey: string): string {
+  let key = rawKey.trim().replace(/\\n/g, '\n');
+  if (!key.includes('-----BEGIN PRIVATE KEY-----') && !key.includes('-----BEGIN RSA PRIVATE KEY-----')) {
+    // 自动按 64 字符换行并包裹 PEM 标准头尾
+    const chunks = key.match(/.{1,64}/g) || [key];
+    key = `-----BEGIN PRIVATE KEY-----\n${chunks.join('\n')}\n-----END PRIVATE KEY-----`;
+  }
+  return key;
+}
+
 export function getWaffoClient(): WaffoPancake | null {
   const merchantId = process.env.WAFFO_MERCHANT_ID;
-  const privateKey = process.env.WAFFO_PRIVATE_KEY;
+  const rawPrivateKey = process.env.WAFFO_PRIVATE_KEY;
 
-  if (!merchantId || !privateKey) {
+  if (!merchantId || !rawPrivateKey) {
     return null;
   }
 
   if (!waffoClientInstance) {
     waffoClientInstance = new WaffoPancake({
       merchantId,
-      privateKey: privateKey.replace(/\\n/g, '\n'),
+      privateKey: formatPrivateKey(rawPrivateKey),
     });
   }
 
