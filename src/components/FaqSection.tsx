@@ -57,7 +57,7 @@ export default function FaqSection() {
               <button
                 type="button"
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
-                className="w-full p-4 sm:p-4.5 text-left flex items-center justify-between gap-4 font-medium text-sm sm:text-base text-zinc-200 hover:text-white"
+                className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-medium text-sm sm:text-base text-zinc-200 hover:text-white"
               >
                 <span>{faq.q}</span>
                 <ChevronDown
@@ -68,7 +68,7 @@ export default function FaqSection() {
               </button>
 
               {isOpen && (
-                <div className="px-4 pb-4 sm:px-4.5 sm:pb-4.5 pt-0 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800/60 mt-1">
+                <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-0 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800/60 mt-1">
                   {faq.a}
                 </div>
               )}
