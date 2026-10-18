@@ -274,7 +274,7 @@ export default function HomePage() {
         {transcriptData && (
           <TranscriptViewer
             data={transcriptData}
-            onGenerateQuiz={(text, title) => handleGenerate({ mode: 'transcript', transcript: text, title, questionCount: 5 })}
+            onGenerateQuiz={(text, title, count) => handleGenerate({ mode: 'transcript', transcript: text, title, questionCount: count })}
             onClose={() => setTranscriptData(null)}
             isLoadingQuiz={isLoading}
           />

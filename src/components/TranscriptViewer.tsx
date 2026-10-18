@@ -7,7 +7,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 interface TranscriptViewerProps {
   data: TranscriptResultData | null;
-  onGenerateQuiz: (transcript: string, title: string) => void;
+  onGenerateQuiz: (transcript: string, title: string, questionCount: number) => void;
   onClose: () => void;
   isLoadingQuiz: boolean;
 }
@@ -18,8 +18,17 @@ export default function TranscriptViewer({
   onClose,
   isLoadingQuiz,
 }: TranscriptViewerProps) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [copied, setCopied] = useState(false);
+
+  // 自选题量状态 (默认 5 题，支持 5, 10, 20 或自定义，最高 30 题)
+  const [questionCount, setQuestionCount] = useState<number>(5);
+  const [isCustomCount, setIsCustomCount] = useState<boolean>(false);
+  const [customInputVal, setCustomInputVal] = useState<string>('15');
+
+  const activeQuestionCount = isCustomCount
+    ? Math.min(Math.max(parseInt(customInputVal, 10) || 5, 1), 30)
+    : questionCount;
 
   if (!data) return null;
 
@@ -121,21 +130,87 @@ export default function TranscriptViewer({
         </p>
       </div>
 
-      {/* 底部高转化引导条：一键从讲义生成测验题 */}
-      <div className="mt-4 pt-4 border-t border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-zinc-950/60 p-3.5 rounded-xl border border-zinc-800/80">
-        <div className="text-xs text-zinc-400 font-medium">
-          💡 讲义阅读完毕？测一测大脑对核心考点的瞬时记忆与理解度
+      {/* 底部高转化引导条：支持自选题量并一键从讲义生成测验题 */}
+      <div className="mt-4 pt-4 border-t border-zinc-800 space-y-3 bg-zinc-950/70 p-4 rounded-xl border border-zinc-800/80">
+        {/* 题量选择行 */}
+        <div className="flex flex-wrap items-center justify-between gap-2.5 pb-2 border-b border-zinc-800/60 text-xs">
+          <div className="flex items-center gap-2 text-zinc-300 font-medium">
+            <span>🎯 {lang === 'zh' ? '测验题量：' : 'Question Count:'}</span>
+            <div className="flex items-center gap-1.5">
+              {[5, 10, 20].map((cnt) => (
+                <button
+                  key={cnt}
+                  type="button"
+                  onClick={() => {
+                    setQuestionCount(cnt);
+                    setIsCustomCount(false);
+                  }}
+                  disabled={isLoadingQuiz}
+                  className={`px-2.5 py-1 rounded-md text-xs font-mono font-medium transition-all ${
+                    !isCustomCount && questionCount === cnt
+                      ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50 shadow-sm font-bold'
+                      : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800'
+                  }`}
+                >
+                  {cnt} {lang === 'zh' ? '题' : 'Q'}
+                </button>
+              ))}
+
+              <button
+                type="button"
+                onClick={() => setIsCustomCount(true)}
+                disabled={isLoadingQuiz}
+                className={`px-2.5 py-1 rounded-md text-xs font-mono font-medium transition-all ${
+                  isCustomCount
+                    ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50 shadow-sm font-bold'
+                    : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800'
+                }`}
+              >
+                {lang === 'zh' ? '自定义' : 'Custom'}
+              </button>
+
+              {isCustomCount && (
+                <div className="flex items-center gap-1">
+                  <input
+                    type="number"
+                    min="1"
+                    max="30"
+                    value={customInputVal}
+                    onChange={(e) => setCustomInputVal(e.target.value)}
+                    className="w-14 px-1.5 py-0.5 bg-zinc-900 border border-amber-500/50 rounded-md text-xs font-mono text-center text-amber-300 focus:outline-none"
+                    disabled={isLoadingQuiz}
+                  />
+                  <span className="text-[11px] text-zinc-500">{lang === 'zh' ? '题(≤30)' : 'max 30'}</span>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="text-[11px] text-zinc-400 font-mono flex items-center gap-1">
+            <span>🪙 {lang === 'zh' ? `需消耗 ${activeQuestionCount} 积分` : `Requires ${activeQuestionCount} credits`}</span>
+          </div>
         </div>
 
-        <button
-          type="button"
-          disabled={isLoadingQuiz}
-          onClick={() => onGenerateQuiz(data.transcript, data.title)}
-          className="inline-flex items-center justify-center gap-2 px-4.5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-white hover:bg-zinc-200 text-zinc-950 shadow-md active:scale-95 disabled:opacity-50 transition-all shrink-0"
-        >
-          <Sparkles className="w-4 h-4 text-amber-500" />
-          <span>{t.transcriptViewer.generateQuizFromThis}</span>
-        </button>
+        {/* 触发生成按钮行 */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="text-xs text-zinc-400 font-medium leading-relaxed">
+            💡 {lang === 'zh' ? '讲义阅读完毕？测一测大脑对核心知识点的记忆与理解度：' : 'Finished reading? Test your understanding of key takeaways:'}
+          </div>
+
+          <button
+            type="button"
+            disabled={isLoadingQuiz}
+            onClick={() => onGenerateQuiz(data.transcript, data.title, activeQuestionCount)}
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-white hover:bg-zinc-200 text-zinc-950 shadow-md active:scale-95 disabled:opacity-50 transition-all shrink-0"
+          >
+            <Sparkles className="w-4 h-4 text-amber-500" />
+            <span>
+              {lang === 'zh'
+                ? `立即生成 ${activeQuestionCount} 题核心测验卷`
+                : `Generate ${activeQuestionCount}-Question Quiz`}
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );
