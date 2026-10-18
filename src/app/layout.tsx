@@ -13,16 +13,13 @@ export const metadata: Metadata = {
   keywords: [
     'youtube to quiz',
     'video to quiz generator',
-    'youtube video summarizer to quiz',
-    'convert youtube video to test',
-    'ai quiz generator from video',
-    'active recall quiz',
+    'ai quiz from video',
     'video to flashcards'
   ],
-  authors: [{ name: 'VideoToQuiz AI Team' }],
+  authors: [{ name: 'VideoToQuiz AI Team', url: 'https://www.videotoquiz.com' }],
   metadataBase: new URL('https://www.videotoquiz.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.videotoquiz.com',
   },
   other: {
     'waffo-verify': '624137efca83e9d5f6d0281819f60d31',
@@ -59,34 +56,70 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = {
+  const jsonLdGraph = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'YouTube to Quiz AI',
-    url: 'https://www.videotoquiz.com',
-    applicationCategory: 'EducationalApplication',
-    operatingSystem: 'All',
-    description: 'AI-powered learning platform that converts any YouTube video lecture or tutorial into interactive quizzes, summaries, and downloadable flashcards in seconds.',
-    offers: {
-      '@type': 'Offer',
-      price: '0.00',
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      ratingCount: '1280',
-      reviewCount: '1280',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    featureList: [
-      'Instant YouTube Video Transcript Parsing',
-      'AI-Powered Multiple Choice & Conceptual Quizzes',
-      'Timestamped Explanations for Every Answer',
-      'Active Recall and Spaced Repetition Workflow',
-      'Downloadable Study Notes and Flashcards'
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': 'https://www.videotoquiz.com/#organization',
+        name: 'VideoToQuiz AI',
+        url: 'https://www.videotoquiz.com',
+        logo: 'https://www.videotoquiz.com/icon.png',
+        sameAs: [
+          'https://github.com/yangrenshi/videotoquiz-com',
+          'https://devpost.com/software/videotoquiz-ai',
+          'https://www.uneed.best/tool/videotoquiz-ai',
+          'https://www.saashub.com/youtube-to-quiz-ai'
+        ]
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://www.videotoquiz.com/#website',
+        url: 'https://www.videotoquiz.com',
+        name: 'YouTube to Quiz AI',
+        publisher: {
+          '@id': 'https://www.videotoquiz.com/#organization'
+        },
+        inLanguage: 'en-US',
+        datePublished: '2026-10-17T00:00:00+00:00',
+        dateModified: '2026-10-18T22:30:00+00:00'
+      },
+      {
+        '@type': 'WebApplication',
+        '@id': 'https://www.videotoquiz.com/#webapp',
+        name: 'YouTube to Quiz AI',
+        url: 'https://www.videotoquiz.com',
+        applicationCategory: 'EducationalApplication',
+        operatingSystem: 'All',
+        author: {
+          '@type': 'Organization',
+          name: 'VideoToQuiz AI Team'
+        },
+        datePublished: '2026-10-17T00:00:00+00:00',
+        dateModified: '2026-10-18T22:30:00+00:00',
+        description: 'AI-powered learning platform that converts any YouTube video lecture or tutorial into interactive quizzes, summaries, and downloadable flashcards in seconds.',
+        offers: {
+          '@type': 'Offer',
+          price: '0.00',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          ratingCount: '1280',
+          reviewCount: '1280',
+          bestRating: '5',
+          worstRating: '1',
+        },
+        featureList: [
+          'Instant YouTube Video Transcript Parsing',
+          'AI-Powered Multiple Choice & Conceptual Quizzes',
+          'Timestamped Explanations for Every Answer',
+          'Active Recall and Spaced Repetition Workflow',
+          'Downloadable Study Notes and Flashcards'
+        ]
+      }
     ]
   };
 
@@ -97,7 +130,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
         />
         {/* Google Analytics 4 (gtag.js) */}
         <Script

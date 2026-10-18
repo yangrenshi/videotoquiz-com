@@ -32,8 +32,14 @@ export default function Header({ onOpenPricing }: HeaderProps) {
 
         {/* 右侧导航与操作 */}
         <div className="flex items-center gap-2.5 sm:gap-3.5">
+          <Link
+            href="/topics"
+            className="hidden sm:inline-flex text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors"
+          >
+            {lang === 'zh' ? '公开课题库' : 'Study Topics'}
+          </Link>
           <a
-            href="#comparison"
+            href="/#comparison"
             className="hidden md:inline-flex text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors"
           >
             {t.nav.whyUs}

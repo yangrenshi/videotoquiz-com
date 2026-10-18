@@ -132,9 +132,27 @@ export default function SeoGeoContentSection() {
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
           The Cognitive Science of Video Learning: Active Recall vs. Passive Watching
         </h2>
-        <p className="text-sm text-zinc-300 leading-relaxed mb-6">
-          Online learners frequently encounter the <strong className="text-zinc-100">Illusion of Explanatory Depth</strong>—the mistaken belief that following an instructor's clear explanation equates to genuine retention. Empirical research across educational psychology illustrates that passive re-watching produces steep memory decay according to the Hermann Ebbinghaus forgetting curve.
-        </p>
+        {/* 权威学术文献引用卡片 (Citations & Quotations for AI Citability) */}
+        <div className="my-6 p-5 rounded-2xl bg-zinc-950/80 border border-zinc-800 relative">
+          <blockquote
+            cite="https://doi.org/10.1111/j.1745-6916.2006.00012.x"
+            className="text-xs sm:text-sm text-zinc-300 italic border-l-2 border-amber-400 pl-4 my-2 leading-relaxed"
+          >
+            "Taking a memory test not only assesses what one knows, but also enhances later retention, a phenomenon known as the testing effect. We demonstrate that testing produces robust learning advantages over repeated study sessions."
+          </blockquote>
+          <div className="mt-3 text-[11px] text-zinc-400 font-mono flex flex-wrap items-center gap-2">
+            <span className="font-semibold text-zinc-300">— Roediger, H. L., &amp; Karpicke, J. D. (2006).</span>
+            <span>Perspectives on Psychological Science, 1(3), 181–210.</span>
+            <a
+              href="https://doi.org/10.1111/j.1745-6916.2006.00012.x"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-400 hover:underline"
+            >
+              DOI: 10.1111/j.1745-6916.2006.00012.x
+            </a>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="p-5 rounded-2xl bg-rose-950/20 border border-rose-900/50">

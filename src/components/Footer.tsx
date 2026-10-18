@@ -6,7 +6,7 @@ import { Mail, GraduationCap } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <footer className="w-full border-t border-zinc-800/80 bg-zinc-950 text-zinc-400 text-xs py-10 mt-16">
@@ -30,6 +30,9 @@ export default function Footer() {
         {/* 右侧合规法律链接与客服邮箱 */}
         <div className="flex flex-col items-center sm:items-end gap-2">
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium">
+            <Link href="/topics" className="hover:text-amber-400 transition-colors">
+              {lang === 'zh' ? '公开课题库' : 'Study Topics'}
+            </Link>
             <Link href="/terms" className="hover:text-zinc-200 transition-colors">
               {t.footer.terms}
             </Link>

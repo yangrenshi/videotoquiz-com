@@ -1,0 +1,31 @@
+# VideoToQuiz AI (https://www.videotoquiz.com)
+> AI-Powered Educational Intelligence: Convert YouTube Videos into Interactive Active Recall Quizzes & Flashcards.
+
+## Overview
+VideoToQuiz AI is an ad-free educational platform that ingests public YouTube educational video transcripts and lectures to formulate structured, Bloom's Taxonomy-aligned multiple choice assessments and Anki flashcards.
+
+## Core Capabilities
+- **Transcript Extraction**: Fetches and parses synchronized YouTube video captions and user lecture transcripts.
+- **Active Recall Quizzes**: Generates 5-to-10 question interactive tests with distractors and pedagogical rationale.
+- **Timestamped Explanations**: Provides exact video timestamp citations for every correct answer and distractor.
+- **Study Flashcard Export**: Formats questions and key takeaways directly into Anki (.txt) and printable PDF review sheets.
+- **Peer Challenge Sharing**: Generates instant `/quiz/[id]` challenge URLs for study groups and classrooms.
+
+## Canonical URLs & Routes
+- Homepage: https://www.videotoquiz.com
+- User Dashboard: https://www.videotoquiz.com/dashboard
+- Interactive Challenge Route: https://www.videotoquiz.com/quiz/[id]
+- Programmatic Topics Directory: https://www.videotoquiz.com/topics
+- Terms of Service: https://www.videotoquiz.com/terms
+- Privacy Policy: https://www.videotoquiz.com/privacy
+
+## Academic Grounding & Methodology
+VideoToQuiz AI is designed around empirical principles from cognitive educational psychology:
+1. **The Testing Effect (Roediger & Karpicke, 2006)**: Active retrieval practice strengthens long-term neural retention significantly over passive review.
+2. **Spacing & Interleaving (Ebbinghaus, 1885; Cepeda et al., 2006)**: Memory decay is interrupted when learners test their retention on spaced intervals.
+
+## Contact & Organization
+- Organization: VideoToQuiz AI Team
+- Official Website: https://www.videotoquiz.com
+- Contact Email: support@videotoquiz.com
+- Open Code Repository: https://github.com/yangrenshi/videotoquiz-com

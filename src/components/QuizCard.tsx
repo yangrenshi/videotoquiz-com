@@ -139,9 +139,9 @@ export default function QuizCard({
             {t.quiz.lockMilestone}
           </span>
 
-          <h4 className="text-lg sm:text-xl font-bold text-zinc-100 tracking-tight mb-2">
+          <h3 className="text-lg sm:text-xl font-bold text-zinc-100 tracking-tight mb-2">
             {t.quiz.lockTitle}
-          </h4>
+          </h3>
 
           <p className="max-w-md text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
             {t.quiz.lockDesc}
