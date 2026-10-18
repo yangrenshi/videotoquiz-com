@@ -15,16 +15,18 @@ export default function LoginModal() {
   const { isLoginModalOpen, closeLoginModal, loginWithGoogleToken, loginWithDemo } = useAuth();
   const { lang } = useLanguage();
   const [submitting, setSubmitting] = useState(false);
-  const [gisLoaded, setGisLoaded] = useState(false);
+  const [gisRendered, setGisRendered] = useState(false);
   const googleBtnRef = useRef<HTMLDivElement>(null);
 
   const googleClientId =
     process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ||
     '840187226487-3n5h84m19ilf1s7tcgf4vgqe00nrmt4l.apps.googleusercontent.com';
 
-  // 动态加载 Google Identity Services (GIS)
   useEffect(() => {
-    if (!isLoginModalOpen) return;
+    if (!isLoginModalOpen) {
+      setGisRendered(false);
+      return;
+    }
 
     const handleCredentialResponse = async (response: any) => {
       if (response && response.credential) {
@@ -37,8 +39,8 @@ export default function LoginModal() {
       }
     };
 
-    const initGoogleGis = () => {
-      if (window.google?.accounts?.id) {
+    const renderGoogleButton = () => {
+      if (window.google?.accounts?.id && googleBtnRef.current) {
         window.google.accounts.id.initialize({
           client_id: googleClientId,
           callback: handleCredentialResponse,
@@ -46,53 +48,33 @@ export default function LoginModal() {
           cancel_on_tap_outside: true,
         });
 
-        if (googleBtnRef.current) {
-          googleBtnRef.current.innerHTML = '';
-          window.google.accounts.id.renderButton(googleBtnRef.current, {
-            theme: 'filled_black',
-            size: 'large',
-            type: 'standard',
-            shape: 'pill',
-            text: 'signin_with',
-            logo_alignment: 'left',
-            width: 320,
-          });
-        }
-        setGisLoaded(true);
+        googleBtnRef.current.innerHTML = '';
+        window.google.accounts.id.renderButton(googleBtnRef.current, {
+          theme: 'filled_black',
+          size: 'large',
+          type: 'standard',
+          shape: 'pill',
+          text: 'signin_with',
+          logo_alignment: 'left',
+          width: 340,
+        });
+        setGisRendered(true);
       }
     };
 
     if (window.google?.accounts?.id) {
-      initGoogleGis();
+      renderGoogleButton();
     } else {
       const script = document.createElement('script');
       script.src = 'https://accounts.google.com/gsi/client';
       script.async = true;
       script.defer = true;
-      script.onload = initGoogleGis;
+      script.onload = renderGoogleButton;
       document.body.appendChild(script);
     }
   }, [isLoginModalOpen, googleClientId]);
 
   if (!isLoginModalOpen) return null;
-
-  const handleCustomGoogleClick = () => {
-    if (window.google?.accounts?.id) {
-      window.google.accounts.id.prompt();
-    } else {
-      // 若海外脚本因网络波动尚未完成加载，提供顺畅体验兜底
-      handleGoogleDemoSignIn();
-    }
-  };
-
-  const handleGoogleDemoSignIn = async () => {
-    setSubmitting(true);
-    try {
-      await loginWithDemo();
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
@@ -163,50 +145,28 @@ export default function LoginModal() {
           </div>
         </div>
 
-        {/* Google 官方按钮容器与自定义按钮 */}
-        <div className="space-y-3 flex flex-col items-center w-full">
-          {/* Google 官方 GIS 原生按钮挂载点 */}
-          <div ref={googleBtnRef} className="flex justify-center w-full min-h-[44px]" />
+        {/* Google 唯一官方按钮容器 */}
+        <div className="flex flex-col items-center justify-center w-full min-h-[50px] relative">
+          {submitting && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center bg-zinc-900/90 rounded-full gap-2 text-sm text-amber-400 font-medium">
+              <Loader2 className="w-5 h-5 animate-spin" />
+              <span>{lang === 'zh' ? '正在快速授权中...' : 'Authorizing...'}</span>
+            </div>
+          )}
 
-          {/* 自定义 Google 登录按钮 (当 GIS 原生按钮未完全渲染或用户直接点击时) */}
-          <button
-            type="button"
-            onClick={handleCustomGoogleClick}
-            disabled={submitting}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl bg-white text-zinc-900 font-semibold text-sm hover:bg-zinc-100 transition-all shadow-md active:scale-[0.98] disabled:opacity-70"
-          >
-            {submitting ? (
-              <Loader2 className="w-5 h-5 animate-spin text-zinc-600" />
-            ) : (
-              <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
-                <path
-                  fill="#4285F4"
-                  d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"
-                />
-                <path
-                  fill="#34A853"
-                  d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.27 21.43 7.35 24 12 24z"
-                />
-                <path
-                  fill="#FBBC05"
-                  d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.17 0 9.99 0 12s.45 3.83 1.25 5.42l4.03-3.15z"
-                />
-                <path
-                  fill="#EA4335"
-                  d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.57 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
-                />
-              </svg>
-            )}
-            <span>
-              {submitting
-                ? lang === 'zh'
-                  ? '正在快速授权中...'
-                  : 'Signing in...'
-                : lang === 'zh'
-                ? '使用 Google 账号一键登录'
-                : 'Continue with Google'}
-            </span>
-          </button>
+          {/* Google GIS 原生挂载点：已登录自动显示“用某某身份登录”，未登录自动显示“使用 Google 账号登录” */}
+          <div
+            ref={googleBtnRef}
+            className="flex justify-center w-full overflow-hidden rounded-full shadow-md"
+            style={{ minHeight: '44px' }}
+          />
+
+          {/* 脚本加载中的微光占位 */}
+          {!gisRendered && !submitting && (
+            <div className="w-[340px] h-[44px] rounded-full bg-zinc-800 animate-pulse flex items-center justify-center text-xs text-zinc-500">
+              {lang === 'zh' ? '加载安全登录组件...' : 'Loading Google Sign-in...'}
+            </div>
+          )}
         </div>
 
         {/* 底部安全背书 */}
