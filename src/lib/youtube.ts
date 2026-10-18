@@ -124,5 +124,35 @@ export async function fetchYouTubeTranscript(videoId: string): Promise<string | 
     // ignore
   }
 
+  // 策略 4: Supadata 住宅代理解析 API (当配置了 SUPADATA_API_KEY 时自动智能兜底)
+  const supadataKey = process.env.SUPADATA_API_KEY;
+  if (supadataKey) {
+    try {
+      const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
+      const res = await fetch(`https://api.supadata.ai/v1/transcript?url=${encodeURIComponent(fullUrl)}&text=true`, {
+        headers: {
+          'x-api-key': supadataKey,
+        },
+        cache: 'no-store',
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        if (typeof data.content === 'string' && data.content.trim().length > 100) {
+          return data.content.trim().slice(0, 35000);
+        } else if (Array.isArray(data.content) && data.content.length > 0) {
+          const text = data.content.map((c: any) => c.text || '').join(' ').trim();
+          if (text.length > 100) {
+            return text.slice(0, 35000);
+          }
+        }
+      } else {
+        console.warn('[Supadata] Response status:', res.status);
+      }
+    } catch (err: any) {
+      console.warn('[Supadata] Failed:', err?.message || err);
+    }
+  }
+
   return null;
 }
