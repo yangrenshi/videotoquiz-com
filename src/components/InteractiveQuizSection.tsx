@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Share2 } from 'lucide-react';
 import VideoInput from '@/components/VideoInput';
 import QuizCard from '@/components/QuizCard';
 import QuizResult from '@/components/QuizResult';
@@ -12,6 +12,7 @@ import { SAMPLE_QUIZZES } from '@/lib/sample-quizzes';
 import { useLanguage } from '@/context/LanguageContext';
 import { useAuth } from '@/context/AuthContext';
 import { saveQuiz, updateQuizScore } from '@/lib/quiz-storage';
+import { createShareableLink } from '@/lib/quiz-share';
 
 export default function InteractiveQuizSection() {
   const { t, lang } = useLanguage();
@@ -147,8 +148,31 @@ export default function InteractiveQuizSection() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const [shareToast, setShareToast] = useState<string | null>(null);
+
+  // 快捷分享测验
+  const handleShareQuiz = async () => {
+    if (!quizData) return;
+    try {
+      const { shareUrl } = await createShareableLink(quizData);
+      await navigator.clipboard.writeText(shareUrl);
+      setShareToast(lang === 'zh' ? '测验分享链接已复制！可直接发送给好友一起做题' : 'Quiz link copied! Send to friends to challenge them.');
+      setTimeout(() => setShareToast(null), 3000);
+    } catch (e) {
+      setShareToast(lang === 'zh' ? '正在生成分享链接...' : 'Generating share link...');
+      setTimeout(() => setShareToast(null), 2000);
+    }
+  };
+
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center relative">
+      {/* 复制成功浮动提示 */}
+      {shareToast && (
+        <div className="fixed bottom-6 right-6 z-50 bg-amber-400 text-zinc-950 px-4 py-2.5 rounded-xl font-medium text-xs shadow-2xl flex items-center gap-2 animate-in fade-in duration-200">
+          <CheckCircle2 className="w-4 h-4" />
+          <span>{shareToast}</span>
+        </div>
+      )}
       {/* 核心亮点标签 */}
       <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-zinc-300 font-medium mb-8">
         <span className="flex items-center gap-1.5">
@@ -227,14 +251,25 @@ export default function InteractiveQuizSection() {
         {quizData && !isQuizCompleted && (
           <div className="space-y-4 animate-fadeIn">
             <div className="px-1 flex items-center justify-between text-xs text-zinc-300">
-              <span className="font-bold text-sm text-zinc-100 truncate max-w-md">
+              <span className="font-bold text-sm text-zinc-100 truncate max-w-xs sm:max-w-md">
                 {quizData.videoTitle}
               </span>
-              {isSample && (
-                <span className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-emerald-950/80 text-emerald-300 border border-emerald-500/50 shadow-sm">
-                  {t.quiz.sampleBadge}
-                </span>
-              )}
+              <div className="flex items-center gap-2">
+                {isSample && (
+                  <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-emerald-950/80 text-emerald-300 border border-emerald-500/50 shadow-sm">
+                    {t.quiz.sampleBadge}
+                  </span>
+                )}
+                <button
+                  type="button"
+                  onClick={handleShareQuiz}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-amber-300 hover:text-amber-200 border border-zinc-700 text-[11px] font-semibold transition-all active:scale-95"
+                  title="Share quiz link"
+                >
+                  <Share2 className="w-3 h-3" />
+                  <span>{lang === 'zh' ? '分享' : 'Share'}</span>
+                </button>
+              </div>
             </div>
             <QuizCard
               key={quizData.questions[currentQuestionIndex].id}

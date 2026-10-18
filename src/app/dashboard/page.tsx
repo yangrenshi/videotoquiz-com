@@ -22,7 +22,8 @@ import {
   Mail,
   User as UserIcon,
   CheckCircle2,
-  ExternalLink
+  ExternalLink,
+  Share2
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { useLanguage } from '@/context/LanguageContext';
@@ -33,6 +34,7 @@ import {
   getStudyStats,
   SavedQuizRecord
 } from '@/lib/quiz-storage';
+import { createShareableLink } from '@/lib/quiz-share';
 
 type DashboardTab = 'quizzes' | 'billing' | 'settings';
 
@@ -96,6 +98,20 @@ export default function DashboardPage() {
 
     setExportedToast(lang === 'zh' ? '闪卡已导出为 Markdown 格式！' : 'Flashcards exported as Markdown!');
     setTimeout(() => setExportedToast(null), 3000);
+  };
+
+  // 分享测验给好友
+  const handleShareQuiz = async (quiz: SavedQuizRecord, e: React.MouseEvent) => {
+    e.stopPropagation();
+    try {
+      const { shareUrl } = await createShareableLink(quiz.data);
+      await navigator.clipboard.writeText(shareUrl);
+      setExportedToast(lang === 'zh' ? '测验挑战链接已复制！可直接发送给好友一起做题' : 'Challenge link copied! Send to friends.');
+      setTimeout(() => setExportedToast(null), 3000);
+    } catch (err) {
+      setExportedToast(lang === 'zh' ? '正在生成链接...' : 'Generating link...');
+      setTimeout(() => setExportedToast(null), 2000);
+    }
   };
 
   // 格式化时间戳
@@ -440,6 +456,16 @@ export default function DashboardPage() {
                       >
                         <FileDown className="w-3.5 h-3.5 text-zinc-400" />
                         <span>{lang === 'zh' ? '导出闪卡' : 'Export'}</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={(e) => handleShareQuiz(quiz, e)}
+                        className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 text-amber-400 hover:text-amber-300 transition-colors"
+                        title={lang === 'zh' ? '分享好友挑战链接' : 'Share Quiz Link'}
+                      >
+                        <Share2 className="w-3.5 h-3.5" />
+                        <span>{lang === 'zh' ? '分享' : 'Share'}</span>
                       </button>
                     </div>
 

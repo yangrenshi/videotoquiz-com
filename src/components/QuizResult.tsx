@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
-import { Award, RotateCcw, Image as ImageIcon, Download, CheckCircle, BookOpen, Printer } from 'lucide-react';
+import React, { useState } from 'react';
+import { Award, RotateCcw, Image as ImageIcon, Download, CheckCircle, BookOpen, Printer, Share2, CheckCircle2 } from 'lucide-react';
 import { QuizResultData, UserAnswerRecord, QuizScoreSummary } from '@/lib/types';
 import { useLanguage } from '@/context/LanguageContext';
 import { openPrintableQuizPaper, downloadAnkiCards } from '@/lib/exporter';
+import { createShareableLink } from '@/lib/quiz-share';
 
 interface QuizResultProps {
   quizData: QuizResultData;
@@ -71,8 +72,31 @@ export default function QuizResult({
     }
   };
 
+  const [shareToast, setShareToast] = useState<string | null>(null);
+
+  // 分享测验给好友
+  const handleShareChallenge = async () => {
+    try {
+      const { shareUrl } = await createShareableLink(quizData);
+      await navigator.clipboard.writeText(shareUrl);
+      setShareToast(lang === 'zh' ? '挑战链接已复制到剪贴板！可直接发送给微信/好友 PK 成绩' : 'Challenge link copied! Send to friends to compare scores.');
+      setTimeout(() => setShareToast(null), 3500);
+    } catch (e) {
+      setShareToast(lang === 'zh' ? '正在生成分享链接...' : 'Generating share link...');
+      setTimeout(() => setShareToast(null), 2500);
+    }
+  };
+
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-6 relative">
+      {/* 复制成功浮动提示 */}
+      {shareToast && (
+        <div className="fixed bottom-6 right-6 z-50 bg-amber-400 text-zinc-950 px-4 py-2.5 rounded-xl font-medium text-xs shadow-2xl flex items-center gap-2 animate-in fade-in duration-200">
+          <CheckCircle2 className="w-4 h-4" />
+          <span>{shareToast}</span>
+        </div>
+      )}
+
       {/* 战报总评分卡片 (Open-Design 纯粹微质感) */}
       <div className="w-full bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-md relative overflow-hidden text-center">
         {/* 能力级别胶囊 (确保拥有宽裕舒适的内边距，两端绝不碰壁) */}
@@ -92,8 +116,9 @@ export default function QuizResult({
         </p>
 
         {/* 关键操作区 (符合 frontend-design 规范：宽幅舒适内间距、卡片级留白、双核层次分明) */}
-        <div className="mt-8 pt-7 border-t border-zinc-800/80">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto px-2">
+        <div className="mt-8 pt-7 border-t border-zinc-800/80 space-y-4 max-w-xl mx-auto px-2">
+          {/* 成果 1 & 成果 2 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* 成果 1: 生成学术结业荣誉海报 */}
             <button
               type="button"
@@ -159,6 +184,34 @@ export default function QuizResult({
             </button>
           </div>
 
+          {/* 成果 3: 病毒裂变核心入口 - 邀请好友挑战测验 */}
+          <button
+            type="button"
+            onClick={handleShareChallenge}
+            className="w-full flex items-center justify-between p-4 sm:p-4.5 rounded-2xl bg-zinc-950/90 border border-amber-500/30 hover:border-amber-400/70 hover:bg-zinc-900 transition-all shadow-sm hover:shadow-md text-left group active:scale-[0.99]"
+          >
+            <div className="flex items-center gap-3.5 min-w-0">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform shrink-0">
+                <Share2 className="w-4.5 h-4.5" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+                  <span>{lang === 'zh' ? '复制专属链接 · 邀请好友挑战此测验' : 'Share Quiz Challenge with Friends'}</span>
+                  <span className="text-[10px] font-mono font-bold px-2 py-0.2 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20">
+                    VIRAL
+                  </span>
+                </div>
+                <div className="text-[11px] text-zinc-400 truncate mt-0.5">
+                  {lang === 'zh' ? '好友点开即可沉浸式做题，比拼得分战报' : 'Friends can take this exact quiz and beat your score'}
+                </div>
+              </div>
+            </div>
+            <span className="text-xs font-semibold text-amber-400 group-hover:text-amber-300 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 shrink-0">
+              {lang === 'zh' ? '复制链接' : 'Copy Link'}
+            </span>
+          </button>
+        </div>
+
           {/* 轻量次级按键 - 测试下一个视频 (充足内边距，雅致通透) */}
           <div className="mt-5 flex justify-center">
             <button
@@ -171,7 +224,6 @@ export default function QuizResult({
             </button>
           </div>
         </div>
-      </div>
 
       {/* 核心考点回顾与视频摘要 */}
       <div className="bg-zinc-900/70 border border-zinc-800 rounded-2xl p-6 sm:p-7 shadow-lg">
