@@ -29,9 +29,9 @@ export default function RefundPage() {
         <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
           <h2 className="text-base font-semibold text-zinc-100 mb-2">2. How to Request a Refund (如何极速申请退款)</h2>
           <p className="text-zinc-400">
-            Simply send an email to <a href="mailto:support@videotoquiz.ai" className="text-zinc-200 underline">support@videotoquiz.ai</a> with your checkout email or invoice ID. Our support team processes all eligible refund requests within 24 business hours back to your original payment method (Creem / Alipay / PayPal / Card).
+            Simply send an email to <a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a> with your checkout email or invoice ID. Our support team processes all eligible refund requests within 24 business hours back to your original payment method (Waffo / Creem / Card / PayPal).
             <br />
-            只需发送邮件至 support@videotoquiz.ai，附上您的支付邮箱或订单号，我们的客服团队将在 24 小时内原路全额退回到您的支付账户（包括支付宝或原卡）。
+            只需发送邮件至 <a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a>，附上您的支付邮箱或订单号，客服将在 24 小时内原路全额退回到您的支付账户（包括原卡或原通道）。
           </p>
         </section>
 

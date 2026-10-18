@@ -47,7 +47,9 @@ export default function PrivacyPage() {
         <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
           <h2 className="text-base font-semibold text-zinc-100 mb-2">4. Contact Us (联系我们)</h2>
           <p className="text-zinc-400">
-            If you have questions regarding your data privacy rights, please email us at <a href="mailto:support@videotoquiz.ai" className="text-zinc-200 underline">support@videotoquiz.ai</a>.
+            If you have questions regarding your data privacy rights, please email us at <a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a>.
+            <br />
+            如对数据隐私或个人信息权益有任何疑问，请随时联系个人支持邮箱：<a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a>。
           </p>
         </section>
       </div>

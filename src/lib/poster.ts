@@ -131,5 +131,5 @@ export function drawQuizScorePoster(
   // 9. 页脚与权威声明
   ctx.fillStyle = '#64748b';
   ctx.font = '14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-  ctx.fillText(`Generated on ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}  •  https://www.videotoquiz.ai`, width / 2, 730);
+  ctx.fillText(`Generated on ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}  •  https://www.videotoquiz.com`, width / 2, 730);
 }

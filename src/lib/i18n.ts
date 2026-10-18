@@ -156,7 +156,7 @@ export const I18N = {
       terms: 'Terms of Service',
       privacy: 'Privacy Policy',
       refund: 'Refund Policy (30-Day Guarantee)',
-      support: 'Support & Inquiries: support@videotoquiz.ai',
+      support: 'Support & Inquiries: yangrenliipu@gmail.com',
     },
   },
   zh: {
@@ -314,7 +314,7 @@ export const I18N = {
       terms: '服务条款 (Terms)',
       privacy: '隐私协议 (Privacy)',
       refund: '退款政策 (30天退款保障)',
-      support: '客服与商务支持：support@videotoquiz.ai',
+      support: '客服与商务支持：yangrenliipu@gmail.com',
     },
   },
 } as const;

@@ -56,7 +56,9 @@ export default function TermsPage() {
         <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
           <h2 className="text-base font-semibold text-zinc-100 mb-2">5. Contact Information (联系方式)</h2>
           <p className="text-zinc-400">
-            For any legal or service inquiries, please contact our support team at <a href="mailto:support@videotoquiz.ai" className="text-zinc-200 underline">support@videotoquiz.ai</a>.
+            For any legal or service inquiries, please contact our support team at <a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a>.
+            <br />
+            如有任何法律、商务合作或服务咨询，请直接联系：<a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a>。
           </p>
         </section>
       </div>

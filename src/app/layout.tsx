@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  other: {
+    'waffo-verify': '624137efca83e9d5f6d0281819f60d31',
+  },
   openGraph: {
     title: 'YouTube to Quiz AI - Interactive Knowledge Testing',
     description: 'Paste any YouTube link, get a 5-question test & summary in 10 seconds. Free interactive test with instant scoring.',
