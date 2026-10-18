@@ -25,7 +25,7 @@ export default function QuizResult({
   onOpenPricing,
   isSample = false,
 }: QuizResultProps) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const correctCount = answers.filter((a) => a.isCorrect).length;
   const total = quizData.questions.length;
   const percentage = Math.round((correctCount / total) * 100);
@@ -90,47 +90,85 @@ export default function QuizResult({
           {masteryLevel}
         </p>
 
-        {/* 关键操作按钮 (Open-Design: 物理按键与高对比度) */}
-        <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <button
-            type="button"
-            onClick={() => onOpenPoster(scoreSummary)}
-            className="inline-flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-zinc-100 hover:bg-white text-zinc-950 shadow-sm active:scale-95 transition-all"
-          >
-            <ImageIcon className="w-4 h-4 text-zinc-700" />
-            <span>{t.result.btnCertificate}</span>
-          </button>
+        {/* 关键操作区 (符合 frontend-design 规范：双核成果卡片 + 呼吸留白 + 层次解耦) */}
+        <div className="mt-7 pt-6 border-t border-zinc-800/80">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-xl mx-auto">
+            {/* 成果 1: 生成学术结业荣誉海报 */}
+            <button
+              type="button"
+              onClick={() => onOpenPoster(scoreSummary)}
+              className="group relative flex items-center justify-between p-3.5 sm:p-4 rounded-xl bg-zinc-950/80 hover:bg-zinc-850 border border-zinc-800 hover:border-zinc-700 text-left transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
+            >
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-lg bg-indigo-950/40 border border-indigo-500/30 flex items-center justify-center text-indigo-400 group-hover:text-indigo-300 group-hover:scale-105 transition-all shrink-0 shadow-inner">
+                  <ImageIcon className="w-5 h-5" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs sm:text-sm font-bold text-zinc-100 group-hover:text-white tracking-tight truncate">
+                    {lang === 'zh' ? '生成学术结业海报' : 'Academic Certificate'}
+                  </div>
+                  <div className="text-[11px] text-zinc-400 group-hover:text-zinc-300 truncate mt-0.5">
+                    {lang === 'zh' ? '1080P 高清战报 · 社交分享' : '1080P HD shareable badge'}
+                  </div>
+                </div>
+              </div>
+              <span className="text-xs text-zinc-500 group-hover:text-zinc-300 ml-2 shrink-0 transition-transform group-hover:translate-x-0.5">
+                →
+              </span>
+            </button>
 
-          {/* 样卷免费导出 vs 私人视频付费导出 */}
-          {isSample ? (
+            {/* 成果 2: 导出打印版试卷与 Anki (变现核心 CTA，微金奢华微光) */}
             <button
               type="button"
               onClick={handleExport}
-              className="inline-flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-emerald-400 hover:bg-emerald-300 text-zinc-950 shadow-sm active:scale-95 transition-all"
-              title="样卷特权：免费打印完整试卷并导出 Anki 卡片"
+              className="group relative flex items-center justify-between p-3.5 sm:p-4 rounded-xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent hover:from-amber-500/20 hover:via-amber-500/10 border border-amber-500/40 hover:border-amber-400/80 text-left transition-all duration-200 shadow-sm hover:shadow-amber-500/10 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]"
             >
-              <Printer className="w-4 h-4 text-zinc-950" />
-              <span>{t.result.btnExportSampleFree}</span>
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-lg bg-amber-950/60 border border-amber-500/50 flex items-center justify-center text-amber-300 group-hover:text-amber-200 group-hover:scale-105 transition-all shrink-0 shadow-inner">
+                  {isSample ? (
+                    <Printer className="w-5 h-5 text-emerald-400" />
+                  ) : (
+                    <Download className="w-5 h-5 text-amber-400" />
+                  )}
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xs sm:text-sm font-bold text-zinc-100 group-hover:text-white tracking-tight truncate">
+                      {lang === 'zh' ? '导出 PDF / Anki 卡包' : 'Export PDF & Anki'}
+                    </span>
+                    {/* 精致微徽章 */}
+                    {isSample ? (
+                      <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shrink-0">
+                        {lang === 'zh' ? '免费' : 'FREE'}
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-400 text-zinc-950 shrink-0 shadow-sm">
+                        $4.99
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-[11px] text-zinc-400 group-hover:text-zinc-300 truncate mt-0.5">
+                    {lang === 'zh' ? '高清打印卷 · 记忆闪卡包' : 'Printable exam & spaced cards'}
+                  </div>
+                </div>
+              </div>
+              <span className="text-xs text-amber-400/70 group-hover:text-amber-300 ml-2 shrink-0 transition-transform group-hover:translate-x-0.5">
+                →
+              </span>
             </button>
-          ) : (
+          </div>
+
+          {/* 轻量次级按键 - 测试下一个视频 */}
+          <div className="mt-4 flex justify-center">
             <button
               type="button"
-              onClick={handleExport}
-              className="inline-flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-amber-400 hover:bg-amber-300 text-zinc-950 shadow-sm active:scale-95 transition-all"
+              onClick={onRestart}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60 transition-colors"
             >
-              <Download className="w-4 h-4 text-zinc-950" />
-              <span>{t.result.btnExport}</span>
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>{lang === 'zh' ? '测验完成，测试下一个视频' : 'Test another video'}</span>
             </button>
-          )}
-
-          <button
-            type="button"
-            onClick={onRestart}
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 transition-colors shadow-sm"
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-            <span>{t.result.btnRestart}</span>
-          </button>
+          </div>
         </div>
       </div>
 
