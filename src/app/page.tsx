@@ -3,14 +3,13 @@
 import React, { useState } from 'react';
 import { Sparkles, CheckCircle2, AlertCircle, FileText, Lightbulb } from 'lucide-react';
 import VideoInput from '@/components/VideoInput';
-import TranscriptViewer from '@/components/TranscriptViewer';
 import QuizCard from '@/components/QuizCard';
 import QuizResult from '@/components/QuizResult';
 import PosterModal from '@/components/PosterModal';
 import PricingModal from '@/components/PricingModal';
 import ComparisonTable from '@/components/ComparisonTable';
 import FaqSection from '@/components/FaqSection';
-import { QuizResultData, UserAnswerRecord, QuizScoreSummary, InputMode, TranscriptResultData } from '@/lib/types';
+import { QuizResultData, UserAnswerRecord, QuizScoreSummary, InputMode } from '@/lib/types';
 import { SAMPLE_QUIZZES } from '@/lib/sample-quizzes';
 import { useLanguage } from '@/context/LanguageContext';
 import { useAuth } from '@/context/AuthContext';
@@ -20,8 +19,6 @@ export default function HomePage() {
   const { user, openLoginModal, refreshUser } = useAuth();
   const [inputMode, setInputMode] = useState<InputMode>('url');
   const [isLoading, setIsLoading] = useState(false);
-  const [isExtractingTranscript, setIsExtractingTranscript] = useState(false);
-  const [transcriptData, setTranscriptData] = useState<TranscriptResultData | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [quizData, setQuizData] = useState<QuizResultData | null>(null);
   const [isSample, setIsSample] = useState(false);
@@ -37,36 +34,6 @@ export default function HomePage() {
   const [isPosterOpen, setIsPosterOpen] = useState(false);
   const [currentScoreSummary, setCurrentScoreSummary] = useState<QuizScoreSummary | null>(null);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
-
-  // 纯免费提取视频讲义与完整字幕 (0费用 / 零等待)
-  const handleExtractTranscript = async (url: string) => {
-    setIsExtractingTranscript(true);
-    setErrorMsg(null);
-    setTranscriptData(null);
-
-    try {
-      const res = await fetch('/api/transcript', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url }),
-      });
-
-      const json = await res.json();
-      if (!res.ok || !json.success) {
-        setErrorMsg(json.error || t.transcriptViewer.noCaptionsTip);
-        return;
-      }
-
-      setTranscriptData(json);
-      setTimeout(() => {
-        document.getElementById('transcript-anchor')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } catch (err: any) {
-      setErrorMsg(err.message || 'Network error extracting transcript.');
-    } finally {
-      setIsExtractingTranscript(false);
-    }
-  };
 
   // 发起测验生成
   const handleGenerate = async (params: {
@@ -217,8 +184,6 @@ export default function HomePage() {
           onExternalModeChange={setInputMode}
           onGenerate={handleGenerate}
           isLoading={isLoading}
-          onExtractTranscript={handleExtractTranscript}
-          isExtractingTranscript={isExtractingTranscript}
         />
 
         {/* 错误提示横幅与智能化补救指引 */}
@@ -268,18 +233,6 @@ export default function HomePage() {
           </div>
         )}
       </section>
-
-      {/* 字幕与讲义查看器锚点 */}
-      <div id="transcript-anchor" className="w-full max-w-3xl mx-auto scroll-mt-24">
-        {transcriptData && (
-          <TranscriptViewer
-            data={transcriptData}
-            onGenerateQuiz={(text, title, count) => handleGenerate({ mode: 'transcript', transcript: text, title, questionCount: count })}
-            onClose={() => setTranscriptData(null)}
-            isLoadingQuiz={isLoading}
-          />
-        )}
-      </div>
 
       {/* 答题锚点与做题区域 */}
       <div id="quiz-anchor" className="w-full max-w-2xl mx-auto mb-16 scroll-mt-24">

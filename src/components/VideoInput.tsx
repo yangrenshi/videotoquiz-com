@@ -17,8 +17,6 @@ interface VideoInputProps {
     questionCount?: number;
   }) => void;
   isLoading: boolean;
-  onExtractTranscript?: (url: string) => void;
-  isExtractingTranscript?: boolean;
   externalMode?: 'url' | 'transcript';
   onExternalModeChange?: (mode: 'url' | 'transcript') => void;
 }
@@ -26,8 +24,6 @@ interface VideoInputProps {
 export default function VideoInput({
   onGenerate,
   isLoading,
-  onExtractTranscript,
-  isExtractingTranscript = false,
   externalMode,
   onExternalModeChange,
 }: VideoInputProps) {
@@ -237,7 +233,7 @@ export default function VideoInput({
         <div className="space-y-2.5">
           <button
             type="submit"
-            disabled={isLoading || isExtractingTranscript || (mode === 'url' ? !url.trim() : !transcript.trim())}
+            disabled={isLoading || (mode === 'url' ? !url.trim() : !transcript.trim())}
             className="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-white hover:bg-zinc-200 text-zinc-950 shadow-md active:scale-[0.99] disabled:bg-zinc-800/90 disabled:text-zinc-400 disabled:border disabled:border-zinc-700/60 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
           >
             {isLoading ? (
@@ -261,58 +257,6 @@ export default function VideoInput({
               </>
             )}
           </button>
-
-          {/* 模式为 URL 时，提供免费提取讲义与字幕入口 (0费用 / 极速导出) */}
-          {mode === 'url' && (
-            <div className="space-y-2">
-              <button
-                type="button"
-                onClick={() => onExtractTranscript?.(url.trim())}
-                disabled={isLoading || isExtractingTranscript || !url.trim()}
-                className="w-full py-2.5 px-4 rounded-xl font-medium text-xs sm:text-sm bg-zinc-950 hover:bg-zinc-800/90 text-zinc-300 hover:text-white border border-zinc-800 hover:border-zinc-700 transition-all flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
-              >
-                {isExtractingTranscript ? (
-                  <>
-                    <Loader2 className="w-3.5 h-3.5 animate-spin text-emerald-400" />
-                    <span className="text-emerald-300">{t.transcriptViewer.extracting}</span>
-                  </>
-                ) : (
-                  <>
-                    <FileText className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>{t.transcriptViewer.btnExtract}</span>
-                  </>
-                )}
-              </button>
-
-              <p className="text-[11px] text-zinc-400 text-center leading-normal px-1">
-                {lang === 'zh' ? (
-                  <>
-                    📌 本链接仅支持提取 YouTube <span className="text-zinc-200 font-medium">公开原生文字记录或字幕</span>；若作者未开放公开字幕，可切换至{' '}
-                    <button
-                      type="button"
-                      onClick={() => setMode('transcript')}
-                      className="underline text-amber-400 hover:text-amber-300 font-medium inline-block"
-                    >
-                      【粘贴讲义 / 文本出题】
-                    </button>{' '}
-                    直接粘贴文本出题。
-                  </>
-                ) : (
-                  <>
-                    📌 Only parses YouTube videos with <span className="text-zinc-200 font-medium">public captions or transcripts</span>. If disabled by the creator, switch to{' '}
-                    <button
-                      type="button"
-                      onClick={() => setMode('transcript')}
-                      className="underline text-amber-400 hover:text-amber-300 font-medium inline-block"
-                    >
-                      [Paste Transcript]
-                    </button>{' '}
-                    to generate instantly.
-                  </>
-                )}
-              </p>
-            </div>
-          )}
 
           {/* 未登录用户的友好福利提示 */}
           {!user && (
