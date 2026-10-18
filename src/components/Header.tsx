@@ -23,7 +23,7 @@ export default function Header({ onOpenPricing }: HeaderProps) {
             <GraduationCap className="w-4 h-4 text-zinc-200" />
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="font-bold text-base text-zinc-100 tracking-tight">VideoToQuiz</span>
+            <span className="font-bold text-base text-zinc-100 tracking-tight">YouTube to Quiz</span>
             <span className="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400 border border-zinc-700/60">
               AI
             </span>
@@ -32,6 +32,12 @@ export default function Header({ onOpenPricing }: HeaderProps) {
 
         {/* 右侧导航与操作 */}
         <div className="flex items-center gap-2.5 sm:gap-3.5">
+          <Link
+            href="/about"
+            className="hidden sm:inline-flex text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors"
+          >
+            {lang === 'zh' ? '关于' : 'About'}
+          </Link>
           <Link
             href="/topics"
             className="hidden sm:inline-flex text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors"

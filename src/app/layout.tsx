@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     'ai quiz from video',
     'video to flashcards'
   ],
-  authors: [{ name: 'VideoToQuiz AI Team', url: 'https://www.videotoquiz.com' }],
+  authors: [{ name: 'YouTube to Quiz AI Team', url: 'https://www.videotoquiz.com' }],
   metadataBase: new URL('https://www.videotoquiz.com'),
   alternates: {
-    canonical: 'https://www.videotoquiz.com',
+    canonical: 'https://www.videotoquiz.com/',
   },
   other: {
     'waffo-verify': '624137efca83e9d5f6d0281819f60d31',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'YouTube to Quiz AI | Free Video to Quiz Generator',
     description: 'Convert YouTube videos into interactive quizzes, tests, and study flashcards instantly with AI. Boost retention and master any lecture for free.',
-    url: 'https://www.videotoquiz.com',
+    url: 'https://www.videotoquiz.com/',
     siteName: 'YouTube to Quiz AI',
     images: [
       {
@@ -62,7 +62,7 @@ export default function RootLayout({
       {
         '@type': 'Organization',
         '@id': 'https://www.videotoquiz.com/#organization',
-        name: 'VideoToQuiz AI',
+        name: 'YouTube to Quiz AI',
         url: 'https://www.videotoquiz.com',
         logo: 'https://www.videotoquiz.com/icon.png',
         sameAs: [
@@ -93,7 +93,7 @@ export default function RootLayout({
         operatingSystem: 'All',
         author: {
           '@type': 'Organization',
-          name: 'VideoToQuiz AI Team'
+          name: 'YouTube to Quiz AI Team'
         },
         datePublished: '2026-10-17T00:00:00+00:00',
         dateModified: '2026-10-18T22:30:00+00:00',
