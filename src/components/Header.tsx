@@ -45,6 +45,14 @@ export default function Header({ onOpenPricing }: HeaderProps) {
             {t.nav.faq}
           </a>
 
+          {/* 仪表盘链接 (已登录或游客均可点击查看测验库) */}
+          <Link
+            href="/dashboard"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-300 hover:text-white transition-colors"
+          >
+            <span>{lang === 'zh' ? '个人中心' : 'Dashboard'}</span>
+          </Link>
+
           {/* 语言切换胶囊按钮 */}
           <button
             type="button"
@@ -71,19 +79,25 @@ export default function Header({ onOpenPricing }: HeaderProps) {
                 <span className="text-[10px] text-amber-400/80">{lang === 'zh' ? '积分' : 'pts'}</span>
               </button>
 
-              {/* 用户头像与登出 */}
+              {/* 用户头像 (点击跳转个人中心) 与登出 */}
               <div className="flex items-center gap-1.5 pl-1">
-                {user.avatar ? (
-                  <img
-                    src={user.avatar}
-                    alt={user.name || 'User'}
-                    className="w-7 h-7 rounded-full border border-zinc-700 object-cover"
-                  />
-                ) : (
-                  <div className="w-7 h-7 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-300 text-xs font-semibold">
-                    <UserIcon className="w-3.5 h-3.5" />
-                  </div>
-                )}
+                <Link
+                  href="/dashboard"
+                  className="hover:opacity-85 transition-opacity"
+                  title={lang === 'zh' ? '进入个人中心' : 'Open Dashboard'}
+                >
+                  {user.avatar ? (
+                    <img
+                      src={user.avatar}
+                      alt={user.name || 'User'}
+                      className="w-7 h-7 rounded-full border border-amber-500/40 object-cover hover:border-amber-400 transition-colors"
+                    />
+                  ) : (
+                    <div className="w-7 h-7 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-300 text-xs font-semibold hover:border-zinc-500">
+                      <UserIcon className="w-3.5 h-3.5" />
+                    </div>
+                  )}
+                </Link>
                 <button
                   type="button"
                   onClick={logout}

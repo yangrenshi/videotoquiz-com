@@ -11,6 +11,7 @@ import { QuizResultData, UserAnswerRecord, QuizScoreSummary, InputMode } from '@
 import { SAMPLE_QUIZZES } from '@/lib/sample-quizzes';
 import { useLanguage } from '@/context/LanguageContext';
 import { useAuth } from '@/context/AuthContext';
+import { saveQuiz, updateQuizScore } from '@/lib/quiz-storage';
 
 export default function InteractiveQuizSection() {
   const { t, lang } = useLanguage();
@@ -99,6 +100,8 @@ export default function InteractiveQuizSection() {
 
       setQuizData(json.data);
       setQuizStartTime(Date.now());
+      // 自动归档至用户历史测验库
+      saveQuiz(json.data, params.url);
       // 刷新用户最新积分余额
       await refreshUser();
 
@@ -126,6 +129,10 @@ export default function InteractiveQuizSection() {
       const elapsed = Math.max(15, Math.round((Date.now() - quizStartTime) / 1000));
       setTimeSpentSeconds(elapsed);
       setIsQuizCompleted(true);
+      // 记录本次答题战报得分
+      const correctCount = userAnswers.filter((a) => a.isCorrect).length;
+      const quizId = quizData.videoId ? `quiz_${quizData.videoId}` : 'quiz_default';
+      updateQuizScore(quizId, correctCount, quizData.questions.length);
     }
   };
 
