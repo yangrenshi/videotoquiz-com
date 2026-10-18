@@ -12,18 +12,42 @@ interface PricingModalProps {
 export default function PricingModal({ isOpen, onClose }: PricingModalProps) {
   const { t } = useLanguage();
   const [selectedPlan, setSelectedPlan] = useState<'onetime' | 'monthly'>('onetime');
+  const [isProcessing, setIsProcessing] = useState(false);
 
   if (!isOpen) return null;
 
-  // Creem 结账处理 (直提支付宝)
-  const handleCreemCheckout = (plan: 'onetime' | 'monthly') => {
-    const productId = plan === 'onetime'
-      ? (process.env.NEXT_PUBLIC_CREEM_PRODUCT_ID_ONETIME || 'prod_vW2vvU50gL24FTRqcppDN')
-      : (process.env.NEXT_PUBLIC_CREEM_PRODUCT_ID_MONTHLY || 'prod_3LmDXFB6O2n3NoVqLg5eLm');
-    
-    // 跳转到 Creem 聚合结账页
-    const checkoutUrl = `https://checkout.creem.io/${productId}?customer_email=learner@example.com`;
-    window.open(checkoutUrl, '_blank');
+  // 极速结账处理：优先通过 Waffo Pancake 官方收银台进行全球结算 (信用卡 / Apple Pay / 微信支付)
+  const handleCheckout = async (plan: 'onetime' | 'monthly') => {
+    setIsProcessing(true);
+    try {
+      const res = await fetch('/api/checkout/waffo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan }),
+      });
+      const data = await res.json();
+
+      if (res.ok && data.success && data.checkoutUrl) {
+        window.location.href = data.checkoutUrl;
+        return;
+      }
+
+      if (data.requiresLogin) {
+        alert(data.error || 'Please sign in first to complete purchase');
+        return;
+      }
+
+      // 回退通道 (Creem)
+      const productId =
+        plan === 'onetime'
+          ? (process.env.NEXT_PUBLIC_CREEM_PRODUCT_ID_ONETIME || 'prod_vW2vvU50gL24FTRqcppDN')
+          : (process.env.NEXT_PUBLIC_CREEM_PRODUCT_ID_MONTHLY || 'prod_3LmDXFB6O2n3NoVqLg5eLm');
+      window.open(`https://checkout.creem.io/${productId}`, '_blank');
+    } catch (err) {
+      console.error('[Checkout] Error:', err);
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   return (
@@ -97,11 +121,12 @@ export default function PricingModal({ isOpen, onClose }: PricingModalProps) {
 
             <button
               type="button"
-              onClick={() => handleCreemCheckout('onetime')}
-              className="w-full py-3 rounded-xl font-semibold text-xs sm:text-sm bg-amber-400 hover:bg-amber-300 text-zinc-950 shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2"
+              disabled={isProcessing}
+              onClick={() => handleCheckout('onetime')}
+              className="w-full py-3 rounded-xl font-semibold text-xs sm:text-sm bg-amber-400 hover:bg-amber-300 disabled:opacity-50 disabled:cursor-not-allowed text-zinc-950 shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2"
             >
               <CreditCard className="w-4 h-4" />
-              <span>{t.pricing.plan1Btn}</span>
+              <span>{isProcessing ? 'Processing...' : t.pricing.plan1Btn}</span>
             </button>
           </div>
 
@@ -148,11 +173,12 @@ export default function PricingModal({ isOpen, onClose }: PricingModalProps) {
 
             <button
               type="button"
-              onClick={() => handleCreemCheckout('monthly')}
-              className="w-full py-3 rounded-xl font-semibold text-xs sm:text-sm bg-zinc-100 hover:bg-white text-zinc-950 shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2"
+              disabled={isProcessing}
+              onClick={() => handleCheckout('monthly')}
+              className="w-full py-3 rounded-xl font-semibold text-xs sm:text-sm bg-zinc-100 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed text-zinc-950 shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2"
             >
               <Zap className="w-4 h-4 fill-current text-zinc-900" />
-              <span>{t.pricing.plan2Btn}</span>
+              <span>{isProcessing ? 'Processing...' : t.pricing.plan2Btn}</span>
             </button>
           </div>
         </div>
