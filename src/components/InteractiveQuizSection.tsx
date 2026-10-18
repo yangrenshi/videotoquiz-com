@@ -154,10 +154,16 @@ export default function InteractiveQuizSection() {
   const handleShareQuiz = async () => {
     if (!quizData) return;
     try {
-      const { shareUrl } = await createShareableLink(quizData);
+      const { shareId } = await createShareableLink(quizData);
+      const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+      const shareUrl = isLocal ? `${window.location.origin}/quiz/${shareId}` : `https://www.videotoquiz.com/quiz/${shareId}`;
       await navigator.clipboard.writeText(shareUrl);
-      setShareToast(lang === 'zh' ? '测验分享链接已复制！可直接发送给好友一起做题' : 'Quiz link copied! Send to friends to challenge them.');
-      setTimeout(() => setShareToast(null), 3000);
+      setShareToast(
+        lang === 'zh'
+          ? `测验挑战链接已复制 (${shareUrl})！可直接发送给好友一起做题 PK`
+          : `Challenge link copied (${shareUrl})! Send to friends to challenge them.`
+      );
+      setTimeout(() => setShareToast(null), 4000);
     } catch (e) {
       setShareToast(lang === 'zh' ? '正在生成分享链接...' : 'Generating share link...');
       setTimeout(() => setShareToast(null), 2000);
@@ -189,8 +195,8 @@ export default function InteractiveQuizSection() {
         </span>
       </div>
 
-      {/* 核心输入与出题区域 */}
-      <section className="w-full max-w-2xl mx-auto mb-10">
+      {/* 核心输入与出题区域 (携带 input-hero 锚点，便于病毒裂变回流直通聚焦) */}
+      <section id="input-hero" className="w-full max-w-2xl mx-auto mb-10 scroll-mt-24">
         <VideoInput
           externalMode={inputMode}
           onExternalModeChange={setInputMode}
@@ -263,11 +269,11 @@ export default function InteractiveQuizSection() {
                 <button
                   type="button"
                   onClick={handleShareQuiz}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-amber-300 hover:text-amber-200 border border-zinc-700 text-[11px] font-semibold transition-all active:scale-95"
-                  title="Share quiz link"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-zinc-950 text-xs font-bold transition-all shadow-md active:scale-95 border border-amber-300"
+                  title="Challenge Friends / Copy Share Link"
                 >
-                  <Share2 className="w-3 h-3" />
-                  <span>{lang === 'zh' ? '分享' : 'Share'}</span>
+                  <Share2 className="w-3.5 h-3.5" />
+                  <span>{lang === 'zh' ? '⚡ 挑战好友 / 分享' : '⚡ Challenge Friends / Copy Link'}</span>
                 </button>
               </div>
             </div>

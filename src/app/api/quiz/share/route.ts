@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { QuizResultData } from '@/lib/types';
-
-// 服务端轻量内存缓存 (LRU 简易版，保留最近 500 个测验)
-const shareCache = new Map<string, { quiz: QuizResultData; createdAt: number }>();
+import { saveSharedQuiz, getSharedQuiz } from '@/lib/quiz-share-store';
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,17 +11,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, error: 'Missing shareId or quiz data' }, { status: 400 });
     }
 
-    // 写入内存缓存
-    shareCache.set(shareId, {
-      quiz,
-      createdAt: Date.now(),
-    });
-
-    // 控制内存容量
-    if (shareCache.size > 500) {
-      const oldestKey = shareCache.keys().next().value;
-      if (oldestKey) shareCache.delete(oldestKey);
-    }
+    // 写入服务端持久缓存
+    saveSharedQuiz(shareId, quiz);
 
     return NextResponse.json({
       success: true,
@@ -43,11 +32,11 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ success: false, error: 'Missing quiz id' }, { status: 400 });
   }
 
-  const found = shareCache.get(id);
-  if (found) {
+  const foundQuiz = getSharedQuiz(id);
+  if (foundQuiz) {
     return NextResponse.json({
       success: true,
-      quiz: found.quiz,
+      quiz: foundQuiz,
     });
   }
 

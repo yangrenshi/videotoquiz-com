@@ -1,5 +1,3 @@
-'use client';
-
 import { QuizResultData } from './types';
 
 export interface MinifiedQuizPayload {
@@ -92,29 +90,35 @@ export async function createShareableLink(quiz: QuizResultData): Promise<{
   shareId: string;
   shareUrl: string;
 }> {
-  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://www.videotoquiz.com';
-  const compressed = compressQuizData(quiz);
-  
+  const isBrowser = typeof window !== 'undefined';
+  const origin = isBrowser 
+    ? (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? window.location.origin 
+        : 'https://www.videotoquiz.com')
+    : 'https://www.videotoquiz.com';
+    
   // 生成短哈希 ID
   const hash = Math.random().toString(36).substring(2, 9);
   const shareId = quiz.videoId ? `v_${quiz.videoId.slice(0, 8)}_${hash}` : `q_${hash}`;
 
   try {
-    // 异步向服务端注册轻量短链（同时缓存）
-    fetch('/api/quiz/share', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        shareId,
-        quiz,
-      }),
-    }).catch((e) => console.warn('Background share register skipped:', e));
+    if (isBrowser) {
+      // 异步向服务端注册持久短链缓存
+      await fetch('/api/quiz/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          shareId,
+          quiz,
+        }),
+      });
+    }
   } catch (e) {
-    // 忽略静默网络异常，有 URL 状态兜底
+    console.warn('Background share register skipped:', e);
   }
 
-  // 附带紧凑压缩数据作为防穿透保底
-  const shareUrl = `${origin}/quiz/${shareId}?d=${compressed}`;
+  // 规范链接格式：https://www.videotoquiz.com/quiz/${shareId}
+  const shareUrl = `${origin}/quiz/${shareId}`;
   return {
     shareId,
     shareUrl,

@@ -77,10 +77,16 @@ export default function QuizResult({
   // 分享测验给好友
   const handleShareChallenge = async () => {
     try {
-      const { shareUrl } = await createShareableLink(quizData);
-      await navigator.clipboard.writeText(shareUrl);
-      setShareToast(lang === 'zh' ? '挑战链接已复制到剪贴板！可直接发送给微信/好友 PK 成绩' : 'Challenge link copied! Send to friends to compare scores.');
-      setTimeout(() => setShareToast(null), 3500);
+      const { shareId } = await createShareableLink(quizData);
+      const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+      const targetUrl = isLocal ? `${window.location.origin}/quiz/${shareId}` : `https://www.videotoquiz.com/quiz/${shareId}`;
+      await navigator.clipboard.writeText(targetUrl);
+      setShareToast(
+        lang === 'zh'
+          ? `挑战链接已复制 (${targetUrl})！可直接发送给微信/好友 PK 成绩`
+          : `Challenge link copied (${targetUrl})! Send to friends to compare scores.`
+      );
+      setTimeout(() => setShareToast(null), 4000);
     } catch (e) {
       setShareToast(lang === 'zh' ? '正在生成分享链接...' : 'Generating share link...');
       setTimeout(() => setShareToast(null), 2500);
@@ -117,7 +123,34 @@ export default function QuizResult({
 
         {/* 关键操作区 (符合 frontend-design 规范：宽幅舒适内间距、卡片级留白、双核层次分明) */}
         <div className="mt-8 pt-7 border-t border-zinc-800/80 space-y-4 max-w-xl mx-auto px-2">
-          {/* 成果 1 & 成果 2 */}
+          {/* 操作栏 3 项：高亮显著的 Challenge Friends 核心卡片置顶横贯 */}
+          <button
+            type="button"
+            onClick={handleShareChallenge}
+            className="w-full relative flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/20 via-zinc-950 to-amber-500/10 border-2 border-amber-400/90 hover:border-amber-300 hover:bg-zinc-900 transition-all duration-200 shadow-lg hover:shadow-amber-500/20 text-left group active:scale-[0.99]"
+          >
+            <div className="flex items-center gap-3.5 min-w-0">
+              <div className="w-11 h-11 rounded-xl bg-amber-400 text-zinc-950 flex items-center justify-center font-bold shadow-md group-hover:scale-105 transition-transform shrink-0">
+                <Share2 className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-xs sm:text-sm font-extrabold text-white flex items-center gap-2">
+                  <span>{lang === 'zh' ? '⚡ 挑战好友 · 复制分享链接' : '⚡ Challenge Friends / Copy Share Link'}</span>
+                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-400 text-zinc-950 shadow-sm shrink-0">
+                    VIRAL
+                  </span>
+                </div>
+                <div className="text-[11px] sm:text-xs text-amber-200/90 truncate mt-1">
+                  {lang === 'zh' ? '生成专属短链，好友点开即可做题 PK 战报' : 'Copy live challenge link & compare recall scores'}
+                </div>
+              </div>
+            </div>
+            <span className="text-xs font-bold text-zinc-950 bg-amber-400 hover:bg-amber-300 px-3.5 py-2 rounded-xl shrink-0 shadow transition-all">
+              {lang === 'zh' ? '复制链接' : 'Copy Link'}
+            </span>
+          </button>
+
+          {/* 成果 1: 学术海报 & 成果 2: 导出 Anki */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* 成果 1: 生成学术结业荣誉海报 */}
             <button
@@ -183,33 +216,6 @@ export default function QuizResult({
               </span>
             </button>
           </div>
-
-          {/* 成果 3: 病毒裂变核心入口 - 邀请好友挑战测验 */}
-          <button
-            type="button"
-            onClick={handleShareChallenge}
-            className="w-full flex items-center justify-between p-4 sm:p-4.5 rounded-2xl bg-zinc-950/90 border border-amber-500/30 hover:border-amber-400/70 hover:bg-zinc-900 transition-all shadow-sm hover:shadow-md text-left group active:scale-[0.99]"
-          >
-            <div className="flex items-center gap-3.5 min-w-0">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform shrink-0">
-                <Share2 className="w-4.5 h-4.5" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
-                  <span>{lang === 'zh' ? '复制专属链接 · 邀请好友挑战此测验' : 'Share Quiz Challenge with Friends'}</span>
-                  <span className="text-[10px] font-mono font-bold px-2 py-0.2 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20">
-                    VIRAL
-                  </span>
-                </div>
-                <div className="text-[11px] text-zinc-400 truncate mt-0.5">
-                  {lang === 'zh' ? '好友点开即可沉浸式做题，比拼得分战报' : 'Friends can take this exact quiz and beat your score'}
-                </div>
-              </div>
-            </div>
-            <span className="text-xs font-semibold text-amber-400 group-hover:text-amber-300 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 shrink-0">
-              {lang === 'zh' ? '复制链接' : 'Copy Link'}
-            </span>
-          </button>
         </div>
 
           {/* 轻量次级按键 - 测试下一个视频 (充足内边距，雅致通透) */}
