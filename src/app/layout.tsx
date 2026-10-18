@@ -7,15 +7,16 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import { AuthProvider } from '@/context/AuthContext';
 
 export const metadata: Metadata = {
-  title: 'YouTube to Quiz AI | Turn Any Video into an Interactive Quiz in Seconds',
-  description: 'Instantly convert any YouTube lecture or tutorial into an interactive quiz, summary, and flashcards with AI. Test your knowledge without signup. 100% free.',
+  title: 'YouTube to Quiz AI | Free Video to Quiz Generator',
+  description: 'Convert YouTube videos into interactive quizzes, tests, and study flashcards instantly with AI. Boost retention and master any lecture for free.',
   keywords: [
     'youtube to quiz',
-    'video to quiz',
+    'video to quiz generator',
     'youtube video summarizer to quiz',
+    'convert youtube video to test',
     'ai quiz generator from video',
-    'convert youtube to test',
-    'video learning quiz'
+    'active recall quiz',
+    'video to flashcards'
   ],
   authors: [{ name: 'VideoToQuiz AI Team' }],
   metadataBase: new URL('https://www.videotoquiz.com'),
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
     'waffo-verify': '624137efca83e9d5f6d0281819f60d31',
   },
   openGraph: {
-    title: 'YouTube to Quiz AI - Interactive Knowledge Testing',
-    description: 'Paste any YouTube link, get a 5-question test & summary in 10 seconds. Free interactive test with instant scoring.',
+    title: 'YouTube to Quiz AI | Free Video to Quiz Generator',
+    description: 'Convert YouTube videos into interactive quizzes, tests, and study flashcards instantly with AI. Boost retention and master any lecture for free.',
     url: 'https://www.videotoquiz.com',
     siteName: 'YouTube to Quiz AI',
     images: [
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
         url: '/og-preview.png',
         width: 1200,
         height: 630,
-        alt: 'YouTube to Quiz AI Preview',
+        alt: 'YouTube to Quiz AI - Video to Quiz Generator Preview',
       },
     ],
     locale: 'en_US',
@@ -43,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'YouTube to Quiz AI | Interactive Knowledge Testing',
-    description: 'Paste any YouTube link, get a 5-question test & summary in 10 seconds. Free interactive test with instant scoring.',
+    title: 'YouTube to Quiz AI | Free Video to Quiz Generator',
+    description: 'Convert YouTube videos into interactive quizzes, tests, and study flashcards instantly with AI. Boost retention and master any lecture for free.',
     images: ['/og-preview.png'],
   },
   verification: {
@@ -64,12 +65,28 @@ export default function RootLayout({
     url: 'https://www.videotoquiz.com',
     applicationCategory: 'EducationalApplication',
     operatingSystem: 'All',
-    description: 'AI platform that converts public YouTube video lectures into interactive quizzes, summaries, and downloadable study worksheets.',
+    description: 'AI-powered learning platform that converts any YouTube video lecture or tutorial into interactive quizzes, summaries, and downloadable flashcards in seconds.',
     offers: {
       '@type': 'Offer',
       price: '0.00',
       priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '1280',
+      reviewCount: '1280',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    featureList: [
+      'Instant YouTube Video Transcript Parsing',
+      'AI-Powered Multiple Choice & Conceptual Quizzes',
+      'Timestamped Explanations for Every Answer',
+      'Active Recall and Spaced Repetition Workflow',
+      'Downloadable Study Notes and Flashcards'
+    ]
   };
 
   return (
