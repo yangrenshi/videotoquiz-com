@@ -56,12 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // 18 个核心高意图 pSEO 专题页面
+  // 46 个高商业价值核心 pSEO 专题页面 (自动遍历)
   const topicRoutes: MetadataRoute.Sitemap = topicsData.map((item) => ({
     url: `${baseUrl}/topics/${item.slug}`,
     lastModified: currentDate,
     changeFrequency: 'weekly',
-    priority: 0.85,
+    priority: 0.8,
   }));
 
   return [...staticRoutes, ...topicRoutes];
