@@ -280,40 +280,84 @@ export default function VideoInput({
       </form>
 
       {/* 快速体验官方免消耗样卷 (零等待试玩，不扣积分) */}
-      <div className="mt-5 pt-4 border-t border-zinc-800 flex flex-wrap items-center gap-2.5 text-xs text-zinc-300">
-        <span className="font-semibold text-zinc-300">{t.input.sampleLabel}</span>
-        <button
-          type="button"
-          onClick={() => {
-            const sampleUrl = 'https://www.youtube.com/watch?v=8mAITcNt710';
-            setUrl(sampleUrl);
-            onGenerate({ mode: 'url', sampleKey: 'cs50', url: sampleUrl, questionCount: 5 });
-          }}
-          disabled={isLoading}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 transition-colors shadow-sm font-medium"
-        >
-          <PlayCircle className="w-3.5 h-3.5 text-emerald-400" />
-          <span>{t.input.sampleCs50}</span>
-          <span className="text-[10px] text-emerald-400/80 bg-emerald-500/10 px-1 rounded">
-            {lang === 'zh' ? '免积分' : 'Free'}
+      <div className="mt-5 pt-4 border-t border-zinc-800 space-y-2 text-xs">
+        <div className="flex items-center justify-between text-zinc-300">
+          <span className="font-semibold text-zinc-200 flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <span>{lang === 'zh' ? '或点击 1 秒试玩样卷 (免登录 · 零积分消耗)' : 'Or try 1-click interactive demo quizzes (Instant · 0 Credits)'}</span>
           </span>
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            const sampleUrl = 'https://www.youtube.com/watch?v=iCvmsMzlF7o';
-            setUrl(sampleUrl);
-            onGenerate({ mode: 'url', sampleKey: 'psychology', url: sampleUrl, questionCount: 5 });
-          }}
-          disabled={isLoading}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 transition-colors shadow-sm font-medium"
-        >
-          <PlayCircle className="w-3.5 h-3.5 text-amber-400" />
-          <span>{t.input.samplePsychology}</span>
-          <span className="text-[10px] text-amber-400/80 bg-amber-500/10 px-1 rounded">
-            {lang === 'zh' ? '免积分' : 'Free'}
-          </span>
-        </button>
+          <span className="text-[11px] text-zinc-400 font-mono hidden sm:inline">Active Recall Demo</span>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 pt-1">
+          <button
+            type="button"
+            onClick={() => {
+              const sampleUrl = 'https://www.youtube.com/watch?v=8mAITcNt710';
+              setUrl(sampleUrl);
+              onGenerate({ mode: 'url', sampleKey: 'cs50', url: sampleUrl, questionCount: 5 });
+            }}
+            disabled={isLoading}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 hover:text-white transition-all shadow-sm font-medium"
+          >
+            <PlayCircle className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Harvard CS50</span>
+            <span className="text-[10px] text-emerald-400/90 bg-emerald-500/10 px-1 py-0.5 rounded font-mono">
+              Python
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              const sampleUrl = 'https://www.youtube.com/watch?v=nm1TxQj9IsQ';
+              setUrl(sampleUrl);
+              onGenerate({ mode: 'url', sampleKey: 'huberman', url: sampleUrl, questionCount: 5 });
+            }}
+            disabled={isLoading}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 hover:text-white transition-all shadow-sm font-medium"
+          >
+            <PlayCircle className="w-3.5 h-3.5 text-indigo-400" />
+            <span>Huberman Lab</span>
+            <span className="text-[10px] text-indigo-400/90 bg-indigo-500/10 px-1 py-0.5 rounded font-mono">
+              Sleep & Focus
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              const sampleUrl = 'https://www.youtube.com/watch?v=2v6E8ZgH9Jk';
+              setUrl(sampleUrl);
+              onGenerate({ mode: 'url', sampleKey: 'cfa', url: sampleUrl, questionCount: 5 });
+            }}
+            disabled={isLoading}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 hover:text-white transition-all shadow-sm font-medium"
+          >
+            <PlayCircle className="w-3.5 h-3.5 text-amber-400" />
+            <span>CFA Prep</span>
+            <span className="text-[10px] text-amber-400/90 bg-amber-500/10 px-1 py-0.5 rounded font-mono">
+              Finance
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              const sampleUrl = 'https://www.youtube.com/watch?v=iCvmsMzlF7o';
+              setUrl(sampleUrl);
+              onGenerate({ mode: 'url', sampleKey: 'psychology', url: sampleUrl, questionCount: 5 });
+            }}
+            disabled={isLoading}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 hover:text-white transition-all shadow-sm font-medium"
+          >
+            <PlayCircle className="w-3.5 h-3.5 text-rose-400" />
+            <span>TED Talk</span>
+            <span className="text-[10px] text-rose-400/90 bg-rose-500/10 px-1 py-0.5 rounded font-mono">
+              Psychology
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -45,11 +45,20 @@ export default function PrivacyPage() {
         </section>
 
         <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
-          <h2 className="text-base font-semibold text-zinc-100 mb-2">4. Contact Us (联系我们)</h2>
+          <h2 className="text-base font-semibold text-zinc-100 mb-2">4. Your Data Rights (用户数据权利)</h2>
           <p className="text-zinc-400">
-            If you have questions regarding your data privacy rights, please email us at <a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a>.
+            You may ask us to access, correct, or delete the personal data linked to your account, and you may ask us to close the account. Email yangrenliipu+videotoquiz@gmail.com from the address on the account, and write &quot;data request&quot; in the subject. We reply within 15 business days and complete a valid deletion or account-closure request within 30 days, except where we must keep a payment record for tax or dispute handling.
             <br />
-            如对数据隐私或个人信息权益有任何疑问，请随时联系个人支持邮箱：<a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a>。
+            您可以要求查阅、更正或删除与账号关联的个人数据，也可以要求注销账号。请用账号邮箱写信至 yangrenliipu+videotoquiz@gmail.com，主题写明 data request。我们在 15 个工作日内回复，并在 30 日内完成有效的删除或注销请求。税务或争议处理所必需的付款记录除外。
+          </p>
+        </section>
+
+        <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
+          <h2 className="text-base font-semibold text-zinc-100 mb-2">5. Contact Us (联系我们)</h2>
+          <p className="text-zinc-400">
+            If you have questions regarding your data privacy rights, please email us at <a href="mailto:yangrenliipu+videotoquiz@gmail.com" className="text-zinc-200 underline">yangrenliipu+videotoquiz@gmail.com</a>.
+            <br />
+            如对数据隐私或个人信息权益有任何疑问，请随时联系个人支持邮箱：<a href="mailto:yangrenliipu+videotoquiz@gmail.com" className="text-zinc-200 underline">yangrenliipu+videotoquiz@gmail.com</a>。
           </p>
         </section>
       </div>

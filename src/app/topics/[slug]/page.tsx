@@ -63,29 +63,60 @@ export default async function PSeoTopicPage({ params }: PageProps) {
   // 获取同类推荐与全部矩阵
   const relatedTopics = topicsData.filter((t) => t.slug !== item.slug).slice(0, 8);
 
+  // FAQ 结构化数据物料 (对齐 Schema 与页面可见 DOM)
+  const faqs = [
+    {
+      question: `How do I turn ${item.sourceChannel} YouTube videos into interactive quizzes?`,
+      answer: `Simply copy any lecture or tutorial URL from ${item.sourceChannel} and paste it into our free YouTube to quiz generator. The AI automatically parses video transcripts, extracts core cognitive concepts, and creates multiple-choice questions with timestamped explanations in seconds.`
+    },
+    {
+      question: `Can I export quizzes generated from ${item.sourceChannel} to Anki or Quizlet?`,
+      answer: `Yes. Every test created with VideoToQuiz AI can be exported with 1-click into standard Anki (.apkg/csv) decks, Quizlet format, printable PDF study guides, or Markdown flashcards for permanent spaced repetition retention.`
+    },
+    {
+      question: `Why is active testing better than re-watching ${item.sourceChannel} videos?`,
+      answer: `Cognitive science research (Roediger & Karpicke, 2006) demonstrates that passive video watching creates an illusion of competence where 70% of material is forgotten within 24 hours. Immediate active recall testing forces neural retrieval, increasing long-term exam retention by over 115%.`
+    }
+  ];
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'TechArticle',
-    headline: item.h1,
-    description: item.metaDesc,
-    inLanguage: 'en-US',
-    mainEntityOfPage: `https://www.videotoquiz.com/topics/${item.slug}`,
-    datePublished: '2026-10-18T00:00:00+00:00',
-    dateModified: '2026-10-18T22:30:00+00:00',
-    author: {
-      '@type': 'Organization',
-      name: 'VideoToQuiz AI Editorial Team',
-      url: 'https://www.videotoquiz.com',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'VideoToQuiz AI',
-      url: 'https://www.videotoquiz.com',
-    },
-    about: {
-      '@type': 'Thing',
-      name: item.sourceChannel,
-    },
+    '@graph': [
+      {
+        '@type': 'TechArticle',
+        headline: item.h1,
+        description: item.metaDesc,
+        inLanguage: 'en-US',
+        mainEntityOfPage: `https://www.videotoquiz.com/topics/${item.slug}`,
+        datePublished: '2026-10-18T00:00:00+00:00',
+        dateModified: '2026-10-24T12:00:00+00:00',
+        author: {
+          '@type': 'Organization',
+          name: 'VideoToQuiz AI Editorial Team',
+          url: 'https://www.videotoquiz.com',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'VideoToQuiz AI',
+          url: 'https://www.videotoquiz.com',
+        },
+        about: {
+          '@type': 'Thing',
+          name: item.sourceChannel,
+        },
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer
+          }
+        }))
+      }
+    ]
   };
 
   return (
@@ -185,13 +216,45 @@ export default async function PSeoTopicPage({ params }: PageProps) {
             <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
               <span className="text-xs font-mono font-bold text-amber-400">STEP 2</span>
               <h3 className="text-sm font-bold text-white mt-1 mb-1">Take Instant 5-Q Test</h3>
-              <p className="text-xs text-zinc-400">Run the video URL through VideoToQuiz to identify blind spots immediately.</p>
+              <p className="text-xs text-zinc-400">
+                Run the video URL through our free{' '}
+                <Link href="/" className="text-amber-400 underline font-medium hover:text-amber-300">
+                  YouTube to quiz generator
+                </Link>{' '}
+                to identify blind spots and solidify cognitive memory immediately.
+              </p>
             </div>
             <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
               <span className="text-xs font-mono font-bold text-amber-400">STEP 3</span>
               <h3 className="text-sm font-bold text-white mt-1 mb-1">Export to Anki</h3>
-              <p className="text-xs text-zinc-400">Schedule missed questions into spaced repetition for permanent retention.</p>
+              <p className="text-xs text-zinc-400">
+                Schedule missed questions into spaced repetition for permanent retention using our{' '}
+                <Link href="/" className="text-amber-400 underline font-medium hover:text-amber-300">
+                  video to quiz AI tool
+                </Link>.
+              </p>
             </div>
+          </div>
+        </div>
+
+        {/* 4.5 Q-A-D-L 权威问答与 FAQ 微数据对齐模块 */}
+        <div className="space-y-4 pt-4 border-t border-zinc-800/80">
+          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+            <FileCheck2 className="w-5 h-5 text-amber-400" />
+            <span>Frequently Asked Questions ({item.sourceChannel} Study Guide)</span>
+          </h2>
+          <div className="space-y-3">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="p-5 rounded-2xl bg-zinc-900/70 border border-zinc-800 space-y-2">
+                <h3 className="text-sm sm:text-base font-bold text-white flex items-start gap-2">
+                  <span className="text-amber-400 font-mono">Q{idx + 1}:</span>
+                  <span>{faq.question}</span>
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed pl-6">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 

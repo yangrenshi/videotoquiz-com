@@ -38,10 +38,10 @@ export default function ContactPage() {
             <h2 className="text-base font-bold text-white mb-1">Official Support Desk</h2>
             <p className="text-xs text-zinc-400 mb-3">For general inquiries, feature requests, and account sync:</p>
             <a
-              href="mailto:support@videotoquiz.com"
+              href="mailto:yangrenliipu+videotoquiz@gmail.com"
               className="text-sm font-mono font-bold text-amber-300 hover:underline"
             >
-              support@videotoquiz.com
+              yangrenliipu+videotoquiz@gmail.com
             </a>
           </div>
           <div className="pt-3 border-t border-zinc-800 text-xs text-zinc-400 flex items-center gap-2">
@@ -59,10 +59,10 @@ export default function ContactPage() {
             <h2 className="text-base font-bold text-white mb-1">Billing & Invoicing</h2>
             <p className="text-xs text-zinc-400 mb-3">For VAT receipts, institutional purchases, or refund requests:</p>
             <a
-              href="mailto:support@videotoquiz.com?subject=Billing%20Inquiry"
+              href="mailto:yangrenliipu+videotoquiz@gmail.com?subject=Billing%20Inquiry"
               className="text-sm font-mono font-bold text-indigo-300 hover:underline"
             >
-              billing@videotoquiz.com
+              yangrenliipu+videotoquiz@gmail.com
             </a>
           </div>
           <div className="pt-3 border-t border-zinc-800 text-xs text-zinc-400 flex items-center gap-2">

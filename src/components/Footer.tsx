@@ -39,6 +39,9 @@ export default function Footer() {
             <Link href="/topics" className="hover:text-amber-400 transition-colors">
               {lang === 'zh' ? '公开课题库' : 'Study Topics'}
             </Link>
+            <Link href="/pricing" className="hover:text-amber-400 transition-colors">
+              {lang === 'zh' ? '价格' : 'Pricing'}
+            </Link>
             <Link href="/terms" className="hover:text-zinc-200 transition-colors">
               {t.footer.terms}
             </Link>
@@ -52,7 +55,9 @@ export default function Footer() {
 
           <div className="flex items-center gap-2 text-zinc-500 text-[11px] mt-1">
             <Mail className="w-3.5 h-3.5 text-zinc-400" />
-            <span>Support: support@videotoquiz.com</span>
+            <a href="mailto:yangrenliipu+videotoquiz@gmail.com" className="hover:text-amber-400">
+              Support: yangrenliipu+videotoquiz@gmail.com
+            </a>
           </div>
         </div>
       </div>

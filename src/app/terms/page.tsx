@@ -54,11 +54,29 @@ export default function TermsPage() {
         </section>
 
         <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
-          <h2 className="text-base font-semibold text-zinc-100 mb-2">5. Contact Information (联系方式)</h2>
+          <h2 className="text-base font-semibold text-zinc-100 mb-2">5. Disclaimer and Liability (免责与责任)</h2>
           <p className="text-zinc-400">
-            For any legal or service inquiries, please contact our support team at <a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a>.
+            The Service is provided as is and as available. AI-generated questions, answers, and explanations are study aids only. They are not guaranteed to be accurate, complete, or fit for any exam, and they are not professional, medical, legal, or financial advice. To the fullest extent allowed by law, VideoToQuiz AI is not liable for lost scores, lost study time, or indirect damages arising from use of the Service. Our total liability for a paid plan is limited to the amount you paid for that plan in the previous 30 days.
             <br />
-            如有任何法律、商务合作或服务咨询，请直接联系：<a href="mailto:yangrenliipu@gmail.com" className="text-zinc-200 underline">yangrenliipu@gmail.com</a>。
+            服务按现状提供。AI 生成的题目、答案与解析只供学习参考，不保证准确、完整或适用于任何考试，也不构成专业、医疗、法律或投资建议。在法律允许的范围内，本服务不对因使用内容而产生的分数、时间或其他间接损失承担责任。付费方案下，我们的责任上限为您在此前 30 天内为该方案支付的金额。
+          </p>
+        </section>
+
+        <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
+          <h2 className="text-base font-semibold text-zinc-100 mb-2">6. Term and Termination (期限与终止)</h2>
+          <p className="text-zinc-400">
+            These terms apply while you use the Service. If you break the acceptable use rules, we may warn you, limit features, pause the account, or terminate the account. Unused credits on a terminated account are not refunded when the termination follows a rule violation. You may stop using the Service at any time and may cancel a monthly plan from the account panel.
+            <br />
+            条款在您使用服务期间有效。若您违反使用规则，我们可以警告、限制功能、暂停账号或终止账号。因违规被终止时，未用完的额度不予退还。您可以随时停止使用，也可以在账户里取消按月方案。
+          </p>
+        </section>
+
+        <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
+          <h2 className="text-base font-semibold text-zinc-100 mb-2">7. Contact Information (联系方式)</h2>
+          <p className="text-zinc-400">
+            For any legal or service inquiries, please contact our support team at <a href="mailto:yangrenliipu+videotoquiz@gmail.com" className="text-zinc-200 underline">yangrenliipu+videotoquiz@gmail.com</a>.
+            <br />
+            如有任何法律、商务合作或服务咨询，请直接联系：<a href="mailto:yangrenliipu+videotoquiz@gmail.com" className="text-zinc-200 underline">yangrenliipu+videotoquiz@gmail.com</a>。
           </p>
         </section>
       </div>

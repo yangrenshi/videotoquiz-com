@@ -146,5 +146,151 @@ export const SAMPLE_QUIZZES: { [key: string]: QuizResultData } = {
         explanation: "Shame cannot survive being spoken and received with genuine empathy; mutual connection dispels isolation."
       }
     ]
+  },
+  huberman: {
+    videoId: "nm1TxQj9IsQ",
+    videoTitle: "Huberman Lab: Master Your Sleep & Optimize Daily Energy",
+    summary: "Neurobiologist Dr. Andrew Huberman explains the neurobiological mechanisms of circadian rhythms, cortisol pulses, adenosine clearance, and evidence-based protocols for peak focus.",
+    takeaways: [
+      "Viewing natural sunlight within 30-60 minutes of waking sets circadian rhythm and triggers optimal cortisol timing.",
+      "Adenosine builds up throughout wakefulness; delaying caffeine intake by 90 minutes prevents the afternoon energy crash.",
+      "Core body temperature drop of 1-3 degrees Celsius is physiologically mandatory for entering deep slow-wave sleep."
+    ],
+    totalQuestions: 5,
+    questions: [
+      {
+        id: 1,
+        question: "Why does Dr. Huberman strongly recommend viewing morning sunlight within 30-60 minutes of waking?",
+        options: [
+          "It permanently bleaches melatonin receptors in the stomach",
+          "It activates intrinsically photosensitive retinal ganglion cells (ipRGCs) to synchronize the suprachiasmatic nucleus (SCN) circadian clock",
+          "It provides 100% of the daily required Vitamin D through the retina",
+          "It prevents the optic nerve from processing visual shapes"
+        ],
+        answerIndex: 1,
+        explanation: "Morning photons captured by retinal ipRGCs trigger the master circadian clock (SCN) in the hypothalamus, setting daytime cortisol and timed nighttime melatonin release."
+      },
+      {
+        id: 2,
+        question: "What neurochemical mechanism explains why delaying caffeine intake by 90-120 minutes upon waking prevents the 'afternoon crash'?",
+        options: [
+          "It allows the liver to clear all bloodstream glucose",
+          "It permits residual adenosine to be cleared naturally rather than being temporarily blocked by caffeine and resurging later",
+          "It converts caffeine directly into dopamine in salivary glands",
+          "It paralyzes adrenaline receptors for the rest of the day"
+        ],
+        answerIndex: 1,
+        explanation: "Caffeine is an adenosine receptor antagonist. Delaying caffeine allows morning adenosine clearance, preventing intense rebound fatigue when caffeine is metabolized."
+      },
+      {
+        id: 3,
+        question: "What core physiological temperature adjustment is required by the human body to transition into restorative deep sleep?",
+        options: [
+          "A core body temperature increase of 2-4 degrees Celsius",
+          "A core body temperature drop of 1-3 degrees Fahrenheit (approx. 1 degree Celsius)",
+          "Maintaining an exact skin temperature of 100 degrees Fahrenheit",
+          "Complete cessation of peripheral blood flow"
+        ],
+        answerIndex: 1,
+        explanation: "The brain and body must cool down by about 1-3 degrees Fahrenheit to initiate and sustain deep restorative non-REM slow-wave sleep."
+      },
+      {
+        id: 4,
+        question: "How does Non-Sleep Deep Rest (NSDR) or Yoga Nidra modulate the autonomic nervous system?",
+        options: [
+          "It triggers sympathetic fight-or-flight panic responses",
+          "It intentionally shifts brain waves from beta down into alpha and theta states, activating parasympathetic recovery",
+          "It causes immediate skeletal muscle atrophy",
+          "It suppresses all pulmonary oxygen exchange"
+        ],
+        answerIndex: 1,
+        explanation: "NSDR protocols guide the autonomic nervous system into parasympathetic dominance, promoting dopamine restoration and mental recovery."
+      },
+      {
+        id: 5,
+        question: "Which type of artificial light exposure between 10 PM and 4 AM is most potent at suppressing nocturnal melatonin secretion?",
+        options: [
+          "Low-placed amber candle-like illumination",
+          "Overhead bright blue and white enriched LED lighting",
+          "Complete pitch darkness",
+          "Infrared warmth emitters"
+        ],
+        answerIndex: 1,
+        explanation: "Overhead bright blue-wavelength photons stimulate retinal ganglion cells, signaling daytime to the hypothalamus and shutting down melatonin synthesis."
+      }
+    ]
+  },
+  cfa: {
+    videoId: "2v6E8ZgH9Jk",
+    videoTitle: "CFA Exam Prep: Quantitative Methods, Time Value of Money & Valuation",
+    summary: "Comprehensive finance review covering Time Value of Money (TVM), discounted cash flows (DCF), Net Present Value (NPV), and internal rate of return (IRR) for professional candidates.",
+    takeaways: [
+      "Present value (PV) discounts future expected cash flows by the appropriate opportunity cost of capital.",
+      "NPV rule states that projects with NPV > 0 add direct enterprise value to shareholders.",
+      "Internal Rate of Return (IRR) is the exact discount rate where Net Present Value equals zero."
+    ],
+    totalQuestions: 5,
+    questions: [
+      {
+        id: 1,
+        question: "Under standard financial corporate finance principles, what is the exact definition of Net Present Value (NPV)?",
+        options: [
+          "The gross sum of all nominal undiscounted future cash receipts",
+          "The present value of expected cash inflows minus the present value of expected cash outflows, discounted at the cost of capital",
+          "The accounting net income divided by total enterprise debt",
+          "The total tax liability accrued at the end of the fiscal year"
+        ],
+        answerIndex: 1,
+        explanation: "NPV represents the net economic dollar value added to the firm, calculated by discounting all cash inflows and outflows back to time zero at the hurdle rate."
+      },
+      {
+        id: 2,
+        question: "When evaluating mutually exclusive capital investment projects with differing scales, which decision rule takes precedence over IRR?",
+        options: [
+          "Payback Period",
+          "Net Present Value (NPV)",
+          "Accounting Rate of Return (ARR)",
+          "Subjective managerial preference"
+        ],
+        answerIndex: 1,
+        explanation: "NPV always takes priority over IRR for mutually exclusive projects because it directly measures the absolute dollar wealth added to shareholders, avoiding IRR reinvestment rate pitfalls."
+      },
+      {
+        id: 3,
+        question: "If a perpetuity pays an annual coupon of $100 forever and the required market discount rate is 5%, what is the Present Value?",
+        options: [
+          "$500",
+          "$1,000",
+          "$2,000",
+          "$5,000"
+        ],
+        answerIndex: 2,
+        explanation: "The present value of a perpetuity is calculated as PV = Cash Flow / Discount Rate = $100 / 0.05 = $2,000."
+      },
+      {
+        id: 4,
+        question: "What does an inverted sovereign yield curve (where short-term yields exceed long-term yields) historically signal?",
+        options: [
+          "Rapid, uncontrolled hyperinflationary boom in the next 30 days",
+          "Heightened probability of an approaching macroeconomic recession and future central bank monetary easing",
+          "Permanent elimination of sovereign debt default risk",
+          "A mandatory 50% dividend hike across all public equities"
+        ],
+        answerIndex: 1,
+        explanation: "An inverted yield curve reflects market expectations of impending economic contraction, prompting expectations that central banks will cut interest rates in the future."
+      },
+      {
+        id: 5,
+        question: "What is the primary conceptual distinction between effective annual rate (EAR) and stated annual percentage rate (APR)?",
+        options: [
+          "APR accounts for intra-year compounding, while EAR ignores compounding",
+          "EAR accurately reflects the true annual return by accounting for the frequency of intra-year compounding periods",
+          "EAR is only used for municipal government bonds",
+          "There is zero mathematical difference between EAR and APR"
+        ],
+        answerIndex: 1,
+        explanation: "EAR = (1 + r/m)^m - 1. It compounds periodic interest throughout the year, reflecting the true annualized economic return or borrowing cost."
+      }
+    ]
   }
 };
