@@ -64,16 +64,16 @@ export default function PricingModal({ isOpen, onClose }: PricingModalProps = {}
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-3xl bg-zinc-900 border border-zinc-800 rounded-3xl shadow-2xl p-6 sm:p-8 overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-zinc-950/85 backdrop-blur-md animate-fadeIn">
+      <div className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto bg-zinc-900 border border-zinc-800 rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-8">
         {/* 顶部标题与关闭 */}
-        <div className="flex items-center justify-between pb-4 border-b border-zinc-800/80 mb-6">
+        <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-zinc-800/80 mb-4 sm:mb-6">
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-zinc-100 tracking-tight flex items-center gap-2">
+            <h2 className="text-lg sm:text-2xl font-bold text-zinc-100 tracking-tight flex items-center gap-2">
               <Zap className="w-5 h-5 text-amber-400 fill-current" />
               <span>{t.pricing.title}</span>
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+            <p className="text-xs sm:text-sm text-zinc-400 mt-0.5 sm:mt-1">
               {t.pricing.subtitle}
             </p>
           </div>
@@ -86,11 +86,11 @@ export default function PricingModal({ isOpen, onClose }: PricingModalProps = {}
         </div>
 
         {/* 双轨卡片区域 (Open-Design 纯粹微质感) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mb-5 sm:mb-6">
           {/* 模式 1: 按量付费 $4.99 (最受欢迎推荐) */}
           <div
             onClick={() => setSelectedPlan('onetime')}
-            className={`cursor-pointer rounded-2xl p-6 border transition-all relative flex flex-col justify-between ${
+            className={`cursor-pointer rounded-2xl p-5 sm:p-6 border transition-all relative flex flex-col justify-between ${
               selectedPlan === 'onetime'
                 ? 'border-amber-400/80 bg-zinc-950 shadow-lg shadow-amber-400/5'
                 : 'border-zinc-800 bg-zinc-950/60 hover:border-zinc-700'

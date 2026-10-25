@@ -60,8 +60,14 @@ export default async function PSeoTopicPage({ params }: PageProps) {
   const item = topicsData.find((d) => d.slug === slug);
   if (!item) notFound();
 
-  // 获取同类推荐与全部矩阵
-  const relatedTopics = topicsData.filter((t) => t.slug !== item.slug).slice(0, 8);
+  // 智能网状内链拓扑：优先筛选同学科/同领域高相关课程，再补充全网顶流，消除孤岛效应
+  const sameCategoryTopics = topicsData.filter(
+    (t) => t.slug !== item.slug && t.category === item.category
+  );
+  const otherTopics = topicsData.filter(
+    (t) => t.slug !== item.slug && t.category !== item.category
+  );
+  const relatedTopics = [...sameCategoryTopics, ...otherTopics].slice(0, 8);
 
   // FAQ 结构化数据物料 (对齐 Schema 与页面可见 DOM)
   const faqs = [
@@ -258,21 +264,39 @@ export default async function PSeoTopicPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* 5. 同类推荐矩阵 (L - Horizontal Matrix Links - 避免孤岛) */}
+        {/* 5. 智能网状内链推荐矩阵 (L - Horizontal Matrix Links - 消除孤岛) */}
         <section className="pt-8 border-t border-zinc-800 space-y-4">
-          <h2 className="text-lg font-bold text-white">Explore More YouTube Lecture & Channel Quizzes</h2>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+              <Layers className="w-4 h-4 text-amber-400" />
+              <span>Recommended Curricula & Related Lecture Quizzes</span>
+            </h2>
+            <span className="text-xs font-mono text-zinc-500">
+              Curated for {item.category}
+            </span>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
             {relatedTopics.map((rel) => (
               <Link
                 key={rel.slug}
                 href={`/topics/${rel.slug}`}
-                className="p-3 rounded-xl bg-zinc-950/70 border border-zinc-800 hover:border-amber-500/40 hover:bg-zinc-900 transition-all group block"
+                className="p-3.5 rounded-xl bg-zinc-950/70 border border-zinc-800/90 hover:border-amber-400/60 hover:bg-zinc-900 transition-all group block shadow-sm"
               >
-                <span className="text-[10px] font-mono font-semibold text-zinc-500 group-hover:text-amber-400 block truncate">
-                  {rel.category}
-                </span>
-                <span className="text-xs font-bold text-zinc-200 group-hover:text-white line-clamp-1 mt-0.5">
+                <div className="flex items-center justify-between text-[10px] font-mono mb-1">
+                  <span className="text-amber-400/90 font-semibold truncate max-w-[120px]">
+                    {rel.sourceChannel}
+                  </span>
+                  <span className="text-zinc-500">
+                    {rel.category.split(' ')[0]}
+                  </span>
+                </div>
+                <span className="text-xs font-bold text-zinc-200 group-hover:text-amber-300 line-clamp-2 mt-0.5 leading-snug">
                   {rel.title}
+                </span>
+                <span className="text-[11px] text-zinc-500 group-hover:text-zinc-300 flex items-center gap-1 mt-2 font-mono">
+                  <span>Take Quiz</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </Link>
             ))}

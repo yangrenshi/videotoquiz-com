@@ -34,8 +34,8 @@ export default function PosterModal({ isOpen, onClose, videoTitle, summary }: Po
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-5 overflow-hidden flex flex-col items-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-zinc-950/85 backdrop-blur-md animate-fadeIn">
+      <div className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-4 sm:p-5 flex flex-col items-center">
         {/* 标题栏与关闭 */}
         <div className="w-full flex items-center justify-between pb-3 border-b border-zinc-800 mb-4">
           <span className="text-sm font-semibold text-zinc-200">
