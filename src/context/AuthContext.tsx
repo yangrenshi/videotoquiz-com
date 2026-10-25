@@ -13,6 +13,9 @@ interface AuthContextType {
   isLoginModalOpen: boolean;
   openLoginModal: () => void;
   closeLoginModal: () => void;
+  isPricingModalOpen: boolean;
+  openPricingModal: () => void;
+  closePricingModal: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -21,6 +24,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<DbUser | null>(null);
   const [loading, setLoading] = useState(true);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isPricingModalOpen, setIsPricingModalOpen] = useState(false);
 
   const refreshUser = async () => {
     try {
@@ -103,6 +107,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         isLoginModalOpen,
         openLoginModal: () => setIsLoginModalOpen(true),
         closeLoginModal: () => setIsLoginModalOpen(false),
+        isPricingModalOpen,
+        openPricingModal: () => setIsPricingModalOpen(true),
+        closePricingModal: () => setIsPricingModalOpen(false),
       }}
     >
       {children}

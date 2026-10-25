@@ -3,21 +3,33 @@
 import React, { useState } from 'react';
 import { X, Check, Zap, ShieldCheck, CreditCard } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useAuth } from '@/context/AuthContext';
 
 interface PricingModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export default function PricingModal({ isOpen, onClose }: PricingModalProps) {
-  const { t } = useLanguage();
+export default function PricingModal({ isOpen, onClose }: PricingModalProps = {}) {
+  const { t, lang } = useLanguage();
+  const { user, isPricingModalOpen, closePricingModal, openLoginModal } = useAuth();
   const [selectedPlan, setSelectedPlan] = useState<'onetime' | 'monthly'>('onetime');
   const [isProcessing, setIsProcessing] = useState(false);
 
-  if (!isOpen) return null;
+  const actualIsOpen = isOpen !== undefined ? isOpen : isPricingModalOpen;
+  const actualOnClose = onClose || closePricingModal;
+
+  if (!actualIsOpen) return null;
 
   // 极速结账处理：优先通过 Waffo Pancake 官方收银台进行全球结算 (信用卡 / Apple Pay / 微信支付)
   const handleCheckout = async (plan: 'onetime' | 'monthly') => {
+    // 若未登录，引导 1 秒登录以绑定充值积分
+    if (!user) {
+      actualOnClose();
+      openLoginModal();
+      return;
+    }
+
     setIsProcessing(true);
     try {
       const res = await fetch('/api/checkout/waffo', {
@@ -33,11 +45,12 @@ export default function PricingModal({ isOpen, onClose }: PricingModalProps) {
       }
 
       if (data.requiresLogin) {
-        alert(data.error || 'Please sign in first to complete purchase');
+        actualOnClose();
+        openLoginModal();
         return;
       }
 
-      // 回退通道 (Creem)
+      // 回退通道 (Creem MoR 跨境聚合支付)
       const productId =
         plan === 'onetime'
           ? (process.env.NEXT_PUBLIC_CREEM_PRODUCT_ID_ONETIME || 'prod_vW2vvU50gL24FTRqcppDN')
@@ -65,7 +78,7 @@ export default function PricingModal({ isOpen, onClose }: PricingModalProps) {
             </p>
           </div>
           <button
-            onClick={onClose}
+            onClick={actualOnClose}
             className="p-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
           >
             <X className="w-5 h-5" />

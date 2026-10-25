@@ -16,7 +16,7 @@ import { createShareableLink } from '@/lib/quiz-share';
 
 export default function InteractiveQuizSection() {
   const { t, lang } = useLanguage();
-  const { user, openLoginModal, refreshUser } = useAuth();
+  const { user, openLoginModal, refreshUser, openPricingModal } = useAuth();
   const [inputMode, setInputMode] = useState<InputMode>('url');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -33,7 +33,6 @@ export default function InteractiveQuizSection() {
   // 弹窗状态
   const [isPosterOpen, setIsPosterOpen] = useState(false);
   const [currentScoreSummary, setCurrentScoreSummary] = useState<QuizScoreSummary | null>(null);
-  const [isPricingOpen, setIsPricingOpen] = useState(false);
 
   // 发起测验生成
   const handleGenerate = async (params: {
@@ -85,7 +84,7 @@ export default function InteractiveQuizSection() {
           openLoginModal();
           setErrorMsg(json.error || (lang === 'zh' ? '请先登录 Google 账户以领取 20 免费积分' : 'Please sign in to claim 20 free credits'));
         } else if (json.insufficientCredits) {
-          setIsPricingOpen(true);
+          openPricingModal();
           setErrorMsg(
             lang === 'zh'
               ? `积分不足 (当前余额: ${json.currentCredits} 点，本次需: ${json.requiredCredits} 点)，请充值加油包或精简题量。`
@@ -286,7 +285,7 @@ export default function InteractiveQuizSection() {
               onNext={handleNext}
               isLast={currentQuestionIndex === quizData.questions.length - 1}
               isLocked={false}
-              onOpenPricing={() => setIsPricingOpen(true)}
+              onOpenPricing={() => openPricingModal()}
             />
           </div>
         )}
@@ -303,7 +302,7 @@ export default function InteractiveQuizSection() {
                 setCurrentScoreSummary(summary);
                 setIsPosterOpen(true);
               }}
-              onOpenPricing={() => setIsPricingOpen(true)}
+              onOpenPricing={() => openPricingModal()}
               isSample={isSample}
             />
           </div>
@@ -316,12 +315,6 @@ export default function InteractiveQuizSection() {
         onClose={() => setIsPosterOpen(false)}
         videoTitle={quizData?.videoTitle || 'Educational Video Lecture'}
         summary={currentScoreSummary}
-      />
-
-      {/* 双轨收费弹窗 */}
-      <PricingModal
-        isOpen={isPricingOpen}
-        onClose={() => setIsPricingOpen(false)}
       />
     </div>
   );

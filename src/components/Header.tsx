@@ -12,7 +12,9 @@ interface HeaderProps {
 
 export default function Header({ onOpenPricing }: HeaderProps) {
   const { lang, toggleLang, t } = useLanguage();
-  const { user, openLoginModal, logout } = useAuth();
+  const { user, openLoginModal, logout, openPricingModal } = useAuth();
+
+  const handlePricingClick = onOpenPricing || openPricingModal;
 
   return (
     <header className="w-full border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-40 transition-all">
@@ -82,7 +84,7 @@ export default function Header({ onOpenPricing }: HeaderProps) {
               {/* 积分徽章 (点击可充值) */}
               <button
                 type="button"
-                onClick={onOpenPricing}
+                onClick={handlePricingClick}
                 className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-mono font-semibold hover:bg-amber-500/25 transition-all shadow-sm active:scale-95"
                 title={lang === 'zh' ? '当前积分余额，点击充值' : 'Credit Balance, click to add'}
               >
@@ -134,7 +136,7 @@ export default function Header({ onOpenPricing }: HeaderProps) {
           {/* 定价 / 充值按钮 */}
           <button
             type="button"
-            onClick={onOpenPricing}
+            onClick={handlePricingClick}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-400 hover:bg-amber-300 text-zinc-950 shadow-sm active:scale-95 transition-all"
           >
             <Zap className="w-3.5 h-3.5 fill-current" />

@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LoginModal from '@/components/LoginModal';
+import PricingModal from '@/components/PricingModal';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { AuthProvider } from '@/context/AuthContext';
 
@@ -168,6 +169,7 @@ export default function RootLayout({
             </main>
             <Footer />
             <LoginModal />
+            <PricingModal />
           </AuthProvider>
         </LanguageProvider>
       </body>
