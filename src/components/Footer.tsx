@@ -39,6 +39,9 @@ export default function Footer() {
             <Link href="/topics" className="hover:text-amber-400 transition-colors">
               {lang === 'zh' ? '公开课题库' : 'Study Topics'}
             </Link>
+            <Link href="/for/medical-students" className="hover:text-emerald-400 transition-colors text-emerald-400/90">
+              {lang === 'zh' ? '医学生刷题' : 'For Medical Students'}
+            </Link>
             <Link href="/pricing" className="hover:text-amber-400 transition-colors">
               {lang === 'zh' ? '价格' : 'Pricing'}
             </Link>

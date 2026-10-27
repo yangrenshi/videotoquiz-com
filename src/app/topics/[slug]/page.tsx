@@ -143,9 +143,17 @@ export default async function PSeoTopicPage({ params }: PageProps) {
 
       {/* 2. 单 H1 黄金原则 (包含核心频道与学科高意图词) */}
       <header className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-400/10 text-amber-300 border border-amber-400/20">
-          <GraduationCap className="w-3.5 h-3.5" />
-          <span>{item.category.toUpperCase()} • {item.sourceChannel}</span>
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-400/10 text-amber-300 border border-amber-400/20">
+            <GraduationCap className="w-3.5 h-3.5" />
+            <span>{item.category.toUpperCase()} • {item.sourceChannel}</span>
+          </div>
+
+          {(item.slug.includes('medicine') || item.category === 'medicine') && (
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-rose-500/10 text-rose-300 border border-rose-500/30">
+              <span>🩺 Tailored for Medical Students (USMLE / MCAT / NCLEX)</span>
+            </div>
+          )}
         </div>
 
         <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -167,7 +175,27 @@ export default async function PSeoTopicPage({ params }: PageProps) {
           <span className="hidden sm:inline">20 Free Bonus Credits</span>
         </div>
 
-        <InteractiveQuizSection />
+        <InteractiveQuizSection
+          initialSampleKey={item.slug.includes('ninja-nerd') ? 'ninja_nerd' : undefined}
+          customBanner={
+            item.slug.includes('ninja-nerd') ? (
+              <div className="p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 via-zinc-950 to-emerald-950/20 border border-emerald-500/40 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold shrink-0">
+                    🩺
+                  </div>
+                  <div className="text-xs">
+                    <p className="font-bold text-emerald-200">Pre-loaded Medical Quiz Demo (5 Questions)</p>
+                    <p className="text-zinc-400 mt-0.5">Test your recall on the Autonomic Nervous System & Cardiovascular Reflexes instantly.</p>
+                  </div>
+                </div>
+                <span className="text-[11px] font-mono px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shrink-0">
+                  Ready to test
+                </span>
+              </div>
+            ) : undefined
+          }
+        />
       </section>
 
       {/* 4. 下半屏结构化语义知识库 (纯 SSR 直出，供 AI 爬虫抓取) */}

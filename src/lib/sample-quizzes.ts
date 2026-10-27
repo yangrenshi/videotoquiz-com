@@ -292,5 +292,78 @@ export const SAMPLE_QUIZZES: { [key: string]: QuizResultData } = {
         explanation: "EAR = (1 + r/m)^m - 1. It compounds periodic interest throughout the year, reflecting the true annualized economic return or borrowing cost."
       }
     ]
+  },
+  ninja_nerd: {
+    videoId: "BvJvJ1g4sD4",
+    videoTitle: "Ninja Nerd: Autonomic Nervous System & Cardiovascular Physiology (USMLE / MCAT Prep)",
+    summary: "High-yield medical lecture review covering the sympathetic vs. parasympathetic divisions, adrenergic and cholinergic receptor pharmacology, and baroreceptor reflex regulation.",
+    takeaways: [
+      "Sympathetic preganglionic neurons originate in the thoracolumbar spinal cord and release Acetylcholine onto nicotinic receptors.",
+      "Parasympathetic postganglionic terminals release Acetylcholine onto M2 muscarinic receptors on cardiac nodal tissue to decrease heart rate (negative chronotropy).",
+      "Arterial baroreceptors in the carotid sinus and aortic arch fire signals via Cranial Nerves IX and X to modulate vascular tone."
+    ],
+    totalQuestions: 5,
+    questions: [
+      {
+        id: 1,
+        question: "Which neurotransmitter and receptor subtype combination mediates parasympathetic slowing of heart rate at the Sinoatrial (SA) Node?",
+        options: [
+          "Norepinephrine acting on Beta-1 adrenergic receptors",
+          "Acetylcholine acting on M2 muscarinic acetylcholine receptors",
+          "Epinephrine acting on Alpha-1 adrenergic receptors",
+          "Dopamine acting on D2 dopaminergic receptors"
+        ],
+        answerIndex: 1,
+        explanation: "Vagal (parasympathetic) efferents release Acetylcholine (ACh), which binds to Gi-protein coupled M2 muscarinic receptors on SA and AV nodal cells, opening GIRK K+ channels and hyperpolarizing nodal pacemaker cells."
+      },
+      {
+        id: 2,
+        question: "During an acute drop in systemic arterial blood pressure, which immediate compensatory reflex is mediated by carotid sinus baroreceptors?",
+        options: [
+          "Increased afferent firing along Cranial Nerve IX (Glossopharyngeal), triggering systemic vasodilation",
+          "Decreased afferent baroreceptor discharge to the nucleus tractus solitarius (NTS), disinhibiting sympathetic outflow",
+          "Immediate total cessation of all renal erythropoietin secretion",
+          "Suppression of adrenal medullary catecholamine release"
+        ],
+        answerIndex: 1,
+        explanation: "Hypotension decreases stretch on carotid sinus baroreceptors, reducing CN IX sensory traffic to the NTS. This disinhibits the rostral ventrolateral medulla (RVLM), resulting in heightened sympathetic tone, tachycardia, and vasoconstriction."
+      },
+      {
+        id: 3,
+        question: "Activation of vascular vascular smooth muscle Alpha-1 adrenergic receptors primarily causes vasoconstriction through which intracellular signaling cascade?",
+        options: [
+          "Gs protein coupling -> adenylate cyclase activation -> elevated cAMP",
+          "Gq protein coupling -> phospholipase C (PLC) activation -> IP3 / DAG generation -> intracellular calcium release",
+          "Gi protein coupling -> adenylate cyclase inhibition -> decreased cGMP",
+          "Direct opening of ligand-gated chloride channels causing membrane hyperpolarization"
+        ],
+        answerIndex: 1,
+        explanation: "Alpha-1 adrenergic receptors couple to Gq proteins, activating Phospholipase C (PLC) to hydrolyze PIP2 into IP3 and DAG. IP3 triggers calcium efflux from the sarcoplasmic reticulum, causing smooth muscle contraction."
+      },
+      {
+        id: 4,
+        question: "Where are the preganglionic cell bodies of the sympathetic autonomic nervous system anatomically situated in the human spinal cord?",
+        options: [
+          "C1 to C8 cervical dorsal horns",
+          "Intermediolateral (IML) cell columns of thoracic and upper lumbar spinal segments (T1 to L2/L3)",
+          "Anterior ventral horns of lumbar L4 to S1 segments exclusively",
+          "Craniosacral nuclei of brainstem cranial nerves III, VII, IX, and X"
+        ],
+        answerIndex: 1,
+        explanation: "Sympathetic preganglionic neurons reside in the intermediolateral (IML) horn of the gray matter between T1 and L2/L3 spinal levels (thoracolumbar outflow)."
+      },
+      {
+        id: 5,
+        question: "In a patient presenting with symptomatic severe sinus bradycardia following beta-blocker overdose, which pharmacological mechanism explains why Atropine can restore heart rate?",
+        options: [
+          "Direct agonism of Beta-1 adrenergic receptors on ventricular myocardium",
+          "Competitive antagonism of M2 muscarinic receptors, blocking parasympathetic vagal braking on the SA node",
+          "Inhibition of cardiac sodium-potassium ATPase pump",
+          "Direct stimulation of voltage-gated L-type calcium channels"
+        ],
+        answerIndex: 1,
+        explanation: "Atropine is a competitive, reversible antagonist of muscarinic acetylcholine receptors. By blocking M2 receptors at the SA node, it lifts parasympathetic vagal tone, allowing intrinsic pacemaker automaticity to accelerate."
+      }
+    ]
   }
 };

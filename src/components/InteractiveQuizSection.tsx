@@ -13,15 +13,23 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useAuth } from '@/context/AuthContext';
 import { saveQuiz, updateQuizScore } from '@/lib/quiz-storage';
 import { createShareableLink } from '@/lib/quiz-share';
+import FlashcardDeck from '@/components/FlashcardDeck';
 
-export default function InteractiveQuizSection() {
+interface InteractiveQuizSectionProps {
+  initialSampleKey?: string;
+  customBanner?: React.ReactNode;
+}
+
+export default function InteractiveQuizSection({ initialSampleKey, customBanner }: InteractiveQuizSectionProps = {}) {
   const { t, lang } = useLanguage();
   const { user, openLoginModal, refreshUser, openPricingModal } = useAuth();
   const [inputMode, setInputMode] = useState<InputMode>('url');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [quizData, setQuizData] = useState<QuizResultData | null>(null);
+  const [rawFullQuizData, setRawFullQuizData] = useState<QuizResultData | null>(null);
   const [isSample, setIsSample] = useState(false);
+  const [viewMode, setViewMode] = useState<'quiz' | 'flashcard'>('quiz');
 
   // 答题状态
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -33,6 +41,17 @@ export default function InteractiveQuizSection() {
   // 弹窗状态
   const [isPosterOpen, setIsPosterOpen] = useState(false);
   const [currentScoreSummary, setCurrentScoreSummary] = useState<QuizScoreSummary | null>(null);
+
+  // 初始样例加载 (支持直达落地页预设)
+  React.useEffect(() => {
+    if (initialSampleKey && SAMPLE_QUIZZES[initialSampleKey] && !quizData) {
+      const sample = SAMPLE_QUIZZES[initialSampleKey];
+      setQuizData(sample);
+      setRawFullQuizData(sample);
+      setIsSample(true);
+      setQuizStartTime(Date.now());
+    }
+  }, [initialSampleKey]);
 
   // 发起测验生成
   const handleGenerate = async (params: {
@@ -54,7 +73,10 @@ export default function InteractiveQuizSection() {
       // 官方精选样例：全免费开放
       if (params.sampleKey && SAMPLE_QUIZZES[params.sampleKey]) {
         setIsSample(true);
-        setQuizData(SAMPLE_QUIZZES[params.sampleKey]);
+        const sampleData = SAMPLE_QUIZZES[params.sampleKey];
+        setQuizData(sampleData);
+        setRawFullQuizData(sampleData);
+        setViewMode('quiz');
         setQuizStartTime(Date.now());
         setIsLoading(false);
         setTimeout(() => {
@@ -99,6 +121,8 @@ export default function InteractiveQuizSection() {
       }
 
       setQuizData(json.data);
+      setRawFullQuizData(json.data);
+      setViewMode('quiz');
       setQuizStartTime(Date.now());
       // 自动归档至用户历史测验库
       saveQuiz(json.data, params.url);
@@ -139,12 +163,36 @@ export default function InteractiveQuizSection() {
   // 重新开始
   const handleRestart = () => {
     setQuizData(null);
+    setRawFullQuizData(null);
     setIsQuizCompleted(false);
     setUserAnswers([]);
     setCurrentQuestionIndex(0);
     setErrorMsg(null);
     setIsSample(false);
+    setViewMode('quiz');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // 错题靶向重练 (Retake Missed Only)
+  const handleRetakeMissed = () => {
+    if (!quizData) return;
+    const missedIds = new Set(userAnswers.filter((a) => !a.isCorrect).map((a) => a.questionId));
+    const missedQuestions = quizData.questions.filter((q) => missedIds.has(q.id));
+    if (missedQuestions.length === 0) return;
+
+    setQuizData({
+      ...quizData,
+      totalQuestions: missedQuestions.length,
+      questions: missedQuestions,
+    });
+    setUserAnswers([]);
+    setCurrentQuestionIndex(0);
+    setIsQuizCompleted(false);
+    setViewMode('quiz');
+    setQuizStartTime(Date.now());
+    setTimeout(() => {
+      document.getElementById('quiz-anchor')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
 
   const [shareToast, setShareToast] = useState<string | null>(null);
@@ -178,6 +226,13 @@ export default function InteractiveQuizSection() {
           <span>{shareToast}</span>
         </div>
       )}
+      {/* 自定义场景横幅 (如医学生/备考定向插槽) */}
+      {customBanner && (
+        <div className="w-full max-w-2xl mx-auto mb-6">
+          {customBanner}
+        </div>
+      )}
+
       {/* 核心亮点标签 */}
       <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-zinc-300 font-medium mb-8">
         <span className="flex items-center gap-1.5">
@@ -253,13 +308,33 @@ export default function InteractiveQuizSection() {
 
       {/* 答题锚点与做题区域 */}
       <div id="quiz-anchor" className="w-full max-w-2xl mx-auto mb-16 scroll-mt-24">
-        {quizData && !isQuizCompleted && (
+        {quizData && viewMode === 'flashcard' && (
+          <div className="animate-fadeIn">
+            <FlashcardDeck
+              questions={quizData.questions}
+              title={quizData.videoTitle}
+              onBackToQuiz={() => setViewMode('quiz')}
+            />
+          </div>
+        )}
+
+        {quizData && viewMode === 'quiz' && !isQuizCompleted && (
           <div className="space-y-4 animate-fadeIn">
             <div className="px-1 flex items-center justify-between text-xs text-zinc-300">
               <span className="font-bold text-sm text-zinc-100 truncate max-w-xs sm:max-w-md">
                 {quizData.videoTitle}
               </span>
               <div className="flex items-center gap-2">
+                {/* 视图模式极速切换 */}
+                <button
+                  type="button"
+                  onClick={() => setViewMode('flashcard')}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-[11px] font-medium transition-colors border border-zinc-700"
+                  title="Switch to Flashcard Mode"
+                >
+                  <span>🗂️ 闪卡模式</span>
+                </button>
+
                 {isSample && (
                   <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-emerald-950/80 text-emerald-300 border border-emerald-500/50 shadow-sm">
                     {t.quiz.sampleBadge}
@@ -291,13 +366,15 @@ export default function InteractiveQuizSection() {
         )}
 
         {/* 战报完成区域 */}
-        {quizData && isQuizCompleted && (
+        {quizData && viewMode === 'quiz' && isQuizCompleted && (
           <div className="animate-fadeIn">
             <QuizResult
               quizData={quizData}
               answers={userAnswers}
               timeSpentSeconds={timeSpentSeconds}
               onRestart={handleRestart}
+              onRetakeMissed={handleRetakeMissed}
+              onSwitchToFlashcards={() => setViewMode('flashcard')}
               onOpenPoster={(summary) => {
                 setCurrentScoreSummary(summary);
                 setIsPosterOpen(true);

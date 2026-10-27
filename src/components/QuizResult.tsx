@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Award, RotateCcw, Image as ImageIcon, Download, CheckCircle, BookOpen, Printer, Share2, CheckCircle2 } from 'lucide-react';
+import { Award, RotateCcw, Image as ImageIcon, Download, CheckCircle, BookOpen, Printer, Share2, CheckCircle2, Layers, Target } from 'lucide-react';
 import { QuizResultData, UserAnswerRecord, QuizScoreSummary } from '@/lib/types';
 import { useLanguage } from '@/context/LanguageContext';
 import { openPrintableQuizPaper, downloadAnkiCards } from '@/lib/exporter';
@@ -14,6 +14,8 @@ interface QuizResultProps {
   onRestart: () => void;
   onOpenPoster: (summary: QuizScoreSummary) => void;
   onOpenPricing: () => void;
+  onRetakeMissed?: () => void;
+  onSwitchToFlashcards?: () => void;
   isSample?: boolean;
 }
 
@@ -24,6 +26,8 @@ export default function QuizResult({
   onRestart,
   onOpenPoster,
   onOpenPricing,
+  onRetakeMissed,
+  onSwitchToFlashcards,
   isSample = false,
 }: QuizResultProps) {
   const { t, lang } = useLanguage();
@@ -218,15 +222,37 @@ export default function QuizResult({
           </div>
         </div>
 
-          {/* 轻量次级按键 - 测试下一个视频 (充足内边距，雅致通透) */}
-          <div className="mt-5 flex justify-center">
+          {/* 错题专项攻坚与核心高频动作 */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            {onRetakeMissed && total - correctCount > 0 && (
+              <button
+                type="button"
+                onClick={onRetakeMissed}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-rose-200 hover:text-white bg-rose-950/70 hover:bg-rose-900 border border-rose-700/80 shadow-lg shadow-rose-950/50 transition-all active:scale-95"
+              >
+                <Target className="w-4 h-4 text-rose-400" />
+                <span>{lang === 'zh' ? `🎯 仅重练错题 (${total - correctCount} 题)` : `🎯 Retake Missed Only (${total - correctCount})`}</span>
+              </button>
+            )}
+
+            {onSwitchToFlashcards && (
+              <button
+                type="button"
+                onClick={onSwitchToFlashcards}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-emerald-300 hover:text-white bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-700/80 shadow-lg shadow-emerald-950/50 transition-all active:scale-95"
+              >
+                <Layers className="w-4 h-4 text-emerald-400" />
+                <span>{lang === 'zh' ? '🗂️ 切换为闪卡背诵模式' : '🗂️ Switch to Flashcard Mode'}</span>
+              </button>
+            )}
+
             <button
               type="button"
               onClick={onRestart}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 bg-zinc-950/60 hover:bg-zinc-800 border border-zinc-800/80 transition-all shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 bg-zinc-950/60 hover:bg-zinc-800 border border-zinc-800/80 transition-all shadow-sm"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>{lang === 'zh' ? '测验完成，测试下一个视频' : 'Test another video'}</span>
+              <span>{lang === 'zh' ? '测试下一个视频' : 'Test another video'}</span>
             </button>
           </div>
         </div>

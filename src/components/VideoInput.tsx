@@ -344,6 +344,23 @@ export default function VideoInput({
           <button
             type="button"
             onClick={() => {
+              const sampleUrl = 'https://www.youtube.com/watch?v=BvJvJ1g4sD4';
+              setUrl(sampleUrl);
+              onGenerate({ mode: 'url', sampleKey: 'ninja_nerd', url: sampleUrl, questionCount: 5 });
+            }}
+            disabled={isLoading}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 border border-emerald-500/40 text-emerald-300 hover:text-white transition-all shadow-sm font-medium"
+          >
+            <PlayCircle className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Ninja Nerd</span>
+            <span className="text-[10px] text-emerald-400/90 bg-emerald-500/10 px-1 py-0.5 rounded font-mono">
+              Medicine / USMLE
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
               const sampleUrl = 'https://www.youtube.com/watch?v=iCvmsMzlF7o';
               setUrl(sampleUrl);
               onGenerate({ mode: 'url', sampleKey: 'psychology', url: sampleUrl, questionCount: 5 });
