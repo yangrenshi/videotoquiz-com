@@ -30,7 +30,7 @@ export interface QuizScoreSummary {
   badgeTitle: string;
 }
 
-export type InputMode = 'url' | 'transcript';
+export type InputMode = 'url' | 'transcript' | 'file';
 
 export interface TranscriptResultData {
   videoId: string;

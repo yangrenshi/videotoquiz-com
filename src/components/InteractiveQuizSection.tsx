@@ -279,12 +279,23 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
                       <button
                         type="button"
                         onClick={() => {
+                          setInputMode('file');
+                          setErrorMsg(null);
+                        }}
+                        className="px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-md transition-all flex items-center gap-1.5 active:scale-95"
+                      >
+                        <span>📁 一键切换到【上传课件 (PDF/Word/字幕)】</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => {
                           setInputMode('transcript');
                           setErrorMsg(null);
                         }}
-                        className="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs shadow-md transition-all flex items-center gap-1.5 active:scale-95"
+                        className="px-3.5 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-semibold text-xs border border-zinc-700 transition-all flex items-center gap-1.5 active:scale-95"
                       >
-                        <span>⚡ 一键切换到【粘贴讲义 / 文本出题】</span>
+                        <span>📝 粘贴讲义文本</span>
                       </button>
                     </div>
 
