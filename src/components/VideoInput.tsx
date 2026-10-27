@@ -257,7 +257,7 @@ export default function VideoInput({
               ref={fileInputRef}
               onChange={handleFileChange}
               accept=".pdf,.docx,.txt,.md,.srt,.vtt,.json,.csv"
-              className="hidden"
+              className="opacity-0 absolute w-1 h-1 pointer-events-none"
               disabled={isLoading || isParsingFile}
             />
 
