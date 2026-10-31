@@ -1,6 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, RefreshCw, ShieldCheck } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Refund Policy | VideoToQuiz AI',
+  description: '30-day money-back guarantee and refund policy for VideoToQuiz AI.',
+  alternates: {
+    canonical: 'https://www.videotoquiz.com/refund',
+  },
+};
 
 export default function RefundPage() {
   return (

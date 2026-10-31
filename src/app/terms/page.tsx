@@ -1,6 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Shield } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service | VideoToQuiz AI',
+  description: 'Terms of Service and legal policies for VideoToQuiz AI.',
+  alternates: {
+    canonical: 'https://www.videotoquiz.com/terms',
+  },
+};
 
 export default function TermsPage() {
   return (

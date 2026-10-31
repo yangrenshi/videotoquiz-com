@@ -1,6 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Lock } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | VideoToQuiz AI',
+  description: 'Privacy Policy and GDPR compliance details for VideoToQuiz AI.',
+  alternates: {
+    canonical: 'https://www.videotoquiz.com/privacy',
+  },
+};
 
 export default function PrivacyPage() {
   return (
