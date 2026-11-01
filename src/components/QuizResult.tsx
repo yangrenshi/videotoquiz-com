@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Award, RotateCcw, Image as ImageIcon, Download, CheckCircle, BookOpen, Printer, Share2, CheckCircle2, Layers, Target } from 'lucide-react';
 import { QuizResultData, UserAnswerRecord, QuizScoreSummary } from '@/lib/types';
 import { useLanguage } from '@/context/LanguageContext';
+import { useAuth } from '@/context/AuthContext';
 import { openPrintableQuizPaper, downloadAnkiCards } from '@/lib/exporter';
 import { createShareableLink } from '@/lib/quiz-share';
 
@@ -31,6 +32,7 @@ export default function QuizResult({
   isSample = false,
 }: QuizResultProps) {
   const { t, lang } = useLanguage();
+  const { user, openLoginModal } = useAuth();
   const correctCount = answers.filter((a) => a.isCorrect).length;
   const total = quizData.questions.length;
   const percentage = Math.round((correctCount / total) * 100);
@@ -99,6 +101,45 @@ export default function QuizResult({
 
   return (
     <div className="w-full space-y-6 relative">
+      {/* 未登录访客即时转化激励条 */}
+      {!user && (
+        <div className="w-full bg-gradient-to-r from-amber-500/20 via-zinc-900 to-indigo-950/40 border border-amber-400/50 rounded-2xl p-5 sm:p-6 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4 animate-in fade-in duration-300">
+          <div className="flex items-start gap-3.5 text-left">
+            <div className="w-10 h-10 rounded-xl bg-amber-400 text-zinc-950 flex items-center justify-center font-bold shrink-0 shadow-md text-base">
+              🎁
+            </div>
+            <div>
+              <div className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <span>{lang === 'zh' ? '免费试学已体验！登录即可免费领 20 积分' : 'Free Preview Complete! Get 20 FREE Credits'}</span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-400 text-zinc-950 font-bold">
+                  $0
+                </span>
+              </div>
+              <p className="text-xs text-zinc-300 mt-1 max-w-lg leading-relaxed">
+                {lang === 'zh'
+                  ? '一键通过 Google 登录立享 20 免费积分，解锁 5~10 题完整测试与 Anki 导出；或选购 $4.99 入门额度包（25 次完整出题，永不过期）。'
+                  : 'Sign in with Google to claim 20 free credits, unlock 5-question tests & Anki export, or get the $4.99 Starter Pack for 25 full video passes.'}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2.5 shrink-0 w-full sm:w-auto">
+            <button
+              type="button"
+              onClick={openLoginModal}
+              className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-zinc-950 font-extrabold text-xs shadow-md transition-all active:scale-95"
+            >
+              {lang === 'zh' ? 'Google 登录送 20 积分' : 'Sign In (Get 20 Credits)'}
+            </button>
+            <button
+              type="button"
+              onClick={onOpenPricing}
+              className="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 font-bold text-xs shadow-sm transition-all active:scale-95"
+            >
+              {lang === 'zh' ? '查看 $4.99 额度包' : '$4.99 Starter Pack'}
+            </button>
+          </div>
+        </div>
+      )}
       {/* 复制成功浮动提示 */}
       {shareToast && (
         <div className="fixed bottom-6 right-6 z-50 bg-amber-400 text-zinc-950 px-4 py-2.5 rounded-xl font-medium text-xs shadow-2xl flex items-center gap-2 animate-in fade-in duration-200">

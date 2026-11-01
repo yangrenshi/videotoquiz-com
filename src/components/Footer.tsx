@@ -33,8 +33,8 @@ export default function Footer() {
             <Link href="/about" className="hover:text-amber-400 transition-colors">
               {lang === 'zh' ? '关于我们' : 'About Us'}
             </Link>
-            <Link href="/contact" className="hover:text-amber-400 transition-colors">
-              {lang === 'zh' ? '联系我们' : 'Contact'}
+            <Link href="/pricing" className="hover:text-amber-400 transition-colors font-semibold text-amber-400/90">
+              {lang === 'zh' ? '价格方案 ($4.99)' : 'Pricing ($4.99)'}
             </Link>
             <Link href="/topics" className="hover:text-amber-400 transition-colors">
               {lang === 'zh' ? '公开课题库' : 'Study Topics'}
@@ -42,8 +42,11 @@ export default function Footer() {
             <Link href="/for/medical-students" className="hover:text-emerald-400 transition-colors text-emerald-400/90">
               {lang === 'zh' ? '医学生刷题' : 'For Medical Students'}
             </Link>
-            <Link href="/pricing" className="hover:text-amber-400 transition-colors">
-              {lang === 'zh' ? '价格' : 'Pricing'}
+            <Link href="/topics/the-cherno-cpp-game-engine-quiz" className="hover:text-zinc-200 transition-colors">
+              The Cherno C++
+            </Link>
+            <Link href="/topics/traversy-media-web-dev-quiz" className="hover:text-zinc-200 transition-colors">
+              Traversy Web Dev
             </Link>
             <Link href="/terms" className="hover:text-zinc-200 transition-colors">
               {t.footer.terms}

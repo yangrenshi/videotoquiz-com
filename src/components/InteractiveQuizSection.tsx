@@ -85,13 +85,7 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
         return;
       }
 
-      // 未登录拦截并友好引导
-      if (!user) {
-        openLoginModal();
-        setIsLoading(false);
-        return;
-      }
-
+      // 若已登录则正常生成，未登录则走 Free Study Preview (2题试玩)
       setIsSample(false);
       const res = await fetch('/api/generate-quiz', {
         method: 'POST',

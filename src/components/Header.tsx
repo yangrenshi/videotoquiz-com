@@ -80,6 +80,12 @@ export default function Header({ onOpenPricing }: HeaderProps) {
             {t.nav.faq}
           </a>
           <Link
+            href="/pricing"
+            className="hover:text-amber-400 text-amber-400/90 font-medium transition-colors"
+          >
+            {lang === 'zh' ? '价格 ($4.99)' : 'Pricing ($4.99)'}
+          </Link>
+          <Link
             href="/about"
             className="hover:text-zinc-200 transition-colors"
           >
