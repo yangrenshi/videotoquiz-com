@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { BookOpen, BrainCircuit, Check, X, HelpCircle, Layers, Award, Sparkles, Zap, Clock, ShieldCheck } from 'lucide-react';
 
 export default function SeoGeoContentSection() {
@@ -296,6 +297,79 @@ export default function SeoGeoContentSection() {
               Language students practicing listening comprehension through native YouTube videos. Validate whether you caught nuanced phrases, idioms, and context-dependent vocabulary with immediate assessment feedback.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Featured Topics & High-Value Internal Links (Pillar Mesh Architecture) */}
+      <div className="max-w-4xl mx-auto mb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-800 text-zinc-300 border border-zinc-700 mb-4">
+          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+          <span>CURATED STUDY TOPICS & TRANSPARENT PRICING</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
+          Explore Popular Video Quizzes & Scalable Learning Plans
+        </h2>
+        <p className="text-xs sm:text-sm text-zinc-400 mb-6 leading-relaxed">
+          Accelerate your retention across computer science, software engineering, and university topics with our pre-compiled active recall quizzes, or review our transparent credit tiers.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <Link
+            href="/topics/the-cherno-cpp-game-engine-quiz"
+            className="group p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-amber-400/50 hover:bg-zinc-800/40 transition-all flex flex-col justify-between"
+          >
+            <div>
+              <div className="text-[11px] font-mono text-amber-400 mb-2 font-semibold">C++ & GAME ENGINES</div>
+              <h3 className="text-sm font-bold text-zinc-100 group-hover:text-amber-300 transition-colors mb-2">
+                The Cherno C++ Game Engine Architecture Quiz
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed">
+                Comprehensive active recall testing covering OpenGL rendering loops, memory allocators, shaders, and ECS patterns.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-zinc-800/80 text-[11px] font-mono text-amber-400/80 flex items-center justify-between">
+              <span>Take Cherno C++ Quiz</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </Link>
+
+          <Link
+            href="/topics/traversy-media-web-dev-quiz"
+            className="group p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-amber-400/50 hover:bg-zinc-800/40 transition-all flex flex-col justify-between"
+          >
+            <div>
+              <div className="text-[11px] font-mono text-amber-400 mb-2 font-semibold">WEB DEVELOPMENT</div>
+              <h3 className="text-sm font-bold text-zinc-100 group-hover:text-amber-300 transition-colors mb-2">
+                Traversy Media Web Dev & JavaScript Quiz
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed">
+                Test your mastery of modern JavaScript, asynchronous event loops, React lifecycles, and RESTful API architecture.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-zinc-800/80 text-[11px] font-mono text-amber-400/80 flex items-center justify-between">
+              <span>Take Traversy Web Quiz</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </Link>
+
+          <Link
+            href="/pricing"
+            className="group p-5 rounded-2xl bg-gradient-to-b from-amber-500/10 to-zinc-900/60 border border-amber-500/30 hover:border-amber-400 hover:bg-amber-500/20 transition-all flex flex-col justify-between"
+          >
+            <div>
+              <div className="text-[11px] font-mono text-amber-400 mb-2 font-semibold">PLANS & PACKAGES</div>
+              <h3 className="text-sm font-bold text-zinc-100 group-hover:text-amber-300 transition-colors mb-2">
+                Transparent Pricing & Unlimited Study Upgrades
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed">
+                Unlock high-capacity video processing, extended lecture transcript limits, and 1-click batch Anki flashcard exports.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-amber-500/20 text-[11px] font-mono text-amber-400 flex items-center justify-between">
+              <span>View Pricing Plans</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </Link>
         </div>
       </div>
 

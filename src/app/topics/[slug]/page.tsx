@@ -95,7 +95,7 @@ export default async function PSeoTopicPage({ params }: PageProps) {
         inLanguage: 'en-US',
         mainEntityOfPage: `https://www.videotoquiz.com/topics/${item.slug}`,
         datePublished: '2026-10-18T00:00:00+00:00',
-        dateModified: '2026-10-24T12:00:00+00:00',
+        dateModified: '2026-11-03T00:00:00+00:00',
         author: {
           '@type': 'Organization',
           name: 'VideoToQuiz AI Editorial Team',

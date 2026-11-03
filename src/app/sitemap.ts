@@ -15,8 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/pricing`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      changeFrequency: 'daily',
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/for/medical-students`,
@@ -29,12 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/dashboard`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
@@ -68,13 +62,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // 46 个高商业价值核心 pSEO 专题页面 (自动遍历)
-  const topicRoutes: MetadataRoute.Sitemap = topicsData.map((item) => ({
-    url: `${baseUrl}/topics/${item.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
+  // 46 个高商业价值核心 pSEO 专题页面 (重点页面提权至 0.95 强引蜘蛛抓取)
+  const highPrioritySlugs = [
+    'the-cherno-cpp-game-engine-quiz',
+    'traversy-media-web-dev-quiz',
+  ];
+
+  const topicRoutes: MetadataRoute.Sitemap = topicsData.map((item) => {
+    const isHighPriority = highPrioritySlugs.includes(item.slug);
+    return {
+      url: `${baseUrl}/topics/${item.slug}`,
+      lastModified: currentDate,
+      changeFrequency: isHighPriority ? 'daily' : 'weekly',
+      priority: isHighPriority ? 0.95 : 0.8,
+    };
+  });
 
   return [...staticRoutes, ...topicRoutes];
 }
