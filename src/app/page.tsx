@@ -9,14 +9,14 @@ export default function HomePage() {
       {/* 头部 Hero 区域 (SSR 语义直出，优先向搜索引擎展现核心主张与 H1) */}
       <section className="text-center max-w-3xl mx-auto pt-6 pb-6">
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.2] mb-5">
-          YouTube to Quiz AI:{' '}
+          AI Video Quiz Maker:{' '}
           <span className="text-amber-400">
-            Turn Any Video into Interactive Quizzes
+            Turn Any Video into Interactive Tests in 10s
           </span>
         </h1>
 
         <p className="text-sm sm:text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed mb-4 font-normal">
-          Convert any YouTube video into active recall quizzes, interactive practice tests, and Anki flashcards instantly with AI. Boost retention, identify learning gaps, and master any lecture in seconds.
+          The fastest AI video quiz generator. Convert YouTube lectures, tutorials, and class videos into 5-question active recall tests and Anki flashcards in seconds. Boost exam retention, identify learning gaps, and study 10x faster.
         </p>
         <p className="text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed">
           Public prices, no login: free preview $0, Starter $4.99 one-time for 25 quizzes, Pro $9.99 per month for 200 quizzes.{' '}

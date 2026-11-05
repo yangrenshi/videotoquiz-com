@@ -9,13 +9,17 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import { AuthProvider } from '@/context/AuthContext';
 
 export const metadata: Metadata = {
-  title: 'YouTube to Quiz AI: 5-Question Tests in 10s · Anki Export',
-  description: 'Turn any YouTube video into 5-question active recall tests and Anki flashcards in 10s with AI. Pinpoint knowledge gaps and study lectures 10x faster.',
+  title: 'AI Video Quiz Maker: Turn Any Video into Tests in 10s · Anki',
+  description: 'The fastest AI video quiz maker. Turn YouTube lectures and videos into interactive tests and Anki flashcards in 10s. Master any topic 10x faster.',
   keywords: [
+    'video quiz maker',
+    'video quiz generator',
+    'ai video quiz',
+    'video to quiz',
     'youtube to quiz',
-    'video to quiz generator',
-    'ai quiz from video',
-    'video to flashcards'
+    'video to flashcards',
+    'anki flashcard generator',
+    'interactive video test'
   ],
   authors: [{ name: 'YouTube to Quiz AI Team', url: 'https://www.videotoquiz.com' }],
   metadataBase: new URL('https://www.videotoquiz.com'),
@@ -37,8 +41,8 @@ export const metadata: Metadata = {
     'waffo-verify': '624137efca83e9d5f6d0281819f60d31',
   },
   openGraph: {
-    title: 'YouTube to Quiz AI: 5-Question Tests in 10s · Anki Export',
-    description: 'Turn any YouTube video into 5-question active recall tests and Anki flashcards in 10s with AI. Pinpoint knowledge gaps and study lectures 10x faster.',
+    title: 'AI Video Quiz Maker: Turn Any Video into Tests in 10s · Anki',
+    description: 'The fastest AI video quiz maker. Turn YouTube lectures and videos into interactive tests and Anki flashcards in 10s. Master any topic 10x faster.',
     url: 'https://www.videotoquiz.com/',
     siteName: 'YouTube to Quiz AI',
     images: [
@@ -54,8 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'YouTube to Quiz AI: 5-Question Tests in 10s · Anki Export',
-    description: 'Turn any YouTube video into 5-question active recall tests and Anki flashcards in 10s with AI. Pinpoint knowledge gaps and study lectures 10x faster.',
+    title: 'AI Video Quiz Maker: Turn Any Video into Tests in 10s · Anki',
+    description: 'The fastest AI video quiz maker. Turn YouTube lectures and videos into interactive tests and Anki flashcards in 10s. Master any topic 10x faster.',
     images: ['/og-preview.png'],
   },
   verification: {

@@ -80,6 +80,12 @@ export default function Header({ onOpenPricing }: HeaderProps) {
             {t.nav.faq}
           </a>
           <Link
+            href="/tools/video-to-anki-flashcards"
+            className="hover:text-amber-400 transition-colors flex items-center gap-1"
+          >
+            <span>{lang === 'zh' ? 'Anki闪卡' : 'Anki Flashcards'}</span>
+          </Link>
+          <Link
             href="/pricing"
             className="hover:text-amber-400 text-amber-400/90 font-medium transition-colors"
           >

@@ -58,13 +58,13 @@ export default function SeoGeoContentSection() {
         </div>
         
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
-          What is YouTube to Quiz AI? (Definition & Architectural Overview)
+          What is an AI Video Quiz Maker? (Definition & Architectural Overview)
         </h2>
 
         {/* Q-A-D-L Answer Box */}
         <div className="p-6 rounded-2xl bg-zinc-900/90 border border-zinc-700/80 shadow-xl leading-relaxed text-zinc-200">
           <p className="text-sm sm:text-base mb-3">
-            <strong className="text-amber-400 font-semibold">YouTube to Quiz AI</strong> is an automated educational intelligence platform engineered to transform long-form video lectures, webinars, and educational tutorials into structured, interactive assessments in under ten seconds. 
+            An <strong className="text-amber-400 font-semibold">AI Video Quiz Maker</strong> is an automated educational intelligence platform engineered to transform educational video lectures, webinars, and YouTube tutorials into structured, interactive assessments in under ten seconds. 
           </p>
           <p className="text-xs sm:text-sm text-zinc-400">
             By ingesting YouTube video transcripts and applying state-of-the-art neural semantic distillation, the engine extracts core pedagogical concepts, creates plausible distractor options, and attaches precise video timestamp references. This transforms passive audiovisual consumption into a high-retention active recall study loop suitable for university students, self-directed professionals, and lifelong learners.
@@ -348,6 +348,25 @@ export default function SeoGeoContentSection() {
             </div>
             <div className="mt-4 pt-3 border-t border-zinc-800/80 text-[11px] font-mono text-amber-400/80 flex items-center justify-between">
               <span>Take Traversy Web Quiz</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </Link>
+
+          <Link
+            href="/tools/video-to-anki-flashcards"
+            className="group p-5 rounded-2xl bg-gradient-to-b from-indigo-500/10 to-zinc-900/60 border border-indigo-500/30 hover:border-indigo-400 hover:bg-indigo-500/20 transition-all flex flex-col justify-between"
+          >
+            <div>
+              <div className="text-[11px] font-mono text-indigo-400 mb-2 font-semibold">SPACED REPETITION</div>
+              <h3 className="text-sm font-bold text-zinc-100 group-hover:text-indigo-300 transition-colors mb-2">
+                Video to Anki Flashcard Generator (.csv)
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed">
+                Automatically convert YouTube lectures and videos into spaced-repetition Anki decks in 10s.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-indigo-500/20 text-[11px] font-mono text-indigo-400 flex items-center justify-between">
+              <span>Make Anki Cards</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </div>
           </Link>

@@ -33,6 +33,9 @@ export default function Footer() {
             <Link href="/about" className="hover:text-amber-400 transition-colors">
               {lang === 'zh' ? '关于我们' : 'About Us'}
             </Link>
+            <Link href="/tools/video-to-anki-flashcards" className="hover:text-amber-400 transition-colors font-medium text-amber-300/90">
+              {lang === 'zh' ? 'Anki闪卡生成器' : 'Anki Flashcard Generator'}
+            </Link>
             <Link href="/pricing" className="hover:text-amber-400 transition-colors font-semibold text-amber-400/90">
               {lang === 'zh' ? '价格方案 ($4.99)' : 'Pricing ($4.99)'}
             </Link>
