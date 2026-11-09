@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | VideoToQuiz AI',
   description: 'Privacy Policy and GDPR compliance details for VideoToQuiz AI.',
   alternates: {
-    canonical: 'https://www.videotoquiz.com/privacy',
+    canonical: 'https://videotoquiz.com/privacy',
   },
 };
 

@@ -38,12 +38,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: item.metaTitle,
     description: item.metaDesc,
     alternates: {
-      canonical: `https://www.videotoquiz.com/topics/${item.slug}`,
+      canonical: `https://videotoquiz.com/topics/${item.slug}`,
     },
     openGraph: {
       title: item.metaTitle,
       description: item.metaDesc,
-      url: `https://www.videotoquiz.com/topics/${item.slug}`,
+      url: `https://videotoquiz.com/topics/${item.slug}`,
       siteName: 'VideoToQuiz AI',
       type: 'article',
     },
@@ -93,18 +93,18 @@ export default async function PSeoTopicPage({ params }: PageProps) {
         headline: item.h1,
         description: item.metaDesc,
         inLanguage: 'en-US',
-        mainEntityOfPage: `https://www.videotoquiz.com/topics/${item.slug}`,
+        mainEntityOfPage: `https://videotoquiz.com/topics/${item.slug}`,
         datePublished: '2026-10-18T00:00:00+00:00',
         dateModified: '2026-11-03T00:00:00+00:00',
         author: {
           '@type': 'Organization',
           name: 'VideoToQuiz AI Editorial Team',
-          url: 'https://www.videotoquiz.com',
+          url: 'https://videotoquiz.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'VideoToQuiz AI',
-          url: 'https://www.videotoquiz.com',
+          url: 'https://videotoquiz.com',
         },
         about: {
           '@type': 'Thing',

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Refund Policy | VideoToQuiz AI',
   description: '30-day money-back guarantee and refund policy for VideoToQuiz AI.',
   alternates: {
-    canonical: 'https://www.videotoquiz.com/refund',
+    canonical: 'https://videotoquiz.com/refund',
   },
 };
 

@@ -197,7 +197,7 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
     try {
       const { shareId } = await createShareableLink(quizData);
       const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-      const shareUrl = isLocal ? `${window.location.origin}/quiz/${shareId}` : `https://www.videotoquiz.com/quiz/${shareId}`;
+      const shareUrl = isLocal ? `${window.location.origin}/quiz/${shareId}` : `https://videotoquiz.com/quiz/${shareId}`;
       await navigator.clipboard.writeText(shareUrl);
       setShareToast(
         lang === 'zh'

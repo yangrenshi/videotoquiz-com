@@ -94,8 +94,8 @@ export async function createShareableLink(quiz: QuizResultData): Promise<{
   const origin = isBrowser 
     ? (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
         ? window.location.origin 
-        : 'https://www.videotoquiz.com')
-    : 'https://www.videotoquiz.com';
+        : 'https://videotoquiz.com')
+    : 'https://videotoquiz.com';
     
   // 生成短哈希 ID
   const hash = Math.random().toString(36).substring(2, 9);
@@ -117,7 +117,7 @@ export async function createShareableLink(quiz: QuizResultData): Promise<{
     console.warn('Background share register skipped:', e);
   }
 
-  // 规范链接格式：https://www.videotoquiz.com/quiz/${shareId}
+  // 规范链接格式：https://videotoquiz.com/quiz/${shareId}
   const shareUrl = `${origin}/quiz/${shareId}`;
   return {
     shareId,

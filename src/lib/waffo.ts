@@ -46,7 +46,7 @@ export async function createWaffoCheckoutSession({
   userEmail,
 }: WaffoCheckoutOptions): Promise<{ checkoutUrl: string } | { error: string }> {
   const client = getWaffoClient();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.videotoquiz.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://videotoquiz.com';
 
   const productId =
     plan === 'onetime'

@@ -1,4 +1,4 @@
-# VideoToQuiz AI (https://www.videotoquiz.com)
+# VideoToQuiz AI (https://videotoquiz.com)
 > AI-Powered Educational Intelligence: Convert YouTube Videos into Interactive Active Recall Quizzes & Flashcards.
 
 ## Overview
@@ -12,22 +12,22 @@ VideoToQuiz AI is an ad-free educational platform that ingests public YouTube ed
 - **Peer Challenge Sharing**: Generates instant `/quiz/[id]` challenge URLs for study groups and classrooms.
 
 ## Canonical URLs & Routes
-- Homepage: https://www.videotoquiz.com
-- User Dashboard: https://www.videotoquiz.com/dashboard
-- Pricing & Credits: https://www.videotoquiz.com/pricing
-- Interactive Challenge Route: https://www.videotoquiz.com/quiz/[id]
-- Programmatic Topics Directory: https://www.videotoquiz.com/topics
-- Terms of Service: https://www.videotoquiz.com/terms
-- Privacy Policy: https://www.videotoquiz.com/privacy
+- Homepage: https://videotoquiz.com
+- User Dashboard: https://videotoquiz.com/dashboard
+- Pricing & Credits: https://videotoquiz.com/pricing
+- Interactive Challenge Route: https://videotoquiz.com/quiz/[id]
+- Programmatic Topics Directory: https://videotoquiz.com/topics
+- Terms of Service: https://videotoquiz.com/terms
+- Privacy Policy: https://videotoquiz.com/privacy
 
 ## Featured Curated Educational Topics
-- Harvard CS50 Programming Quiz: https://www.videotoquiz.com/topics/harvard-cs50-quiz-generator
-- Huberman Lab Neuroscience & Sleep Quiz: https://www.videotoquiz.com/topics/huberman-lab-podcast-quiz
-- MIT OpenCourseWare STEM Quiz Maker: https://www.videotoquiz.com/topics/mit-opencourseware-quiz-maker
-- CFA Exam Finance & Quantitative Quiz: https://www.videotoquiz.com/topics/cfa-exam-finance-quiz
-- Khan Academy Mastery Quiz: https://www.videotoquiz.com/topics/khan-academy-video-to-quiz
-- 3Blue1Brown Math & Geometry Quiz: https://www.videotoquiz.com/topics/3blue1brown-math-quiz
-- Veritasium Science & Physics Quiz: https://www.videotoquiz.com/topics/veritasium-science-quiz
+- Harvard CS50 Programming Quiz: https://videotoquiz.com/topics/harvard-cs50-quiz-generator
+- Huberman Lab Neuroscience & Sleep Quiz: https://videotoquiz.com/topics/huberman-lab-podcast-quiz
+- MIT OpenCourseWare STEM Quiz Maker: https://videotoquiz.com/topics/mit-opencourseware-quiz-maker
+- CFA Exam Finance & Quantitative Quiz: https://videotoquiz.com/topics/cfa-exam-finance-quiz
+- Khan Academy Mastery Quiz: https://videotoquiz.com/topics/khan-academy-video-to-quiz
+- 3Blue1Brown Math & Geometry Quiz: https://videotoquiz.com/topics/3blue1brown-math-quiz
+- Veritasium Science & Physics Quiz: https://videotoquiz.com/topics/veritasium-science-quiz
 
 ## Academic Grounding & Methodology
 VideoToQuiz AI is designed around empirical principles from cognitive educational psychology:
@@ -36,6 +36,6 @@ VideoToQuiz AI is designed around empirical principles from cognitive educationa
 
 ## Contact & Organization
 - Organization: VideoToQuiz AI Team
-- Official Website: https://www.videotoquiz.com
+- Official Website: https://videotoquiz.com
 - Contact Email: support@videotoquiz.com
 - Open Code Repository: https://github.com/yangrenshi/videotoquiz-com

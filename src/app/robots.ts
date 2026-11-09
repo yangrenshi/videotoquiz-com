@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://www.videotoquiz.com/sitemap.xml',
+    sitemap: 'https://videotoquiz.com/sitemap.xml',
   };
 }

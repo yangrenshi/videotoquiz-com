@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     'spaced repetition quiz'
   ],
   alternates: {
-    canonical: 'https://www.videotoquiz.com/tools/video-to-anki-flashcards',
+    canonical: 'https://videotoquiz.com/tools/video-to-anki-flashcards',
   },
   openGraph: {
     title: 'Video to Anki Flashcards Generator: Turn YouTube to Decks',
     description:
       'Convert YouTube videos into Anki flashcards instantly with AI. Extract key concepts into spaced-repetition decks (.apkg/csv) for 10x faster lecture mastery.',
-    url: 'https://www.videotoquiz.com/tools/video-to-anki-flashcards',
+    url: 'https://videotoquiz.com/tools/video-to-anki-flashcards',
     siteName: 'VideoToQuiz AI',
     type: 'website',
   },
@@ -85,7 +85,7 @@ const pageJsonLd = {
       },
       description:
         'Convert educational YouTube videos and lecture transcripts into Anki-ready flashcards and spaced-repetition decks with AI.',
-      url: 'https://www.videotoquiz.com/tools/video-to-anki-flashcards',
+      url: 'https://videotoquiz.com/tools/video-to-anki-flashcards',
     },
     {
       '@type': 'FAQPage',

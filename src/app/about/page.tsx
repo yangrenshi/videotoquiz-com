@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'About Us | YouTube to Quiz AI Educational Mission',
   description: 'Learn how YouTube to Quiz AI empowers university students, engineers, and lifelong learners to master video lectures through active recall testing.',
   alternates: {
-    canonical: 'https://www.videotoquiz.com/about',
+    canonical: 'https://videotoquiz.com/about',
   },
 };
 

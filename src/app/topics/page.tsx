@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'YouTube Lecture & Channel Quiz Directory | VideoToQuiz AI',
   description: 'Explore interactive active recall quizzes for MIT, Harvard, Khan Academy, Huberman Lab, and top educational YouTube video channels for free.',
   alternates: {
-    canonical: 'https://www.videotoquiz.com/topics',
+    canonical: 'https://videotoquiz.com/topics',
   },
   openGraph: {
     title: 'YouTube Lecture & Channel Quiz Directory | VideoToQuiz AI',
     description: 'Explore interactive quizzes for MIT, Harvard, Khan Academy, Huberman Lab, and top educational YouTube channels.',
-    url: 'https://www.videotoquiz.com/topics',
+    url: 'https://videotoquiz.com/topics',
     siteName: 'VideoToQuiz AI',
   },
 };

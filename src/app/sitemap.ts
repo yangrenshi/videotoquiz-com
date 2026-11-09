@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import topicsData from '@/data/pseo-topics.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.videotoquiz.com';
+  const baseUrl = 'https://videotoquiz.com';
   const currentDate = new Date().toISOString();
 
   const staticRoutes: MetadataRoute.Sitemap = [

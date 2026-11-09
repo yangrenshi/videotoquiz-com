@@ -22,12 +22,12 @@ export const metadata: Metadata = {
   title: 'AI Quiz Generator for Medical Students | VideoToQuiz',
   description: 'Turn YouTube medical lectures into active recall quizzes, USMLE & MCAT practice questions, and 1-click Anki flashcards. Study smarter with AI.',
   alternates: {
-    canonical: 'https://www.videotoquiz.com/for/medical-students',
+    canonical: 'https://videotoquiz.com/for/medical-students',
   },
   openGraph: {
     title: 'AI Quiz Generator for Medical Students | VideoToQuiz',
     description: 'Convert heavy medical video lectures into active recall quizzes and Anki decks with timestamped rationales.',
-    url: 'https://www.videotoquiz.com/for/medical-students',
+    url: 'https://videotoquiz.com/for/medical-students',
     siteName: 'VideoToQuiz AI',
     type: 'article',
   },
@@ -65,7 +65,7 @@ export default function MedicalStudentsPage() {
         '@type': 'WebPage',
         name: 'AI Quiz Generator for Medical Students',
         description: 'Interactive exam prep tool converting medical video lectures into board-style quizzes and Anki cards.',
-        url: 'https://www.videotoquiz.com/for/medical-students',
+        url: 'https://videotoquiz.com/for/medical-students',
       },
       {
         '@type': 'FAQPage',

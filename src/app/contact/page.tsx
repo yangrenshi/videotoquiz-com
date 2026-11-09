@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Contact Us | YouTube to Quiz AI Customer Support',
   description: 'Get in touch with the YouTube to Quiz AI support team. Inquiries for customer support, billing assistance, and academic licensing.',
   alternates: {
-    canonical: 'https://www.videotoquiz.com/contact',
+    canonical: 'https://videotoquiz.com/contact',
   },
 };
 

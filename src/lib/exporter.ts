@@ -145,7 +145,7 @@ export function openPrintableQuizPaper(
         ${questionsHtml}
 
         <div class="footer">
-          Generated via VideoToQuiz AI (https://www.videotoquiz.com) • Certified Cognitive Assessment System
+          Generated via VideoToQuiz AI (https://videotoquiz.com) • Certified Cognitive Assessment System
         </div>
 
         <script>

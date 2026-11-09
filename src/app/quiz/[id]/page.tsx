@@ -44,7 +44,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
 
   const pageTitle = `Challenge: Can You Ace This Quiz on "${videoTitle}"? (${totalQuestions} Qs) | VideoToQuiz AI`;
   const pageDesc = `${summary} Score 100% on active recall questions generated automatically by VideoToQuiz AI.`;
-  const ogUrl = `https://www.videotoquiz.com/quiz/${id}`;
+  const ogUrl = `https://videotoquiz.com/quiz/${id}`;
 
   return {
     title: pageTitle,
@@ -60,7 +60,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
       type: 'website',
       images: [
         {
-          url: 'https://www.videotoquiz.com/og-image.png',
+          url: 'https://videotoquiz.com/og-image.png',
           width: 1200,
           height: 630,
           alt: `VideoToQuiz AI - ${videoTitle}`,
@@ -71,7 +71,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
       card: 'summary_large_image',
       title: pageTitle,
       description: pageDesc,
-      images: ['https://www.videotoquiz.com/og-image.png'],
+      images: ['https://videotoquiz.com/og-image.png'],
     },
   };
 }

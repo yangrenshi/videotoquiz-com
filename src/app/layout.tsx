@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     'anki flashcard generator',
     'interactive video test'
   ],
-  authors: [{ name: 'YouTube to Quiz AI Team', url: 'https://www.videotoquiz.com' }],
-  metadataBase: new URL('https://www.videotoquiz.com'),
+  authors: [{ name: 'YouTube to Quiz AI Team', url: 'https://videotoquiz.com' }],
+  metadataBase: new URL('https://videotoquiz.com'),
   alternates: {
-    canonical: 'https://www.videotoquiz.com/',
+    canonical: 'https://videotoquiz.com/',
   },
   icons: {
     icon: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Video Quiz Maker: Turn Any Video into Tests in 10s · Anki',
     description: 'The fastest AI video quiz maker. Turn YouTube lectures and videos into interactive tests and Anki flashcards in 10s. Master any topic 10x faster.',
-    url: 'https://www.videotoquiz.com/',
+    url: 'https://videotoquiz.com/',
     siteName: 'YouTube to Quiz AI',
     images: [
       {
@@ -77,10 +77,10 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://www.videotoquiz.com/#organization',
+        '@id': 'https://videotoquiz.com/#organization',
         name: 'YouTube to Quiz AI',
-        url: 'https://www.videotoquiz.com',
-        logo: 'https://www.videotoquiz.com/icon.png',
+        url: 'https://videotoquiz.com',
+        logo: 'https://videotoquiz.com/icon.png',
         sameAs: [
           'https://github.com/yangrenshi/videotoquiz-com',
           'https://devpost.com/software/videotoquiz-ai',
@@ -90,11 +90,11 @@ export default function RootLayout({
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://www.videotoquiz.com/#website',
-        url: 'https://www.videotoquiz.com',
+        '@id': 'https://videotoquiz.com/#website',
+        url: 'https://videotoquiz.com',
         name: 'YouTube to Quiz AI',
         publisher: {
-          '@id': 'https://www.videotoquiz.com/#organization'
+          '@id': 'https://videotoquiz.com/#organization'
         },
         inLanguage: 'en-US',
         datePublished: '2026-10-17T00:00:00+00:00',
@@ -102,9 +102,9 @@ export default function RootLayout({
       },
       {
         '@type': 'WebApplication',
-        '@id': 'https://www.videotoquiz.com/#webapp',
+        '@id': 'https://videotoquiz.com/#webapp',
         name: 'YouTube to Quiz AI',
-        url: 'https://www.videotoquiz.com',
+        url: 'https://videotoquiz.com',
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'All',
         author: {

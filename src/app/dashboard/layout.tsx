@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Dashboard | VideoToQuiz AI',
   description: 'Your personal learning dashboard, quiz history, and credits.',
   alternates: {
-    canonical: 'https://www.videotoquiz.com/dashboard',
+    canonical: 'https://videotoquiz.com/dashboard',
   },
   robots: {
     index: false,

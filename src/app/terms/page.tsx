@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Terms of Service | VideoToQuiz AI',
   description: 'Terms of Service and legal policies for VideoToQuiz AI.',
   alternates: {
-    canonical: 'https://www.videotoquiz.com/terms',
+    canonical: 'https://videotoquiz.com/terms',
   },
 };
 

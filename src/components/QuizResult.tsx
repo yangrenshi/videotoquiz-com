@@ -85,7 +85,7 @@ export default function QuizResult({
     try {
       const { shareId } = await createShareableLink(quizData);
       const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-      const targetUrl = isLocal ? `${window.location.origin}/quiz/${shareId}` : `https://www.videotoquiz.com/quiz/${shareId}`;
+      const targetUrl = isLocal ? `${window.location.origin}/quiz/${shareId}` : `https://videotoquiz.com/quiz/${shareId}`;
       await navigator.clipboard.writeText(targetUrl);
       setShareToast(
         lang === 'zh'
