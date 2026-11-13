@@ -51,7 +51,7 @@ export default function Header({ onOpenPricing }: HeaderProps) {
             <GraduationCap className="w-4 h-4 text-zinc-200" />
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="font-bold text-base text-zinc-100 tracking-tight">YouTube to Quiz</span>
+            <span className="font-bold text-base text-zinc-100 tracking-tight">Video to Notes</span>
             <span className="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400 border border-zinc-700/60">
               AI
             </span>
@@ -61,29 +61,29 @@ export default function Header({ onOpenPricing }: HeaderProps) {
         {/* 桌面端导航 */}
         <nav className="hidden md:flex items-center gap-5 text-xs font-medium text-zinc-400">
           <Link
-            href="/topics"
-            className="hover:text-zinc-100 transition-colors flex items-center gap-1.5"
+            href="/youtube-to-notes"
+            className="hover:text-amber-400 text-zinc-300 transition-colors flex items-center gap-1"
           >
-            <BookOpen className="w-3.5 h-3.5 text-amber-400/90" />
-            <span>{lang === 'zh' ? '公开课题库' : 'Study Topics'}</span>
+            <span>YouTube to Notes</span>
           </Link>
-          <a
-            href="/#comparison"
-            className="hover:text-zinc-200 transition-colors"
+          <Link
+            href="/cornell-notes-generator"
+            className="hover:text-amber-400 text-zinc-300 transition-colors flex items-center gap-1"
           >
-            {t.nav.whyUs}
-          </a>
-          <a
-            href="/#faq"
-            className="hover:text-zinc-200 transition-colors"
-          >
-            {t.nav.faq}
-          </a>
+            <span>Cornell Notes</span>
+          </Link>
           <Link
             href="/tools/video-to-anki-flashcards"
             className="hover:text-amber-400 transition-colors flex items-center gap-1"
           >
             <span>{lang === 'zh' ? 'Anki闪卡' : 'Anki Flashcards'}</span>
+          </Link>
+          <Link
+            href="/topics"
+            className="hover:text-zinc-100 transition-colors flex items-center gap-1.5"
+          >
+            <BookOpen className="w-3.5 h-3.5 text-amber-400/90" />
+            <span>{lang === 'zh' ? '公开课题库' : 'Study Topics'}</span>
           </Link>
           <Link
             href="/pricing"

@@ -14,6 +14,7 @@ import { useAuth } from '@/context/AuthContext';
 import { saveQuiz, updateQuizScore } from '@/lib/quiz-storage';
 import { createShareableLink } from '@/lib/quiz-share';
 import FlashcardDeck from '@/components/FlashcardDeck';
+import NotesDisplay from '@/components/NotesDisplay';
 
 interface InteractiveQuizSectionProps {
   initialSampleKey?: string;
@@ -29,7 +30,7 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
   const [quizData, setQuizData] = useState<QuizResultData | null>(null);
   const [rawFullQuizData, setRawFullQuizData] = useState<QuizResultData | null>(null);
   const [isSample, setIsSample] = useState(false);
-  const [viewMode, setViewMode] = useState<'quiz' | 'flashcard'>('quiz');
+  const [viewMode, setViewMode] = useState<'notes' | 'quiz' | 'flashcard'>('notes');
 
   // 答题状态
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -76,7 +77,7 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
         const sampleData = SAMPLE_QUIZZES[params.sampleKey];
         setQuizData(sampleData);
         setRawFullQuizData(sampleData);
-        setViewMode('quiz');
+        setViewMode('notes');
         setQuizStartTime(Date.now());
         setIsLoading(false);
         setTimeout(() => {
@@ -116,7 +117,7 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
 
       setQuizData(json.data);
       setRawFullQuizData(json.data);
-      setViewMode('quiz');
+      setViewMode('notes');
       setQuizStartTime(Date.now());
       // 自动归档至用户历史测验库
       saveQuiz(json.data, params.url);
@@ -311,8 +312,68 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
         )}
       </section>
 
-      {/* 答题锚点与做题区域 */}
-      <div id="quiz-anchor" className="w-full max-w-2xl mx-auto mb-16 scroll-mt-24">
+      {/* 答题锚点与结果区域 (支持 Notes / Quiz / Flashcards 三模无缝切换) */}
+      <div id="quiz-anchor" className="w-full max-w-3xl mx-auto mb-16 scroll-mt-24">
+        {quizData && (
+          <div className="flex items-center justify-between gap-2 mb-4 bg-zinc-950 p-1.5 rounded-xl border border-zinc-800">
+            <div className="flex items-center gap-1 sm:gap-2">
+              <button
+                type="button"
+                onClick={() => setViewMode('notes')}
+                className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
+                  viewMode === 'notes'
+                    ? 'bg-amber-400 text-zinc-950 shadow-sm'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
+                }`}
+              >
+                <span>📝 Notes</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('quiz')}
+                className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
+                  viewMode === 'quiz'
+                    ? 'bg-amber-400 text-zinc-950 shadow-sm'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
+                }`}
+              >
+                <span>🎯 Quiz ({quizData.questions.length})</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('flashcard')}
+                className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
+                  viewMode === 'flashcard'
+                    ? 'bg-amber-400 text-zinc-950 shadow-sm'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
+                }`}
+              >
+                <span>🗂️ Flashcards</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleShareQuiz}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold transition-all border border-zinc-700 shrink-0"
+              title="Share notes & quiz"
+            >
+              <Share2 className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Share</span>
+            </button>
+          </div>
+        )}
+
+        {quizData && viewMode === 'notes' && (
+          <div className="animate-fadeIn">
+            <NotesDisplay
+              quizData={quizData}
+              onSwitchToQuiz={() => setViewMode('quiz')}
+              onSwitchToFlashcards={() => setViewMode('flashcard')}
+            />
+          </div>
+        )}
+
         {quizData && viewMode === 'flashcard' && (
           <div className="animate-fadeIn">
             <FlashcardDeck
@@ -329,32 +390,11 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
               <span className="font-bold text-sm text-zinc-100 truncate max-w-xs sm:max-w-md">
                 {quizData.videoTitle}
               </span>
-              <div className="flex items-center gap-2">
-                {/* 视图模式极速切换 */}
-                <button
-                  type="button"
-                  onClick={() => setViewMode('flashcard')}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-[11px] font-medium transition-colors border border-zinc-700"
-                  title="Switch to Flashcard Mode"
-                >
-                  <span>🗂️ 闪卡模式</span>
-                </button>
-
-                {isSample && (
-                  <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-emerald-950/80 text-emerald-300 border border-emerald-500/50 shadow-sm">
-                    {t.quiz.sampleBadge}
-                  </span>
-                )}
-                <button
-                  type="button"
-                  onClick={handleShareQuiz}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-zinc-950 text-xs font-bold transition-all shadow-md active:scale-95 border border-amber-300"
-                  title="Challenge Friends / Copy Share Link"
-                >
-                  <Share2 className="w-3.5 h-3.5" />
-                  <span>{lang === 'zh' ? '⚡ 挑战好友 / 分享' : '⚡ Challenge Friends / Copy Link'}</span>
-                </button>
-              </div>
+              {isSample && (
+                <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-emerald-950/80 text-emerald-300 border border-emerald-500/50 shadow-sm">
+                  {t.quiz.sampleBadge}
+                </span>
+              )}
             </div>
             <QuizCard
               key={quizData.questions[currentQuestionIndex].id}

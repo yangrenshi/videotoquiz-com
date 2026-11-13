@@ -6,11 +6,25 @@ export interface QuizQuestion {
   explanation: string; // 详尽考点解析
 }
 
+export interface StudyNoteSection {
+  heading: string;
+  timestamp?: string;
+  bullets: string[];
+}
+
+export interface CornellNotesData {
+  cues: string[];
+  notes: string[];
+  summary: string;
+}
+
 export interface QuizResultData {
   videoId: string;
   videoTitle: string;
   summary: string;
   takeaways: string[];
+  sections?: StudyNoteSection[];
+  cornellNotes?: CornellNotesData;
   questions: QuizQuestion[];
   totalQuestions: number;
 }

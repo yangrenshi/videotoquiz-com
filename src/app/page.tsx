@@ -6,23 +6,24 @@ import SeoGeoContentSection from '@/components/SeoGeoContentSection';
 export default function HomePage() {
   return (
     <div className="w-full flex flex-col items-center">
-      {/* 头部 Hero 区域 (SSR 语义直出，优先向搜索引擎展现核心主张与 H1) */}
-      <section className="text-center max-w-3xl mx-auto pt-6 pb-6">
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.2] mb-5">
-          AI Video Quiz Maker:{' '}
-          <span className="text-amber-400">
-            Turn Any Video into Interactive Tests in 10s
-          </span>
+      {/* 头部 Hero 区域 (SSR 语义直出，严格聚焦主词 video to notes，H1 纯净单一) */}
+      <section className="text-center max-w-3xl mx-auto pt-8 pb-6">
+        <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight mb-4">
+          Video to Notes
         </h1>
 
-        <p className="text-sm sm:text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed mb-4 font-normal">
-          The fastest AI video quiz generator. Convert YouTube lectures, tutorials, and class videos into 5-question active recall tests and Anki flashcards in seconds. Boost exam retention, identify learning gaps, and study 10x faster.
+        <p className="text-base sm:text-lg text-amber-400/90 font-medium max-w-2xl mx-auto mb-3">
+          Turn Any Video into Structured Study Notes, Key Takeaways & Flashcards in 10s
         </p>
-        <p className="text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-          Public prices, no login: free preview $0, Starter $4.99 one-time for 25 quizzes, Pro $9.99 per month for 200 quizzes.{' '}
-          <a href="#pricing" className="text-amber-400 underline">See pricing</a>
+
+        <p className="text-sm sm:text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed mb-4 font-normal">
+          The fastest AI <strong>video to notes</strong> generator. Convert online lectures, college courses, and tutorial videos into comprehensive study outlines, key takeaways, and printable Cornell notes. Boost exam retention with our automated <strong>video to notes</strong> workflow and active recall quizzes.
+        </p>
+        <p className="text-sm text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          Public pricing, no login required to test: Free study notes preview, Starter $4.99 one-time for 25 conversions, Pro $9.99/mo for 200 conversions.{' '}
+          <a href="#pricing" className="text-amber-400 underline hover:text-amber-300">See pricing</a>
           {' · '}
-          <a href="/pricing" className="text-amber-400 underline">Pricing page</a>
+          <a href="/pricing" className="text-amber-400 underline hover:text-amber-300">Pricing page</a>
         </p>
       </section>
 

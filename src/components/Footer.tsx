@@ -17,30 +17,36 @@ export default function Footer() {
             <div className="w-6 h-6 rounded-md bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-300">
               <GraduationCap className="w-3.5 h-3.5" />
             </div>
-            <span className="font-bold text-zinc-200">YouTube to Quiz AI</span>
+            <span className="font-bold text-zinc-200">Video to Notes AI</span>
           </div>
           <p className="text-[11px] text-zinc-500">
             {t.footer.brandDesc}
           </p>
           <p className="text-[11px] text-zinc-600">
-            © 2026 YouTube to Quiz AI. All rights reserved.
+            © 2026 Video to Notes AI. All rights reserved.
           </p>
         </div>
 
         {/* 右侧合规法律链接与客服邮箱 */}
         <div className="flex flex-col items-center sm:items-end gap-2">
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium">
-            <Link href="/about" className="hover:text-amber-400 transition-colors">
-              {lang === 'zh' ? '关于我们' : 'About Us'}
+            <Link href="/youtube-to-notes" className="hover:text-amber-400 text-zinc-300 transition-colors">
+              YouTube to Notes
+            </Link>
+            <Link href="/cornell-notes-generator" className="hover:text-amber-400 text-zinc-300 transition-colors">
+              Cornell Notes Maker
             </Link>
             <Link href="/tools/video-to-anki-flashcards" className="hover:text-amber-400 transition-colors font-medium text-amber-300/90">
-              {lang === 'zh' ? 'Anki闪卡生成器' : 'Anki Flashcard Generator'}
+              {lang === 'zh' ? 'Anki闪卡' : 'Anki Flashcards'}
             </Link>
             <Link href="/pricing" className="hover:text-amber-400 transition-colors font-semibold text-amber-400/90">
               {lang === 'zh' ? '价格方案 ($4.99)' : 'Pricing ($4.99)'}
             </Link>
             <Link href="/topics" className="hover:text-amber-400 transition-colors">
               {lang === 'zh' ? '公开课题库' : 'Study Topics'}
+            </Link>
+            <Link href="/about" className="hover:text-zinc-200 transition-colors">
+              {lang === 'zh' ? '关于我们' : 'About Us'}
             </Link>
             <Link href="/for/medical-students" className="hover:text-emerald-400 transition-colors text-emerald-400/90">
               {lang === 'zh' ? '医学生刷题' : 'For Medical Students'}

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
@@ -9,19 +9,20 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import { AuthProvider } from '@/context/AuthContext';
 
 export const metadata: Metadata = {
-  title: 'AI Video Quiz Maker: Turn Any Video into Tests in 10s · Anki',
-  description: 'The fastest AI video quiz maker. Turn YouTube lectures and videos into interactive tests and Anki flashcards in 10s. Master any topic 10x faster.',
+  title: 'Video to Notes — Turn Any Video into Study Notes',
+  description: 'The fastest AI video to notes generator. Convert any video lecture into structured study notes, key takeaways, and flashcards in 10s. Study 10x faster.',
   keywords: [
-    'video quiz maker',
-    'video quiz generator',
-    'ai video quiz',
-    'video to quiz',
-    'youtube to quiz',
+    'video to notes',
+    'video to notes ai',
+    'video notes generator',
+    'youtube to notes',
+    'cornell notes generator',
+    'lecture to notes',
     'video to flashcards',
-    'anki flashcard generator',
-    'interactive video test'
+    'video quiz maker',
+    'anki flashcard generator'
   ],
-  authors: [{ name: 'YouTube to Quiz AI Team', url: 'https://videotoquiz.com' }],
+  authors: [{ name: 'Video to Notes Team', url: 'https://videotoquiz.com' }],
   metadataBase: new URL('https://videotoquiz.com'),
   alternates: {
     canonical: 'https://videotoquiz.com/',
@@ -41,16 +42,16 @@ export const metadata: Metadata = {
     'waffo-verify': '624137efca83e9d5f6d0281819f60d31',
   },
   openGraph: {
-    title: 'AI Video Quiz Maker: Turn Any Video into Tests in 10s · Anki',
-    description: 'The fastest AI video quiz maker. Turn YouTube lectures and videos into interactive tests and Anki flashcards in 10s. Master any topic 10x faster.',
+    title: 'Video to Notes — Turn Any Video into Study Notes',
+    description: 'The fastest AI video to notes generator. Convert any video lecture into structured study notes, key takeaways, and flashcards in 10s. Study 10x faster.',
     url: 'https://videotoquiz.com/',
-    siteName: 'YouTube to Quiz AI',
+    siteName: 'Video to Notes',
     images: [
       {
         url: '/og-preview.png',
         width: 1200,
         height: 630,
-        alt: 'YouTube to Quiz AI - Video to Quiz Generator Preview',
+        alt: 'Video to Notes - AI Study Notes Generator Preview',
       },
     ],
     locale: 'en_US',
@@ -58,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Video Quiz Maker: Turn Any Video into Tests in 10s · Anki',
-    description: 'The fastest AI video quiz maker. Turn YouTube lectures and videos into interactive tests and Anki flashcards in 10s. Master any topic 10x faster.',
+    title: 'Video to Notes — Turn Any Video into Study Notes',
+    description: 'The fastest AI video to notes generator. Convert any video lecture into structured study notes, key takeaways, and flashcards in 10s. Study 10x faster.',
     images: ['/og-preview.png'],
   },
   verification: {
@@ -78,7 +79,7 @@ export default function RootLayout({
       {
         '@type': 'Organization',
         '@id': 'https://videotoquiz.com/#organization',
-        name: 'YouTube to Quiz AI',
+        name: 'Video to Notes',
         url: 'https://videotoquiz.com',
         logo: 'https://videotoquiz.com/icon.png',
         sameAs: [
@@ -92,28 +93,28 @@ export default function RootLayout({
         '@type': 'WebSite',
         '@id': 'https://videotoquiz.com/#website',
         url: 'https://videotoquiz.com',
-        name: 'YouTube to Quiz AI',
+        name: 'Video to Notes',
         publisher: {
           '@id': 'https://videotoquiz.com/#organization'
         },
         inLanguage: 'en-US',
         datePublished: '2026-10-17T00:00:00+00:00',
-        dateModified: '2026-10-18T22:30:00+00:00'
+        dateModified: '2026-11-13T21:00:00+00:00'
       },
       {
         '@type': 'WebApplication',
         '@id': 'https://videotoquiz.com/#webapp',
-        name: 'YouTube to Quiz AI',
+        name: 'Video to Notes AI',
         url: 'https://videotoquiz.com',
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'All',
         author: {
           '@type': 'Organization',
-          name: 'YouTube to Quiz AI Team'
+          name: 'Video to Notes Team'
         },
         datePublished: '2026-10-17T00:00:00+00:00',
-        dateModified: '2026-10-18T22:30:00+00:00',
-        description: 'AI-powered learning platform that converts any YouTube video lecture or tutorial into interactive quizzes, summaries, and downloadable flashcards in seconds.',
+        dateModified: '2026-11-13T21:00:00+00:00',
+        description: 'AI-powered learning platform that converts any video lecture or tutorial into structured study notes, executive summaries, Cornell notes, and active recall quizzes in seconds.',
         offers: {
           '@type': 'Offer',
           price: '0.00',
@@ -129,11 +130,11 @@ export default function RootLayout({
           worstRating: '1',
         },
         featureList: [
-          'Instant YouTube Video Transcript Parsing',
-          'AI-Powered Multiple Choice & Conceptual Quizzes',
-          'Timestamped Explanations for Every Answer',
-          'Active Recall and Spaced Repetition Workflow',
-          'Downloadable Study Notes and Flashcards'
+          'Instant Video to Notes Summary Outline',
+          'Cornell Notes Format with Cues and Key Points',
+          'Timestamped Explanations for Every Section',
+          'Active Recall Quizzes and Anki Flashcards Export',
+          'One-click Markdown and PDF Download'
         ]
       }
     ]
@@ -163,6 +164,14 @@ export default function RootLayout({
             });
           `}
         </Script>
+        {/* Umami 自建流量统计（免 Cookie、高抗拦截、2KB 极轻量） */}
+        {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+          <Script
+            src={`${process.env.NEXT_PUBLIC_UMAMI_HOST_URL || 'https://my-umami.vercel.app'}/script.js`}
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+            strategy="afterInteractive"
+          />
+        )}
       </head>
       <body className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100 antialiased">
         <LanguageProvider>
