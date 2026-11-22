@@ -172,6 +172,12 @@ export default function RootLayout({
             strategy="afterInteractive"
           />
         )}
+        {/* PVUV.ai 流量统计（内置 Bot 识别与清洗） */}
+        <Script
+          src="https://in.pvuv.ai/f.js"
+          data-site={process.env.NEXT_PUBLIC_PVUV_SITE_ID || "PzJpAmsA"}
+          strategy="afterInteractive"
+        />
       </head>
       <body className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100 antialiased">
         <LanguageProvider>
