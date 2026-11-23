@@ -10,7 +10,7 @@ import { AuthProvider } from '@/context/AuthContext';
 
 export const metadata: Metadata = {
   title: 'Video to Quiz & Notes Generator | VideoToQuiz',
-  description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Study and retain concepts 10x faster.',
+  description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Master any subject 10x faster.',
   keywords: [
     'video to notes',
     'video to notes ai',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Video to Quiz & Notes Generator | VideoToQuiz',
-    description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Study and retain concepts 10x faster.',
+    description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Master any subject 10x faster.',
     url: 'https://videotoquiz.com/',
     siteName: 'VideoToQuiz',
     images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Video to Quiz & Notes Generator | VideoToQuiz',
-    description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Study and retain concepts 10x faster.',
+    description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Master any subject 10x faster.',
     images: ['/og-preview.png'],
   },
   verification: {
