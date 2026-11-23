@@ -15,7 +15,8 @@ import {
   LayoutDashboard,
   Info,
   HelpCircle,
-  Sparkles
+  Sparkles,
+  Layers
 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useAuth } from '@/context/AuthContext';
@@ -57,6 +58,18 @@ export default function Header({ onOpenPricing }: HeaderProps) {
 
         {/* 桌面端导航 */}
         <nav className="hidden md:flex items-center gap-5 text-xs font-medium text-zinc-400">
+          <Link
+            href="/video-to-quiz"
+            className="hover:text-amber-400 text-amber-300/90 font-semibold transition-colors flex items-center gap-1"
+          >
+            <span>Video to Quiz</span>
+          </Link>
+          <Link
+            href="/tools"
+            className="hover:text-amber-400 text-zinc-300 transition-colors flex items-center gap-1"
+          >
+            <span>Tools</span>
+          </Link>
           <Link
             href="/youtube-to-notes"
             className="hover:text-amber-400 text-zinc-300 transition-colors flex items-center gap-1"
@@ -197,6 +210,29 @@ export default function Header({ onOpenPricing }: HeaderProps) {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-zinc-800 bg-zinc-950/95 backdrop-blur-xl px-4 py-5 animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col space-y-3 text-sm font-medium">
+            <Link
+              href="/video-to-quiz"
+              onClick={closeMobileMenu}
+              className="flex items-center justify-between p-3 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-300 hover:bg-amber-400/20 transition-all font-semibold"
+            >
+              <div className="flex items-center gap-2.5">
+                <Sparkles className="w-4 h-4 text-amber-400" />
+                <span>Video to Quiz Generator</span>
+              </div>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-400 text-zinc-950 font-bold">
+                HOT
+              </span>
+            </Link>
+
+            <Link
+              href="/tools"
+              onClick={closeMobileMenu}
+              className="flex items-center gap-2.5 p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80 text-zinc-200 hover:border-amber-400/50 hover:text-white transition-all"
+            >
+              <Layers className="w-4 h-4 text-amber-400" />
+              <span>All Study Tools Directory</span>
+            </Link>
+
             <Link
               href="/topics"
               onClick={closeMobileMenu}

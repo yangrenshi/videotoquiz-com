@@ -30,6 +30,12 @@ export default function Footer() {
         {/* 右侧合规法律链接与客服邮箱 */}
         <div className="flex flex-col items-center sm:items-end gap-2">
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium">
+            <Link href="/video-to-quiz" className="hover:text-amber-400 text-amber-300 font-semibold transition-colors">
+              Video to Quiz
+            </Link>
+            <Link href="/tools" className="hover:text-amber-400 text-zinc-300 transition-colors">
+              Study Tools
+            </Link>
             <Link href="/youtube-to-notes" className="hover:text-amber-400 text-zinc-300 transition-colors">
               YouTube to Notes
             </Link>

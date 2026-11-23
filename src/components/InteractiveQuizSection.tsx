@@ -19,9 +19,10 @@ import NotesDisplay from '@/components/NotesDisplay';
 interface InteractiveQuizSectionProps {
   initialSampleKey?: string;
   customBanner?: React.ReactNode;
+  initialViewMode?: 'notes' | 'quiz' | 'flashcard';
 }
 
-export default function InteractiveQuizSection({ initialSampleKey, customBanner }: InteractiveQuizSectionProps = {}) {
+export default function InteractiveQuizSection({ initialSampleKey, customBanner, initialViewMode = 'notes' }: InteractiveQuizSectionProps = {}) {
   const { t, lang } = useLanguage();
   const { user, openLoginModal, refreshUser, openPricingModal } = useAuth();
   const [inputMode, setInputMode] = useState<InputMode>('url');
@@ -30,7 +31,7 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
   const [quizData, setQuizData] = useState<QuizResultData | null>(null);
   const [rawFullQuizData, setRawFullQuizData] = useState<QuizResultData | null>(null);
   const [isSample, setIsSample] = useState(false);
-  const [viewMode, setViewMode] = useState<'notes' | 'quiz' | 'flashcard'>('notes');
+  const [viewMode, setViewMode] = useState<'notes' | 'quiz' | 'flashcard'>(initialViewMode);
 
   // 答题状态
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -77,7 +78,7 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
         const sampleData = SAMPLE_QUIZZES[params.sampleKey];
         setQuizData(sampleData);
         setRawFullQuizData(sampleData);
-        setViewMode('notes');
+        setViewMode(initialViewMode);
         setQuizStartTime(Date.now());
         setIsLoading(false);
         setTimeout(() => {
@@ -117,7 +118,7 @@ export default function InteractiveQuizSection({ initialSampleKey, customBanner 
 
       setQuizData(json.data);
       setRawFullQuizData(json.data);
-      setViewMode('notes');
+      setViewMode(initialViewMode);
       setQuizStartTime(Date.now());
       // 自动归档至用户历史测验库
       saveQuiz(json.data, params.url);
