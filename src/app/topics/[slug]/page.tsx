@@ -14,7 +14,8 @@ import {
   ChevronRight,
   BrainCircuit,
   FileCheck2,
-  Clock
+  Clock,
+  HelpCircle
 } from 'lucide-react';
 import topicsData from '@/data/pseo-topics.json';
 import InteractiveQuizSection from '@/components/InteractiveQuizSection';
@@ -34,7 +35,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const item = topicsData.find((d) => d.slug === slug);
   if (!item) return {};
 
-  const rawTitle = item.metaTitle || '';
+  // 严格要求：频道名放在最前，紧跟 Quiz Generator
+  const rawTitle = item.metaTitle || `${item.sourceChannel} Quiz Generator — Make Video Quizzes & Tests`;
   const cleanBaseTitle = rawTitle.split('|')[0].trim();
   const normalizedTitle = `${cleanBaseTitle} | VideoToQuiz`;
 
@@ -64,24 +66,24 @@ export default async function PSeoTopicPage({ params }: PageProps) {
   const item = topicsData.find((d) => d.slug === slug);
   if (!item) notFound();
 
-  // 智能网状内链拓扑：优先筛选同学科/同领域高相关课程，再补充全网顶流，消除孤岛效应
+  // 智能网状内链：同主题优先，筛选 4 个相关测验页
   const sameCategoryTopics = topicsData.filter(
     (t) => t.slug !== item.slug && t.category === item.category
   );
   const otherTopics = topicsData.filter(
     (t) => t.slug !== item.slug && t.category !== item.category
   );
-  const relatedTopics = [...sameCategoryTopics, ...otherTopics].slice(0, 8);
+  const relatedTopics = [...sameCategoryTopics, ...otherTopics].slice(0, 4);
 
   // FAQ 结构化数据物料 (对齐 Schema 与页面可见 DOM)
   const faqs = [
     {
       question: `How do I turn ${item.sourceChannel} YouTube videos into interactive quizzes?`,
-      answer: `Simply copy any lecture or tutorial URL from ${item.sourceChannel} and paste it into our free YouTube to quiz generator. The AI automatically parses video transcripts, extracts core cognitive concepts, and creates multiple-choice questions with timestamped explanations in seconds.`
+      answer: `Simply copy any lecture or tutorial URL from ${item.sourceChannel} and paste it into our free video to quiz generator. The AI automatically parses video transcripts, extracts core cognitive concepts, and creates multiple-choice questions with timestamped explanations in seconds.`
     },
     {
       question: `Can I export quizzes generated from ${item.sourceChannel} to Anki or Quizlet?`,
-      answer: `Yes. Every test created with VideoToQuiz AI can be exported with 1-click into standard Anki (.apkg/csv) decks, Quizlet format, printable PDF study guides, or Markdown flashcards for permanent spaced repetition retention.`
+      answer: `Yes. Every test created with VideoToQuiz can be exported with 1-click into standard Anki (.apkg/csv) decks, Quizlet format, printable PDF study guides, or Markdown flashcards for permanent spaced repetition retention.`
     },
     {
       question: `Why is active testing better than re-watching ${item.sourceChannel} videos?`,
@@ -102,18 +104,41 @@ export default async function PSeoTopicPage({ params }: PageProps) {
         dateModified: '2026-11-03T00:00:00+00:00',
         author: {
           '@type': 'Organization',
-          name: 'VideoToQuiz AI Editorial Team',
+          name: 'VideoToQuiz Editorial Team',
           url: 'https://videotoquiz.com',
         },
         publisher: {
           '@type': 'Organization',
-          name: 'VideoToQuiz AI',
+          name: 'VideoToQuiz',
           url: 'https://videotoquiz.com',
         },
         about: {
           '@type': 'Thing',
           name: item.sourceChannel,
         },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://videotoquiz.com',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Study Topics',
+            item: 'https://videotoquiz.com/topics',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: item.title,
+            item: `https://videotoquiz.com/topics/${item.slug}`,
+          },
+        ],
       },
       {
         '@type': 'FAQPage',
@@ -167,6 +192,34 @@ export default async function PSeoTopicPage({ params }: PageProps) {
         <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
           {item.benefit}
         </p>
+
+        {/* 顶部专属导读 (Editorial Intro Guide) */}
+        {item.editorialIntro && (
+          <div className="p-5 sm:p-6 rounded-2xl bg-zinc-900/90 border border-amber-500/20 shadow-sm mt-4">
+            <div className="flex items-center gap-2 mb-2 text-xs font-mono font-bold text-amber-300">
+              <BookOpen className="w-4 h-4 text-amber-400" />
+              <span>Curator&apos;s Study Guide for {item.sourceChannel}</span>
+            </div>
+            <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-normal">
+              {item.editorialIntro}
+            </p>
+          </div>
+        )}
+
+        {/* 明确指向 /video-to-quiz 的 CTA 条 */}
+        <div className="flex items-center justify-between p-3.5 px-4 rounded-xl bg-amber-400/10 border border-amber-400/20 text-xs sm:text-sm text-zinc-200">
+          <div className="flex items-center gap-2">
+            <Zap className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>Have a custom video or lecture? Convert any video into questions with our dedicated tool.</span>
+          </div>
+          <Link
+            href="/video-to-quiz"
+            className="inline-flex items-center gap-1 text-xs font-bold text-amber-300 hover:text-amber-200 shrink-0 font-mono underline"
+          >
+            <span>Video to Quiz Generator</span>
+            <ArrowRight className="w-3 h-3" />
+          </Link>
+        </div>
       </header>
 
       {/* 3. 首屏核心交互出题组件 (即开即用) */}
@@ -255,9 +308,9 @@ export default async function PSeoTopicPage({ params }: PageProps) {
               <span className="text-xs font-mono font-bold text-amber-400">STEP 2</span>
               <h3 className="text-sm font-bold text-white mt-1 mb-1">Take Instant 5-Q Test</h3>
               <p className="text-xs text-zinc-400">
-                Run the video URL through our free{' '}
-                <Link href="/" className="text-amber-400 underline font-medium hover:text-amber-300">
-                  YouTube to quiz generator
+                Run the video URL through our dedicated{' '}
+                <Link href="/video-to-quiz" className="text-amber-400 underline font-medium hover:text-amber-300">
+                  Video to Quiz Generator
                 </Link>{' '}
                 to identify blind spots and solidify cognitive memory immediately.
               </p>
@@ -267,8 +320,8 @@ export default async function PSeoTopicPage({ params }: PageProps) {
               <h3 className="text-sm font-bold text-white mt-1 mb-1">Export to Anki</h3>
               <p className="text-xs text-zinc-400">
                 Schedule missed questions into spaced repetition for permanent retention using our{' '}
-                <Link href="/" className="text-amber-400 underline font-medium hover:text-amber-300">
-                  video to quiz AI tool
+                <Link href="/video-to-quiz" className="text-amber-400 underline font-medium hover:text-amber-300">
+                  Video to Quiz Generator
                 </Link>.
               </p>
             </div>
@@ -296,18 +349,44 @@ export default async function PSeoTopicPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* 5. 智能网状内链推荐矩阵 (L - Horizontal Matrix Links - 消除孤岛) */}
-        <section className="pt-8 border-t border-zinc-800 space-y-4">
+        {/* 5. 相关测验与核心功能页传权区块 (Related Quizzes & Video to Quiz Hub) */}
+        <section className="pt-8 border-t border-zinc-800 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <h2 className="text-lg font-bold text-white flex items-center gap-2">
-              <Layers className="w-4 h-4 text-amber-400" />
-              <span>Recommended Curricula & Related Lecture Quizzes</span>
+            <h2 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+              <Layers className="w-5 h-5 text-amber-400" />
+              <span>Related Video Quizzes & Curriculum Tests</span>
             </h2>
             <span className="text-xs font-mono text-zinc-500">
-              Curated for {item.category}
+              Filtered for {item.category}
             </span>
           </div>
 
+          {/* 重点加入：给 /video-to-quiz 集中传权的大卡片 */}
+          <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-amber-950/40 via-zinc-900 to-amber-950/20 border border-amber-400/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="space-y-1.5">
+              <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-400">
+                <Zap className="w-3.5 h-3.5 fill-current" />
+                <span>Primary Tool</span>
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-white">
+                <Link href="/video-to-quiz" className="hover:text-amber-300 transition-colors">
+                  Video to Quiz Generator
+                </Link>
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-300 max-w-xl">
+                Create multiple-choice tests, flashcards, and summary study guides from any YouTube video, lecture recording, or uploaded MP4 file.
+              </p>
+            </div>
+            <Link
+              href="/video-to-quiz"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 text-zinc-950 text-xs sm:text-sm font-bold hover:bg-amber-300 transition-colors shrink-0 shadow-sm"
+            >
+              <span>Try Video to Quiz</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* 同主题 3-5 个相关 topics 页 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
             {relatedTopics.map((rel) => (
               <Link
@@ -334,12 +413,20 @@ export default async function PSeoTopicPage({ params }: PageProps) {
             ))}
           </div>
 
-          <div className="pt-4 text-center">
+          {/* 明确的页尾 CTA 指向 /video-to-quiz */}
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs border-t border-zinc-800/60 pt-4">
+            <p className="text-zinc-400">
+              Need custom test questions from a specific lecture? Use our free{' '}
+              <Link href="/video-to-quiz" className="text-amber-400 font-semibold underline hover:text-amber-300">
+                Video to Quiz Generator
+              </Link>{' '}
+              to start in seconds.
+            </p>
             <Link
               href="/topics"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-400 hover:text-amber-300 font-mono"
+              className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 font-mono shrink-0"
             >
-              <span>View all {topicsData.length} educational topic directories</span>
+              <span>All {topicsData.length} Study Topics</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
