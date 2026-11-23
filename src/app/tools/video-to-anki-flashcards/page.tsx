@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description:
       'Convert YouTube videos into Anki flashcards instantly with AI. Extract key concepts into spaced-repetition decks (.apkg/csv) for 10x faster lecture mastery.',
     url: 'https://videotoquiz.com/tools/video-to-anki-flashcards',
-    siteName: 'VideoToQuiz AI',
+    siteName: 'VideoToQuiz',
     type: 'website',
   },
   twitter: {

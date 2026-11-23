@@ -17,13 +17,13 @@ export default function Footer() {
             <div className="w-6 h-6 rounded-md bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-300">
               <GraduationCap className="w-3.5 h-3.5" />
             </div>
-            <span className="font-bold text-zinc-200">Video to Notes AI</span>
+            <span className="font-bold text-zinc-200">VideoToQuiz</span>
           </div>
           <p className="text-[11px] text-zinc-500">
             {t.footer.brandDesc}
           </p>
           <p className="text-[11px] text-zinc-600">
-            © 2026 Video to Notes AI. All rights reserved.
+            © 2026 VideoToQuiz. All rights reserved.
           </p>
         </div>
 

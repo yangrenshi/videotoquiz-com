@@ -51,10 +51,7 @@ export default function Header({ onOpenPricing }: HeaderProps) {
             <GraduationCap className="w-4 h-4 text-zinc-200" />
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="font-bold text-base text-zinc-100 tracking-tight">Video to Notes</span>
-            <span className="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400 border border-zinc-700/60">
-              AI
-            </span>
+            <span className="font-bold text-base text-zinc-100 tracking-tight">VideoToQuiz</span>
           </div>
         </Link>
 

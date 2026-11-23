@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: 'AI Quiz Generator for Medical Students | VideoToQuiz',
     description: 'Convert heavy medical video lectures into active recall quizzes and Anki decks with timestamped rationales.',
     url: 'https://videotoquiz.com/for/medical-students',
-    siteName: 'VideoToQuiz AI',
+    siteName: 'VideoToQuiz',
     type: 'article',
   },
   twitter: {

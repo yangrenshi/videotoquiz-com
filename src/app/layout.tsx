@@ -9,8 +9,8 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import { AuthProvider } from '@/context/AuthContext';
 
 export const metadata: Metadata = {
-  title: 'Video to Notes — Turn Any Video into Study Notes',
-  description: 'The fastest AI video to notes generator. Convert any video lecture into structured study notes, key takeaways, and flashcards in 10s. Study 10x faster.',
+  title: 'Video to Quiz & Notes Generator | VideoToQuiz',
+  description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Study and retain concepts 10x faster.',
   keywords: [
     'video to notes',
     'video to notes ai',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     'video quiz maker',
     'anki flashcard generator'
   ],
-  authors: [{ name: 'Video to Notes Team', url: 'https://videotoquiz.com' }],
+  authors: [{ name: 'VideoToQuiz Team', url: 'https://videotoquiz.com' }],
   metadataBase: new URL('https://videotoquiz.com'),
   alternates: {
     canonical: 'https://videotoquiz.com/',
@@ -42,16 +42,16 @@ export const metadata: Metadata = {
     'waffo-verify': '624137efca83e9d5f6d0281819f60d31',
   },
   openGraph: {
-    title: 'Video to Notes — Turn Any Video into Study Notes',
-    description: 'The fastest AI video to notes generator. Convert any video lecture into structured study notes, key takeaways, and flashcards in 10s. Study 10x faster.',
+    title: 'Video to Quiz & Notes Generator | VideoToQuiz',
+    description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Study and retain concepts 10x faster.',
     url: 'https://videotoquiz.com/',
-    siteName: 'Video to Notes',
+    siteName: 'VideoToQuiz',
     images: [
       {
         url: '/og-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Video to Notes - AI Study Notes Generator Preview',
+        alt: 'VideoToQuiz - AI Video to Quiz and Notes Generator Preview',
       },
     ],
     locale: 'en_US',
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Video to Notes — Turn Any Video into Study Notes',
-    description: 'The fastest AI video to notes generator. Convert any video lecture into structured study notes, key takeaways, and flashcards in 10s. Study 10x faster.',
+    title: 'Video to Quiz & Notes Generator | VideoToQuiz',
+    description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Study and retain concepts 10x faster.',
     images: ['/og-preview.png'],
   },
   verification: {
@@ -79,7 +79,7 @@ export default function RootLayout({
       {
         '@type': 'Organization',
         '@id': 'https://videotoquiz.com/#organization',
-        name: 'Video to Notes',
+        name: 'VideoToQuiz',
         url: 'https://videotoquiz.com',
         logo: 'https://videotoquiz.com/icon.png',
         sameAs: [
@@ -93,24 +93,24 @@ export default function RootLayout({
         '@type': 'WebSite',
         '@id': 'https://videotoquiz.com/#website',
         url: 'https://videotoquiz.com',
-        name: 'Video to Notes',
+        name: 'VideoToQuiz',
         publisher: {
           '@id': 'https://videotoquiz.com/#organization'
         },
         inLanguage: 'en-US',
         datePublished: '2026-10-17T00:00:00+00:00',
-        dateModified: '2026-11-13T21:00:00+00:00'
+        dateModified: '2026-11-23T19:30:00+00:00'
       },
       {
         '@type': 'WebApplication',
         '@id': 'https://videotoquiz.com/#webapp',
-        name: 'Video to Notes AI',
+        name: 'VideoToQuiz',
         url: 'https://videotoquiz.com',
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'All',
         author: {
           '@type': 'Organization',
-          name: 'Video to Notes Team'
+          name: 'VideoToQuiz Team'
         },
         datePublished: '2026-10-17T00:00:00+00:00',
         dateModified: '2026-11-13T21:00:00+00:00',

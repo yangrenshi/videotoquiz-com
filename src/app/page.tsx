@@ -9,7 +9,7 @@ export default function HomePage() {
       {/* 头部 Hero 区域 (SSR 语义直出，严格聚焦主词 video to notes，H1 纯净单一) */}
       <section className="text-center max-w-3xl mx-auto pt-8 pb-6">
         <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight mb-4">
-          Video to Notes
+          Video to Quiz &amp; Notes Generator
         </h1>
 
         <p className="text-base sm:text-lg text-amber-400/90 font-medium max-w-2xl mx-auto mb-3">

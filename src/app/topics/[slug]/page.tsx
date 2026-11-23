@@ -34,22 +34,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const item = topicsData.find((d) => d.slug === slug);
   if (!item) return {};
 
+  const rawTitle = item.metaTitle || '';
+  const cleanBaseTitle = rawTitle.split('|')[0].trim();
+  const normalizedTitle = `${cleanBaseTitle} | VideoToQuiz`;
+
   return {
-    title: item.metaTitle,
+    title: normalizedTitle,
     description: item.metaDesc,
     alternates: {
       canonical: `https://videotoquiz.com/topics/${item.slug}`,
     },
     openGraph: {
-      title: item.metaTitle,
+      title: normalizedTitle,
       description: item.metaDesc,
       url: `https://videotoquiz.com/topics/${item.slug}`,
-      siteName: 'VideoToQuiz AI',
+      siteName: 'VideoToQuiz',
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
-      title: item.metaTitle,
+      title: normalizedTitle,
       description: item.metaDesc,
     },
   };

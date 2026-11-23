@@ -5,16 +5,16 @@ import { GraduationCap, ArrowRight, BookOpen, Sparkles, Layers } from 'lucide-re
 import topicsData from '@/data/pseo-topics.json';
 
 export const metadata: Metadata = {
-  title: 'YouTube Lecture & Channel Quiz Directory | VideoToQuiz AI',
+  title: 'YouTube Lecture & Channel Quiz Directory | VideoToQuiz',
   description: 'Explore interactive active recall quizzes for MIT, Harvard, Khan Academy, Huberman Lab, and top educational YouTube video channels for free.',
   alternates: {
     canonical: 'https://videotoquiz.com/topics',
   },
   openGraph: {
-    title: 'YouTube Lecture & Channel Quiz Directory | VideoToQuiz AI',
+    title: 'YouTube Lecture & Channel Quiz Directory | VideoToQuiz',
     description: 'Explore interactive quizzes for MIT, Harvard, Khan Academy, Huberman Lab, and top educational YouTube channels.',
     url: 'https://videotoquiz.com/topics',
-    siteName: 'VideoToQuiz AI',
+    siteName: 'VideoToQuiz',
   },
 };
 

@@ -42,8 +42,8 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
     ? quiz.summary.slice(0, 160)
     : 'Take this interactive active-recall test generated from YouTube video lectures. Test your retention with instant explanations.';
 
-  const pageTitle = `Challenge: Can You Ace This Quiz on "${videoTitle}"? (${totalQuestions} Qs) | VideoToQuiz AI`;
-  const pageDesc = `${summary} Score 100% on active recall questions generated automatically by VideoToQuiz AI.`;
+  const pageTitle = `Challenge: Can You Ace This Quiz on "${videoTitle}"? (${totalQuestions} Qs) | VideoToQuiz`;
+  const pageDesc = `${summary} Score 100% on active recall questions generated automatically by VideoToQuiz.`;
   const ogUrl = `https://videotoquiz.com/quiz/${id}`;
 
   return {
@@ -56,7 +56,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
       title: pageTitle,
       description: pageDesc,
       url: ogUrl,
-      siteName: 'VideoToQuiz AI',
+      siteName: 'VideoToQuiz',
       type: 'website',
       images: [
         {
