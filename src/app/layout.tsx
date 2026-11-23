@@ -122,14 +122,6 @@ export default function RootLayout({
           priceCurrency: 'USD',
           availability: 'https://schema.org/InStock',
         },
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          ratingCount: '1280',
-          reviewCount: '1280',
-          bestRating: '5',
-          worstRating: '1',
-        },
         featureList: [
           'Instant Video to Notes Summary Outline',
           'Cornell Notes Format with Cues and Key Points',

@@ -115,14 +115,6 @@ export default function VideoToQuizPage() {
           priceCurrency: 'USD',
           availability: 'https://schema.org/InStock',
         },
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          ratingCount: '1540',
-          reviewCount: '1540',
-          bestRating: '5',
-          worstRating: '1',
-        },
         featureList: [
           'Automatic YouTube Video to Quiz Generation',
           'Multiple Choice and True False Question Formatting',
