@@ -372,6 +372,25 @@ export default function SeoGeoContentSection() {
           </Link>
 
           <Link
+            href="/youtube-to-notes"
+            className="group p-5 rounded-2xl bg-gradient-to-b from-red-500/10 to-zinc-900/60 border border-red-500/30 hover:border-red-400 hover:bg-red-500/20 transition-all flex flex-col justify-between"
+          >
+            <div>
+              <div className="text-[11px] font-mono text-red-400 mb-2 font-semibold">YOUTUBE LECTURES</div>
+              <h3 className="text-sm font-bold text-zinc-100 group-hover:text-red-300 transition-colors mb-2">
+                YouTube to Notes
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed">
+                Convert long YouTube videos, university podcasts, and tutorials into structured study notes and summaries in seconds.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-red-500/20 text-[11px] font-mono text-red-400 flex items-center justify-between">
+              <span>YouTube to Notes</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </Link>
+
+          <Link
             href="/pricing"
             className="group p-5 rounded-2xl bg-gradient-to-b from-amber-500/10 to-zinc-900/60 border border-amber-500/30 hover:border-amber-400 hover:bg-amber-500/20 transition-all flex flex-col justify-between"
           >

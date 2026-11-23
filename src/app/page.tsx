@@ -17,7 +17,7 @@ export default function HomePage() {
         </p>
 
         <p className="text-sm sm:text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed mb-4 font-normal">
-          The fastest AI <strong>video to notes</strong> generator. Convert online lectures, college courses, and tutorial videos into comprehensive study outlines, key takeaways, and printable Cornell notes. Boost exam retention with our automated <strong>video to notes</strong> workflow and active recall quizzes.
+          The fastest AI <strong>video to notes</strong> generator. Convert online lectures, college courses, and tutorial videos into comprehensive study outlines, key takeaways, and printable Cornell notes. Boost exam retention with our automated <strong>video to notes</strong> workflow and active recall quizzes. Looking specifically for YouTube links? Use our dedicated <a href="/youtube-to-notes" className="text-amber-400 underline hover:text-amber-300 font-medium">YouTube to Notes</a> converter.
         </p>
         <p className="text-sm text-zinc-400 max-w-2xl mx-auto leading-relaxed">
           Public pricing, no login required to test: Free study notes preview, Starter $4.99 one-time for 25 conversions, Pro $9.99/mo for 200 conversions.{' '}
