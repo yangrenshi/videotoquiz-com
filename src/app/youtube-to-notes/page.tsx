@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Youtube, CheckCircle2, BookOpen, Sparkles, HelpCircle, ArrowRight, Clock, ListChecks, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'YouTube to Notes — Convert YouTube Videos into Study Notes | VideoToQuiz',
+  title: 'YouTube to Notes Converter — VideoToQuiz',
   description: 'Convert YouTube videos into structured study notes, key takeaways, and flashcards in seconds. Free AI YouTube to notes converter for lectures and tutorials.',
   keywords: [
     'youtube to notes',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: 'https://videotoquiz.com/youtube-to-notes',
   },
   openGraph: {
-    title: 'YouTube to Notes — Convert YouTube Videos into Study Notes | VideoToQuiz',
+    title: 'YouTube to Notes Converter — VideoToQuiz',
     description: 'Convert YouTube videos into structured study notes, key takeaways, and flashcards in seconds. Free AI YouTube to notes converter for lectures and tutorials.',
     url: 'https://videotoquiz.com/youtube-to-notes',
     siteName: 'VideoToQuiz',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'YouTube to Notes — Convert YouTube Videos into Study Notes | VideoToQuiz',
+    title: 'YouTube to Notes Converter — VideoToQuiz',
     description: 'Convert YouTube videos into structured study notes, key takeaways, and flashcards in seconds. Free AI YouTube to notes converter for lectures and tutorials.',
   },
 };

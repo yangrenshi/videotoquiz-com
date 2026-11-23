@@ -9,10 +9,11 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import { AuthProvider } from '@/context/AuthContext';
 
 export const metadata: Metadata = {
-  title: 'Video to Quiz & Notes Generator | VideoToQuiz',
-  description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Master any subject 10x faster.',
+  title: 'Video to Notes Generator — Turn Any Video into Study Notes | VideoToQuiz',
+  description: 'The fastest AI video to notes generator. Turn videos into structured study notes, Cornell summaries, and Anki flashcards in 10s. Master any subject 10x faster.',
   keywords: [
     'video to notes',
+    'video to notes generator',
     'video to notes ai',
     'video notes generator',
     'youtube to notes',
@@ -42,8 +43,8 @@ export const metadata: Metadata = {
     'waffo-verify': '624137efca83e9d5f6d0281819f60d31',
   },
   openGraph: {
-    title: 'Video to Quiz & Notes Generator | VideoToQuiz',
-    description: 'The fastest AI video to notes generator. Turn videos into quizzes, structured study notes, and Anki flashcards in 10s. Master any subject 10x faster.',
+    title: 'Video to Notes Generator — Turn Any Video into Study Notes | VideoToQuiz',
+    description: 'The fastest AI video to notes generator. Turn videos into structured study notes, Cornell summaries, and Anki flashcards in 10s. Master any subject 10x faster.',
     url: 'https://videotoquiz.com/',
     siteName: 'VideoToQuiz',
     images: [
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
         url: '/og-preview.png',
         width: 1200,
         height: 630,
-        alt: 'VideoToQuiz - AI Video to Quiz and Notes Generator Preview',
+        alt: 'VideoToQuiz - AI Video to Notes and Quiz Generator Preview',
       },
     ],
     locale: 'en_US',

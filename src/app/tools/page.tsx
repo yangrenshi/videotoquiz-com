@@ -13,6 +13,7 @@ import {
   Video,
   GraduationCap
 } from 'lucide-react';
+import topicsData from '@/data/pseo-topics.json';
 
 export const metadata: Metadata = {
   title: 'AI Video Study Tools Directory | VideoToQuiz',
@@ -91,7 +92,7 @@ export default function ToolsIndexPage() {
       badge: 'Curriculum',
       icon: <BookOpen className="w-5 h-5 text-purple-400" />,
       description: 'Browse pre-generated active recall quizzes covering top university courses including Harvard CS50, MIT OCW, Khan Academy, and Huberman Lab.',
-      features: ['46+ top channel curricula', 'Instant diagnostic practice', 'Free curriculum quizzes']
+      features: [`${topicsData.length} top channel curricula`, 'Instant diagnostic practice', 'Free curriculum quizzes']
     }
   ];
 

@@ -16,6 +16,7 @@ import {
   Share2, 
   Download,
   Check,
+  X,
   Zap
 } from 'lucide-react';
 import InteractiveQuizSection from '@/components/InteractiveQuizSection';
@@ -41,16 +42,64 @@ export const metadata: Metadata = {
     description: 'Free AI video to quiz generator. Turn YouTube lectures and video files into multiple choice quizzes in seconds with instant explanations. Try it free.',
     url: 'https://videotoquiz.com/video-to-quiz',
     siteName: 'VideoToQuiz',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-video-to-quiz.png',
+        width: 1200,
+        height: 630,
+        alt: 'Video to Quiz Generator — VideoToQuiz',
+      },
+    ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Video to Quiz Generator — Turn Any Video into a Quiz',
     description: 'Free AI video to quiz generator. Turn YouTube lectures and video files into multiple choice quizzes in seconds with instant explanations. Try it free.',
+    images: ['https://videotoquiz.com/og-video-to-quiz.png'],
   },
 };
 
 export default function VideoToQuizPage() {
+  const faqList = [
+    {
+      q: 'Can I use this video to quiz generator for free?',
+      a: 'Yes! You can generate interactive quizzes from videos completely free without even registering an account. Free guest previews let you test sample educational videos or paste public YouTube links right away. Creating a free account grants additional complimentary generation credits.'
+    },
+    {
+      q: 'How long of a video can I generate a quiz from?',
+      a: 'Our AI model supports videos ranging from quick 3-minute tutorials to extensive 3-hour college lectures and conference keynotes. The engine parses the full spoken transcript and semantic timeline, extracting high-yield cognitive checkpoints across the entire recording.'
+    },
+    {
+      q: 'How does Video to Quiz extract questions from YouTube and video files?',
+      a: 'VideoToQuiz utilizes high-speed transcript parsers and speech-to-text models to retrieve timestamped spoken audio. Once ingested, large language reasoning models (DeepSeek-V3) evaluate the lecture against Blooms Taxonomy, filtering conversational filler and formulating diagnostic multiple-choice questions with precise timestamped rationales.'
+    },
+    {
+      q: 'Why is active recall testing superior to passive video watching?',
+      a: 'Cognitive psychology research demonstrates that passive video watching leads to the "illusion of competence," where learners feel they understand material simply because it is presented fluently. The Testing Effect proves that actively retrieving knowledge from memory reorganizes neural synaptic connections and interrupts the forgetting curve, increasing long-term retention by over 75%.'
+    },
+    {
+      q: 'Can I generate quizzes from videos without closed captions or auto-generated subtitles?',
+      a: 'Yes. If a video lacks native captions or has regional restrictions, our platform provides an instant one-click transcript and lecture-notes fallback. Users can simply paste any lecture transcript, article, or slide transcript into the custom prompt window to generate full interactive quizzes instantly.'
+    },
+    {
+      q: 'Can I export the quiz questions to Google Forms, Kahoot, or Anki?',
+      a: 'Yes. Every generated test can be exported in one click as formatted text, Markdown, Anki flashcard decks (.apkg/csv), or printable PDF question sheets. You can easily copy and paste formatted question stems and distractor choices directly into Google Forms, Kahoot, Canvas, or Moodle.'
+    },
+    {
+      q: 'How accurate are the generated video quiz questions?',
+      a: 'Our quiz generation engine is trained on Blooms Taxonomy and pedagogical assessment methodologies. Rather than writing trivial keyword-matching questions, it generates diagnostic conceptual questions with plausible distractors and timestamped explanations citing the exact rationale from the speaker.'
+    },
+    {
+      q: 'What languages are supported by the video to quiz maker?',
+      a: 'The tool supports videos in over 50 languages, including English, Spanish, French, German, Mandarin Chinese, Japanese, Portuguese, Hindi, and Arabic. The AI accurately parses international speech and generates grammatically polished assessments in your preferred language.'
+    },
+    {
+      q: 'What types of videos produce the best quiz results?',
+      a: 'Academic lectures (MIT OpenCourseWare, Harvard CS50, Stanford Online), technical coding tutorials, medical explainers, historical documentaries, and business case analyses yield exceptional quiz fidelity. High-information-density videos allow the AI to extract precise conceptual questions.'
+    }
+  ];
+
   const jsonLdGraph = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -84,48 +133,14 @@ export default function VideoToQuizPage() {
       },
       {
         '@type': 'FAQPage',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'Can I use this video to quiz generator for free?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Yes! You can generate interactive quizzes from videos completely free without even registering an account. Free guest previews let you test sample educational videos or paste public YouTube links right away. Creating a free account grants additional complimentary generation credits.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'How long of a video can I generate a quiz from?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Our AI model supports videos ranging from quick 3-minute tutorials to extensive 3-hour college lectures and conference keynotes. The engine parses the full spoken transcript and semantic timeline, extracting high-yield cognitive checkpoints across the entire recording.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Can I export the quiz questions to Google Forms or Kahoot?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Yes. Every generated test can be exported in one click as formatted text, Markdown, Anki flashcard decks (.apkg/csv), or printable PDF question sheets. You can easily copy and paste formatted question stems and distractor choices directly into Google Forms, Kahoot, Canvas, or Moodle.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'How accurate are the generated video quiz questions?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Our quiz generation engine is trained on Blooms Taxonomy and pedagogical assessment methodologies. Rather than writing trivial keyword-matching questions, it generates diagnostic conceptual questions with plausible distractors and timestamped explanations citing the exact rationale from the speaker.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'What languages are supported by the video to quiz maker?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'The tool supports videos in over 50 languages, including English, Spanish, French, German, Mandarin Chinese, Japanese, Portuguese, Hindi, and Arabic. The AI accurately parses international speech and generates grammatically polished assessments in your preferred language.',
-            },
-          },
-        ],
+        mainEntity: faqList.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.a
+          }
+        }))
       }
     ]
   };
@@ -162,19 +177,19 @@ export default function VideoToQuizPage() {
         </p>
       </section>
 
-      {/* 模块 1: 立刻可用的交互出题与做题插槽 (默认直接进入测验答题体验) */}
+      {/* 模块 1: 立刻可用的交互出题与做题插槽 */}
       <InteractiveQuizSection initialViewMode="quiz" />
 
       {/* 公开定价卡片 */}
       <PublicPricingSection placement="page" />
 
-      {/* 深度长文知识库 (正文 800+ 词，包含模块 2 至 7) */}
+      {/* 深度长文知识库 (正文包含对比表、示例与全量 FAQ) */}
       <article className="w-full max-w-4xl mx-auto mt-16 pt-12 border-t border-zinc-800 space-y-16 text-zinc-200">
         
         {/* 模块 2: 三步流程 (3-Step Workflow) */}
         <section className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">Fast & Automated</span>
+            <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">Fast &amp; Automated</span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               How Video to Quiz Works in 3 Simple Steps
             </h2>
@@ -238,7 +253,6 @@ export default function VideoToQuizPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* 平台与格式 */}
             <div className="bg-zinc-950/70 border border-zinc-800/80 rounded-xl p-5 space-y-4">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <UploadCloud className="w-4 h-4 text-amber-400" />
@@ -264,7 +278,6 @@ export default function VideoToQuizPage() {
               </ul>
             </div>
 
-            {/* 题目类型 */}
             <div className="bg-zinc-950/70 border border-zinc-800/80 rounded-xl p-5 space-y-4">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <Layers className="w-4 h-4 text-blue-400" />
@@ -292,6 +305,70 @@ export default function VideoToQuizPage() {
           </div>
         </section>
 
+        {/* 原首页搬移进来的对比表: Feature Benchmark Matrix */}
+        <section className="space-y-6">
+          <div className="space-y-2">
+            <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">Feature Benchmark</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              YouTube to Quiz AI vs. Traditional Note-Taking &amp; Generic Quiz Tools
+            </h2>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              A granular comparison detailing why specialized video-to-quiz architecture outperforms traditional video summaries and manual flashcard creation.
+            </p>
+          </div>
+
+          <div className="w-full overflow-x-auto rounded-2xl border border-zinc-800 bg-zinc-900/60 shadow-xl">
+            <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[640px]">
+              <thead>
+                <tr className="border-b border-zinc-800 bg-zinc-950 text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                  <th className="py-3.5 px-5">Capability / Metric</th>
+                  <th className="py-3.5 px-4 text-zinc-100 bg-zinc-800/40 font-bold">YouTube to Quiz AI</th>
+                  <th className="py-3.5 px-4 text-zinc-500 font-medium">Standard Note Summarizers</th>
+                  <th className="py-3.5 px-4 text-zinc-500 font-medium">Manual Flashcard Decks</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-zinc-800/70">
+                <tr className="hover:bg-zinc-800/20">
+                  <td className="py-3 px-5 font-medium text-zinc-200">Interactive Knowledge Testing</td>
+                  <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">Immediate 5-Question Test</td>
+                  <td className="py-3 px-4 text-zinc-400">Passive Bullet Points Only</td>
+                  <td className="py-3 px-4 text-zinc-400">Requires Hours of Manual Entry</td>
+                </tr>
+                <tr className="hover:bg-zinc-800/20">
+                  <td className="py-3 px-5 font-medium text-zinc-200">Timestamped Explanations</td>
+                  <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">Native Timestamp References</td>
+                  <td className="py-3 px-4 text-zinc-400">Generic Chapter Headings</td>
+                  <td className="py-3 px-4 text-zinc-400">None</td>
+                </tr>
+                <tr className="hover:bg-zinc-800/20">
+                  <td className="py-3 px-5 font-medium text-zinc-200">Generation Turnaround Time</td>
+                  <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">&lt; 10 Seconds</td>
+                  <td className="py-3 px-4 text-zinc-400">15 - 30 Seconds</td>
+                  <td className="py-3 px-4 text-zinc-400">30 - 60 Minutes</td>
+                </tr>
+                <tr className="hover:bg-zinc-800/20">
+                  <td className="py-3 px-5 font-medium text-zinc-200">Restricted Caption Fallback</td>
+                  <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">Direct Transcript Paste Mode</td>
+                  <td className="py-3 px-4 text-rose-400">Errors Out on No Subtitles</td>
+                  <td className="py-3 px-4 text-zinc-400">Manual Transcribing</td>
+                </tr>
+                <tr className="hover:bg-zinc-800/20">
+                  <td className="py-3 px-5 font-medium text-zinc-200">Export &amp; Study Ecosystem</td>
+                  <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">PDF + Anki Flashcards</td>
+                  <td className="py-3 px-4 text-zinc-400">Markdown Copy Only</td>
+                  <td className="py-3 px-4 text-zinc-400">Anki / Quizlet</td>
+                </tr>
+                <tr className="hover:bg-zinc-800/20">
+                  <td className="py-3 px-5 font-medium text-zinc-200">Free Starting Tier</td>
+                  <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">20 Credits + Free Samples</td>
+                  <td className="py-3 px-4 text-zinc-400">Limited Trial / Paywall</td>
+                  <td className="py-3 px-4 text-zinc-400">Free but Labor Intensive</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* 模块 4: 真实的示例展示 (Real-World Demonstration) */}
         <section className="space-y-6">
           <div className="space-y-2">
@@ -305,7 +382,6 @@ export default function VideoToQuizPage() {
           </div>
 
           <div className="space-y-4">
-            {/* 样例题目 1 */}
             <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-3">
               <div className="flex items-center justify-between text-xs text-zinc-400">
                 <span className="font-mono text-amber-400 font-bold">Question 1 · Computational Complexity</span>
@@ -333,7 +409,6 @@ export default function VideoToQuizPage() {
               </div>
             </div>
 
-            {/* 样例题目 2 */}
             <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-3">
               <div className="flex items-center justify-between text-xs text-zinc-400">
                 <span className="font-mono text-amber-400 font-bold">Question 2 · Language Architecture</span>
@@ -361,7 +436,6 @@ export default function VideoToQuizPage() {
               </div>
             </div>
 
-            {/* 样例题目 3 */}
             <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-3">
               <div className="flex items-center justify-between text-xs text-zinc-400">
                 <span className="font-mono text-amber-400 font-bold">Question 3 · Data Structure Performance</span>
@@ -436,7 +510,7 @@ export default function VideoToQuizPage() {
           </div>
         </section>
 
-        {/* 模块 6: FAQ 5 条 (常见问答) */}
+        {/* 模块 6: 整合的全量 FAQ (含原首页的 quiz 核心深度问答) */}
         <section className="space-y-6">
           <div className="space-y-2">
             <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">Got Questions?</span>
@@ -445,55 +519,21 @@ export default function VideoToQuizPage() {
               Video to Quiz Frequently Asked Questions
             </h2>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              Everything you need to know about our video to quiz generation engine, exports, and language capabilities.
+              Everything you need to know about our video to quiz generation engine, active recall science, exports, and language capabilities.
             </p>
           </div>
 
           <div className="space-y-4">
-            <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-xl space-y-2">
-              <h3 className="font-semibold text-white text-base">
-                1. Can I use the video to quiz generator for free?
-              </h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Yes! You can generate interactive quizzes from videos completely free without even registering an account. Free guest previews let you test sample educational videos or paste public YouTube links right away. Creating a free account grants additional complimentary generation credits.
-              </p>
-            </div>
-
-            <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-xl space-y-2">
-              <h3 className="font-semibold text-white text-base">
-                2. How long of a video can I generate a quiz from?
-              </h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Our AI model supports videos ranging from quick 3-minute tutorials to extensive 3-hour college lectures and conference keynotes. The engine parses the full spoken transcript and semantic timeline, extracting high-yield cognitive checkpoints across the entire recording.
-              </p>
-            </div>
-
-            <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-xl space-y-2">
-              <h3 className="font-semibold text-white text-base">
-                3. Can I export the quiz questions to Google Forms or Kahoot?
-              </h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Yes. Every generated test can be exported in one click as formatted text, Markdown, Anki flashcard decks (.apkg/csv), or printable PDF question sheets. You can easily copy and paste formatted question stems and distractor choices directly into Google Forms, Kahoot, Canvas, or Moodle.
-              </p>
-            </div>
-
-            <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-xl space-y-2">
-              <h3 className="font-semibold text-white text-base">
-                4. How accurate are the generated video quiz questions?
-              </h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Our quiz generation engine is trained on Blooms Taxonomy and pedagogical assessment methodologies. Rather than writing trivial keyword-matching questions, it generates diagnostic conceptual questions with plausible distractors and timestamped explanations citing the exact rationale from the speaker.
-              </p>
-            </div>
-
-            <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-xl space-y-2">
-              <h3 className="font-semibold text-white text-base">
-                5. What languages are supported by the video to quiz maker?
-              </h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                The tool supports videos in over 50 languages, including English, Spanish, French, German, Mandarin Chinese, Japanese, Portuguese, Hindi, and Arabic. The AI accurately parses international speech and generates grammatically polished assessments in your preferred language.
-              </p>
-            </div>
+            {faqList.map((item, idx) => (
+              <div key={idx} className="bg-zinc-900 border border-zinc-800 p-5 rounded-xl space-y-2">
+                <h3 className="font-semibold text-white text-base">
+                  {idx + 1}. {item.q}
+                </h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  {item.a}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 

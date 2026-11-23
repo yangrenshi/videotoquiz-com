@@ -36,7 +36,7 @@ export default function TopicsIndexPage() {
         </h1>
 
         <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
-          Select your favorite university course, science podcast, or programming bootcamp below. Turn long-form educational videos into high-yield active recall tests and Anki flashcards instantly.
+          Explore our {topicsData.length} curated university courses, science podcasts, and programming bootcamps. Turn long-form educational videos into high-yield active recall tests and Anki flashcards instantly.
         </p>
       </div>
 

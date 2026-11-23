@@ -1,32 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
-import { BookOpen, BrainCircuit, Check, X, HelpCircle, Layers, Award, Sparkles, Zap, Clock, ShieldCheck } from 'lucide-react';
+import { BookOpen, BrainCircuit, Check, X, HelpCircle, Layers, Award, Sparkles, Zap, Clock, ShieldCheck, FileText, ArrowRight } from 'lucide-react';
 
 export default function SeoGeoContentSection() {
   const faqData = [
     {
-      q: 'How does YouTube to Quiz AI extract knowledge from YouTube videos?',
-      a: 'YouTube to Quiz AI utilizes advanced residential proxy parsing combined with deep linguistic tokenization to retrieve full timestamped transcripts. Once the raw audio transcript is ingested, large language reasoning models (DeepSeek-V3) decompose the lecture into core conceptual clusters, identifying key terminology, cause-and-effect relationships, and testing points to generate validated multiple-choice questions with precise context citations.'
+      q: 'How does the AI Video to Notes Generator work?',
+      a: 'The engine ingests video transcripts via high-speed subtitle parsing or speech-to-text models. Large language reasoning models (DeepSeek-V3) evaluate the spoken narration, eliminate filler words, extract core conceptual hierarchies, and automatically organize key takeaways into comprehensive bulleted outlines and Cornell study notes with timestamped references.'
     },
     {
-      q: 'Why is interactive active recall superior to passive video watching?',
-      a: 'Cognitive psychology research demonstrates that passive video watching leads to the "illusion of competence," where learners feel they understand material simply because it is presented fluently. The Testing Effect proves that actively retrieving knowledge from memory reorganizes neural synaptic connections and interrupts the Ebbinghaus forgetting curve, increasing 30-day knowledge retention from 15% to over 75%.'
+      q: 'Can I format generated notes into Cornell Note-Taking templates?',
+      a: 'Yes. Our automated note generation workflow categorizes lecture material into standard Cornell sections: Cues/Keywords in the left margin, detailed Lecture Notes in the main body, and a high-yield 2-3 sentence executive summary at the bottom, making exam review dramatically faster.'
     },
     {
-      q: 'Can I generate quizzes from videos without closed captions or auto-generated subtitles?',
-      a: 'Yes. If a YouTube video lacks native captions or has regional restrictions, our platform provides an instant one-click transcript and lecture-notes fallback. Users can simply paste any lecture transcript, article, or slide transcript into the custom prompt window to generate full interactive quizzes instantly.'
+      q: 'Can I export study notes to Markdown, PDF, or Anki flashcards?',
+      a: 'Yes. Every generated study guide can be exported with one click into clean Markdown (.md) for Notion/Obsidian, formatted printable PDF worksheets, or direct Anki-compatible flashcard decks (.csv) for spaced repetition memorization.'
     },
     {
-      q: 'Can I export quizzes into Anki flashcards and printable PDF worksheets?',
-      a: 'Yes. Every generated test can be exported directly as formatted Anki-compatible flashcard decks (.txt / .apkg structure) or compiled into high-resolution academic study posters and printable PDF test sheets with complete answer keys and timestamped video references.'
+      q: 'Does it support long university lectures or webinars exceeding 2 hours?',
+      a: 'Yes. The system processes videos ranging from brief 5-minute software tutorials to extensive 3-hour academic seminars and keynote talks. Transcripts are chunked semantically to ensure no critical formulas, theorems, or historical context are missed.'
     },
     {
-      q: 'Is YouTube to Quiz AI free to use?',
-      a: 'Yes! Every new learner receives 20 free credits upon signing in with Google, sufficient to analyze multiple video lectures and generate up to 20 complete interactive quiz questions. We also provide permanently free, curated sample quizzes covering computer science, biology, and finance so anyone can test the system without restrictions.'
+      q: 'What video sources and platforms are supported?',
+      a: 'You can paste public YouTube links, web lecture URLs, or directly upload local video/audio files (MP4, MOV, WebM, MP3). If a video lacks captions or has strict geo-blocks, you can paste raw speech transcripts directly into the prompt box.'
     },
     {
-      q: 'What types of YouTube videos produce the best quiz results?',
-      a: 'Academic lectures (MIT OpenCourseWare, Stanford Online), technical software tutorials, medical and biological explainers, historical documentaries, and business case analyses yield exceptional quiz fidelity. High-information-density videos with structured spoken narration allow the AI to extract precise conceptual questions.'
+      q: 'Can I also generate interactive quizzes from my video notes?',
+      a: 'Yes! If you prefer active recall testing and multiple-choice diagnostics rather than reading outlines, use our dedicated Video to Quiz Generator to turn any video into practice exam questions in seconds.'
     }
   ];
 
@@ -50,36 +50,36 @@ export default function SeoGeoContentSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* 1. GEO Authoritative Definition Box */}
+      {/* 1. GEO Authoritative Definition Box (聚焦 Video to Notes) */}
       <div className="max-w-4xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30 mb-4">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>AUTHORITATIVE OVERVIEW & DEFINITION</span>
+          <span>AUTHORITATIVE OVERVIEW &amp; DEFINITION</span>
         </div>
         
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
-          What is an AI Video Quiz Maker? (Definition & Architectural Overview)
+          What is an AI Video to Notes Generator? (Definition &amp; Architectural Overview)
         </h2>
 
         {/* Q-A-D-L Answer Box */}
         <div className="p-6 rounded-2xl bg-zinc-900/90 border border-zinc-700/80 shadow-xl leading-relaxed text-zinc-200">
           <p className="text-sm sm:text-base mb-3">
-            An <strong className="text-amber-400 font-semibold">AI Video Quiz Maker</strong> is an automated educational intelligence platform engineered to transform educational video lectures, webinars, and YouTube tutorials into structured, interactive assessments in under ten seconds. 
+            An <strong className="text-amber-400 font-semibold">AI Video to Notes Generator</strong> is an intelligent educational productivity system engineered to transform spoken video lectures, webinars, and educational tutorials into structured, high-yield study outlines in under ten seconds.
           </p>
           <p className="text-xs sm:text-sm text-zinc-400">
-            By ingesting YouTube video transcripts and applying state-of-the-art neural semantic distillation, the engine extracts core pedagogical concepts, creates plausible distractor options, and attaches precise video timestamp references. This transforms passive audiovisual consumption into a high-retention active recall study loop suitable for university students, self-directed professionals, and lifelong learners.
+            By analyzing audio transcripts and utilizing deep neural semantic distillation, the engine filters discursive conversational tangents, organizes core conceptual hierarchies, and formats knowledge into Cornell notes, executive summaries, and flashcards. This eliminates hours of manual transcription while accelerating exam preparation and professional upskilling.
           </p>
         </div>
       </div>
 
-      {/* 2. Three-Step Methodology */}
+      {/* 2. Three-Step Methodology (聚焦 Video to Notes) */}
       <div className="max-w-4xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-800 text-zinc-300 border border-zinc-700 mb-4">
           <Zap className="w-3.5 h-3.5 text-amber-400" />
           <span>ALGORITHMIC WORKFLOW</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-6">
-          How to Convert Any YouTube Video into a Quiz (3-Step Guide)
+          How to Convert Any Video into Structured Study Notes (3-Step Guide)
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -88,20 +88,20 @@ export default function SeoGeoContentSection() {
               <span className="text-2xl font-black text-amber-400/80 font-mono">01</span>
               <h3 className="text-base font-bold text-white mt-2 mb-2">Transcript Extraction</h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Paste any public YouTube URL. High-speed residential proxy workers bypass IP bottlenecks to fetch synchronized subtitles and timestamp metadata directly from the source video.
+                Paste any video URL or upload your local lecture file. Cloud parsers retrieve synchronized speech transcripts and precise timestamp coordinates instantly.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-zinc-800/80 text-[11px] text-zinc-300 font-mono">
-              Input: URL or Direct Text
+              Input: URL, MP4 or Transcript
             </div>
           </div>
 
           <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
             <div>
               <span className="text-2xl font-black text-amber-400/80 font-mono">02</span>
-              <h3 className="text-base font-bold text-white mt-2 mb-2">Neural Question Synthesis</h3>
+              <h3 className="text-base font-bold text-white mt-2 mb-2">Neural Synthesis &amp; Outlining</h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                DeepSeek-V3 evaluates speech transcripts against Bloom’s Taxonomy. It filters conversational filler words, identifies core learning objectives, and formulates context-grounded multiple-choice problems.
+                DeepSeek-V3 evaluates speech transcripts against academic taxonomy. It structures core ideas into bulleted hierarchies, key takeaways, and Cornell note cues.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-zinc-800/80 text-[11px] text-zinc-300 font-mono">
@@ -112,34 +112,34 @@ export default function SeoGeoContentSection() {
           <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
             <div>
               <span className="text-2xl font-black text-amber-400/80 font-mono">03</span>
-              <h3 className="text-base font-bold text-white mt-2 mb-2">Interactive Evaluation & Export</h3>
+              <h3 className="text-base font-bold text-white mt-2 mb-2">Export to Notion, PDF &amp; Anki</h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Learners complete the randomized test in an ad-free interface, receive instant explanations with timestamp references, and export flashcards directly to Anki or formatted PDF study sheets.
+                Review notes in a clean ad-free view, copy structured Markdown directly into Notion or Obsidian, and export flashcards for long-term spaced repetition.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-zinc-800/80 text-[11px] text-zinc-300 font-mono">
-              Output: Interactive / PDF / Anki
+              Output: Markdown / PDF / Anki
             </div>
           </div>
         </div>
       </div>
 
-      {/* 3. Cognitive Science & Active Recall */}
+      {/* 3. Cognitive Science & Structured Notes */}
       <div className="max-w-4xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-800 text-zinc-300 border border-zinc-700 mb-4">
           <BrainCircuit className="w-3.5 h-3.5 text-emerald-400" />
           <span>COGNITIVE LEARNING SCIENCE</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
-          The Cognitive Science of Video Learning: Active Recall vs. Passive Watching
+          The Cognitive Science of Video Learning: Structured Notes vs. Passive Watching
         </h2>
-        {/* 权威学术文献引用卡片 (Citations & Quotations for AI Citability) */}
+        
         <div className="my-6 p-5 rounded-2xl bg-zinc-950/80 border border-zinc-800 relative">
           <blockquote
             cite="https://doi.org/10.1111/j.1745-6916.2006.00012.x"
             className="text-xs sm:text-sm text-zinc-300 italic border-l-2 border-amber-400 pl-4 my-2 leading-relaxed"
           >
-            "Taking a memory test not only assesses what one knows, but also enhances later retention, a phenomenon known as the testing effect. We demonstrate that testing produces robust learning advantages over repeated study sessions."
+            &quot;Taking a memory test not only assesses what one knows, but also enhances later retention, a phenomenon known as the testing effect. We demonstrate that testing produces robust learning advantages over repeated study sessions.&quot;
           </blockquote>
           <div className="mt-3 text-[11px] text-zinc-400 font-mono flex flex-wrap items-center gap-2">
             <span className="font-semibold text-zinc-300">— Roediger, H. L., &amp; Karpicke, J. D. (2006).</span>
@@ -159,218 +159,117 @@ export default function SeoGeoContentSection() {
           <div className="p-5 rounded-2xl bg-rose-950/20 border border-rose-900/50">
             <h3 className="text-sm font-bold text-rose-300 flex items-center gap-2 mb-2">
               <X className="w-4 h-4 text-rose-400 shrink-0" />
-              <span>Passive Video Consumption Hazards</span>
+              <span>Passive Video Watching Pitfalls</span>
             </h3>
             <ul className="text-xs text-zinc-400 space-y-2 list-disc list-inside leading-relaxed">
-              <li><strong>Rapid Information Atrophy:</strong> Over 70% of video lecture content is forgotten within 48 hours without deliberate retrieval.</li>
-              <li><strong>Zero Immediate Feedback:</strong> Learners cannot detect false assumptions or conceptual blind spots while passively watching.</li>
-              <li><strong>High Time Inefficiency:</strong> Re-watching 60-minute videos repeatedly wastes valuable study time with diminishing returns.</li>
+              <li><strong>Illusion of Competence:</strong> Learners mistakenly believe they understand material because spoken delivery seems intuitive.</li>
+              <li><strong>Rapid Forgetting:</strong> Over 70% of spoken information evaporates within 48 hours without structured organization.</li>
+              <li><strong>High Review Costs:</strong> Scrubbing through 2-hour video timelines to locate a single formula wastes critical study time.</li>
             </ul>
           </div>
 
           <div className="p-5 rounded-2xl bg-emerald-950/20 border border-emerald-900/50">
             <h3 className="text-sm font-bold text-emerald-300 flex items-center gap-2 mb-2">
               <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Interactive Active Recall Benefits</span>
+              <span>Automated Study Notes Advantages</span>
             </h3>
             <ul className="text-xs text-zinc-400 space-y-2 list-disc list-inside leading-relaxed">
-              <li><strong>The Testing Effect:</strong> Forcing the brain to retrieve information strengthens neural pathways and stabilizes memory traces.</li>
-              <li><strong>Instant Error Correction:</strong> Explanations tied to exact video timestamps immediately clarify misunderstandings.</li>
-              <li><strong>Spaced Repetition Ready:</strong> One-click conversion to Anki decks supports scientifically scheduled long-term memorization.</li>
+              <li><strong>Cornell Structure:</strong> Synthesizes lectures into clear cues, thorough notes, and actionable summaries.</li>
+              <li><strong>Searchable Timestamps:</strong> Every core concept links back to the exact video timestamp for instant clarification.</li>
+              <li><strong>Seamless Integration:</strong> Export directly to Notion, Obsidian, and Anki for spaced repetition mastery.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* 4. Native HTML Comparison Table for Maximum AI Crawler Authority */}
-      <div className="max-w-4xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-800 text-zinc-300 border border-zinc-700 mb-4">
-          <Layers className="w-3.5 h-3.5 text-amber-400" />
-          <span>FEATURE BENCHMARK MATRIX</span>
-        </div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
-          YouTube to Quiz AI vs. Traditional Note-Taking & Generic Quiz Tools
-        </h2>
-        <p className="text-xs sm:text-sm text-zinc-400 mb-6">
-          A granular comparison detailing why specialized video-to-quiz architecture outperforms traditional video summaries and manual flashcard creation.
-        </p>
-
-        <div className="w-full overflow-x-auto rounded-2xl border border-zinc-800 bg-zinc-900/60 shadow-xl">
-          <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[640px]">
-            <thead>
-              <tr className="border-b border-zinc-800 bg-zinc-950 text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                <th className="py-3.5 px-5">Capability / Metric</th>
-                <th className="py-3.5 px-4 text-zinc-100 bg-zinc-800/40 font-bold">YouTube to Quiz AI</th>
-                <th className="py-3.5 px-4 text-zinc-500 font-medium">Standard Note Summarizers</th>
-                <th className="py-3.5 px-4 text-zinc-500 font-medium">Manual Flashcard Decks</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-zinc-800/70">
-              <tr className="hover:bg-zinc-800/20">
-                <td className="py-3 px-5 font-medium text-zinc-200">Interactive Knowledge Testing</td>
-                <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">Immediate 5-Question Test</td>
-                <td className="py-3 px-4 text-zinc-400">Passive Bullet Points Only</td>
-                <td className="py-3 px-4 text-zinc-400">Requires Hours of Manual Entry</td>
-              </tr>
-              <tr className="hover:bg-zinc-800/20">
-                <td className="py-3 px-5 font-medium text-zinc-200">Timestamped Explanations</td>
-                <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">Native Timestamp References</td>
-                <td className="py-3 px-4 text-zinc-400">Generic Chapter Headings</td>
-                <td className="py-3 px-4 text-zinc-400">None</td>
-              </tr>
-              <tr className="hover:bg-zinc-800/20">
-                <td className="py-3 px-5 font-medium text-zinc-200">Generation Turnaround Time</td>
-                <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">&lt; 10 Seconds</td>
-                <td className="py-3 px-4 text-zinc-400">15 - 30 Seconds</td>
-                <td className="py-3 px-4 text-zinc-400">30 - 60 Minutes</td>
-              </tr>
-              <tr className="hover:bg-zinc-800/20">
-                <td className="py-3 px-5 font-medium text-zinc-200">Restricted Caption Fallback</td>
-                <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">Direct Transcript Paste Mode</td>
-                <td className="py-3 px-4 text-rose-400">Errors Out on No Subtitles</td>
-                <td className="py-3 px-4 text-zinc-400">Manual Transcribing</td>
-              </tr>
-              <tr className="hover:bg-zinc-800/20">
-                <td className="py-3 px-5 font-medium text-zinc-200">Export & Study Ecosystem</td>
-                <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">PDF + Anki Flashcards</td>
-                <td className="py-3 px-4 text-zinc-400">Markdown Copy Only</td>
-                <td className="py-3 px-4 text-zinc-400">Anki / Quizlet</td>
-              </tr>
-              <tr className="hover:bg-zinc-800/20">
-                <td className="py-3 px-5 font-medium text-zinc-200">Free Starting Tier</td>
-                <td className="py-3 px-4 bg-zinc-800/20 text-emerald-400 font-semibold">20 Credits + Free Samples</td>
-                <td className="py-3 px-4 text-zinc-400">Limited Trial / Paywall</td>
-                <td className="py-3 px-4 text-zinc-400">Free but Labor Intensive</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* 5. Target Audiences & Use Cases */}
+      {/* 4. Target Audiences & Use Cases */}
       <div className="max-w-4xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-800 text-zinc-300 border border-zinc-700 mb-4">
           <Award className="w-3.5 h-3.5 text-amber-400" />
           <span>AUDIENCE PROFILE</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-6">
-          Who Benefits Most from YouTube to Quiz AI?
+          Who Uses Video to Notes?
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
             <h3 className="text-base font-bold text-zinc-100 mb-2 flex items-center gap-2">
               <span className="text-amber-400">🎓</span>
-              <span>University Students & Exam Preppers</span>
+              <span>University Students &amp; Researchers</span>
             </h3>
             <p className="text-xs text-zinc-400 leading-relaxed">
-              Medical, engineering, and humanities students reviewing 2-hour university lectures on YouTube. Convert comprehensive lecture recordings into weekly revision quizzes, verifying key definitions and formulas before high-stakes midterms.
+              Medical, engineering, and law students reviewing lengthy college recordings. Generate weekly Cornell outlines and revision sheets without spending hours transcribing blackboard lectures.
             </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
             <h3 className="text-base font-bold text-zinc-100 mb-2 flex items-center gap-2">
               <span className="text-amber-400">💻</span>
-              <span>Software Engineers & Tech Upskillers</span>
+              <span>Software Engineers &amp; Tech Upskillers</span>
             </h3>
             <p className="text-xs text-zinc-400 leading-relaxed">
-              Developers watching deep-dive architectural talks, Next.js tutorials, or machine learning walkthroughs. Test your grasp of API lifecycles, data structures, and syntax logic rather than merely trusting passive comprehension.
+              Developers following system design talks, coding crash courses, and architecture webinars. Extract syntax snippets, design patterns, and CLI commands into searchable Markdown.
             </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
             <h3 className="text-base font-bold text-zinc-100 mb-2 flex items-center gap-2">
-              <span className="text-amber-400">👨‍🏫</span>
-              <span>Educators, Tutors & Course Creators</span>
+              <span className="text-amber-400">💼</span>
+              <span>Professionals &amp; Knowledge Workers</span>
             </h3>
             <p className="text-xs text-zinc-400 leading-relaxed">
-              Teachers creating flipped-classroom assignments from curated educational YouTube playlists. Export clean, formatted quiz worksheets and answer keys in minutes without drafting questions from scratch.
+              Teams summarizing Zoom calls, webinars, and investor meetings. Produce structured executive summaries and action items in seconds for team documentation.
             </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
             <h3 className="text-base font-bold text-zinc-100 mb-2 flex items-center gap-2">
               <span className="text-amber-400">🌐</span>
-              <span>Language Learners & Polyglots</span>
+              <span>Self-Directed Lifelong Learners</span>
             </h3>
             <p className="text-xs text-zinc-400 leading-relaxed">
-              Language students practicing listening comprehension through native YouTube videos. Validate whether you caught nuanced phrases, idioms, and context-dependent vocabulary with immediate assessment feedback.
+              Podcast listeners and documentary buffs digesting hours of content. Capture key arguments, book recommendations, and historical timelines effortlessly.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Featured Topics & High-Value Internal Links (Pillar Mesh Architecture) */}
+      {/* 5. Featured Tools & High-Value Internal Links */}
       <div className="max-w-4xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-800 text-zinc-300 border border-zinc-700 mb-4">
           <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-          <span>CURATED STUDY TOPICS & TRANSPARENT PRICING</span>
+          <span>ECOSYSTEM OF STUDY TOOLS</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
-          Explore Popular Video Quizzes & Scalable Learning Plans
+          Complementary Study Tools &amp; Popular Curricula
         </h2>
         <p className="text-xs sm:text-sm text-zinc-400 mb-6 leading-relaxed">
-          Accelerate your retention across computer science, software engineering, and university topics with our pre-compiled active recall quizzes, or review our transparent credit tiers.
+          Supercharge your study workflow with specialized tools designed for lectures, active recall testing, and spaced repetition.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* 指向 /video-to-quiz 的高权重卡片 */}
           <Link
-            href="/topics/the-cherno-cpp-game-engine-quiz"
-            className="group p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-amber-400/50 hover:bg-zinc-800/40 transition-all flex flex-col justify-between"
+            href="/video-to-quiz"
+            className="group p-5 rounded-2xl bg-gradient-to-b from-amber-500/10 to-zinc-900/60 border border-amber-500/30 hover:border-amber-400 hover:bg-amber-500/20 transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="text-[11px] font-mono text-amber-400 mb-2 font-semibold">C++ & GAME ENGINES</div>
+              <div className="text-[11px] font-mono text-amber-400 mb-2 font-semibold">ACTIVE RECALL TESTING</div>
               <h3 className="text-sm font-bold text-zinc-100 group-hover:text-amber-300 transition-colors mb-2">
-                The Cherno C++ Game Engine Architecture Quiz
+                Video to Quiz Generator
               </h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Comprehensive active recall testing covering OpenGL rendering loops, memory allocators, shaders, and ECS patterns.
+                Turn any video or lecture into interactive multiple-choice tests with timestamped explanations.
               </p>
             </div>
-            <div className="mt-4 pt-3 border-t border-zinc-800/80 text-[11px] font-mono text-amber-400/80 flex items-center justify-between">
-              <span>Take Cherno C++ Quiz</span>
+            <div className="mt-4 pt-3 border-t border-amber-500/20 text-[11px] font-mono text-amber-400 flex items-center justify-between">
+              <span>Make Video Quiz</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </div>
           </Link>
 
-          <Link
-            href="/topics/traversy-media-web-dev-quiz"
-            className="group p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-amber-400/50 hover:bg-zinc-800/40 transition-all flex flex-col justify-between"
-          >
-            <div>
-              <div className="text-[11px] font-mono text-amber-400 mb-2 font-semibold">WEB DEVELOPMENT</div>
-              <h3 className="text-sm font-bold text-zinc-100 group-hover:text-amber-300 transition-colors mb-2">
-                Traversy Media Web Dev & JavaScript Quiz
-              </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Test your mastery of modern JavaScript, asynchronous event loops, React lifecycles, and RESTful API architecture.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-zinc-800/80 text-[11px] font-mono text-amber-400/80 flex items-center justify-between">
-              <span>Take Traversy Web Quiz</span>
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </div>
-          </Link>
-
-          <Link
-            href="/tools/video-to-anki-flashcards"
-            className="group p-5 rounded-2xl bg-gradient-to-b from-indigo-500/10 to-zinc-900/60 border border-indigo-500/30 hover:border-indigo-400 hover:bg-indigo-500/20 transition-all flex flex-col justify-between"
-          >
-            <div>
-              <div className="text-[11px] font-mono text-indigo-400 mb-2 font-semibold">SPACED REPETITION</div>
-              <h3 className="text-sm font-bold text-zinc-100 group-hover:text-indigo-300 transition-colors mb-2">
-                Video to Anki Flashcard Generator (.csv)
-              </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Automatically convert YouTube lectures and videos into spaced-repetition Anki decks in 10s.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-indigo-500/20 text-[11px] font-mono text-indigo-400 flex items-center justify-between">
-              <span>Make Anki Cards</span>
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </div>
-          </Link>
-
+          {/* 指向 /youtube-to-notes */}
           <Link
             href="/youtube-to-notes"
             className="group p-5 rounded-2xl bg-gradient-to-b from-red-500/10 to-zinc-900/60 border border-red-500/30 hover:border-red-400 hover:bg-red-500/20 transition-all flex flex-col justify-between"
@@ -378,10 +277,10 @@ export default function SeoGeoContentSection() {
             <div>
               <div className="text-[11px] font-mono text-red-400 mb-2 font-semibold">YOUTUBE LECTURES</div>
               <h3 className="text-sm font-bold text-zinc-100 group-hover:text-red-300 transition-colors mb-2">
-                YouTube to Notes
+                YouTube to Notes Converter
               </h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Convert long YouTube videos, university podcasts, and tutorials into structured study notes and summaries in seconds.
+                Convert long YouTube videos, university podcasts, and tutorials into structured study notes and summaries.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-red-500/20 text-[11px] font-mono text-red-400 flex items-center justify-between">
@@ -390,35 +289,36 @@ export default function SeoGeoContentSection() {
             </div>
           </Link>
 
+          {/* 指向 /cornell-notes-generator */}
           <Link
-            href="/pricing"
-            className="group p-5 rounded-2xl bg-gradient-to-b from-amber-500/10 to-zinc-900/60 border border-amber-500/30 hover:border-amber-400 hover:bg-amber-500/20 transition-all flex flex-col justify-between"
+            href="/cornell-notes-generator"
+            className="group p-5 rounded-2xl bg-gradient-to-b from-emerald-500/10 to-zinc-900/60 border border-emerald-500/30 hover:border-emerald-400 hover:bg-emerald-500/20 transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="text-[11px] font-mono text-amber-400 mb-2 font-semibold">PLANS & PACKAGES</div>
-              <h3 className="text-sm font-bold text-zinc-100 group-hover:text-amber-300 transition-colors mb-2">
-                Transparent Pricing & Unlimited Study Upgrades
+              <div className="text-[11px] font-mono text-emerald-400 mb-2 font-semibold">NOTE METHODOLOGY</div>
+              <h3 className="text-sm font-bold text-zinc-100 group-hover:text-emerald-300 transition-colors mb-2">
+                Cornell Notes Generator
               </h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Unlock high-capacity video processing, extended lecture transcript limits, and 1-click batch Anki flashcard exports.
+                Generate 3-column Cornell format notes with cues, structured notes, and summary sections.
               </p>
             </div>
-            <div className="mt-4 pt-3 border-t border-amber-500/20 text-[11px] font-mono text-amber-400 flex items-center justify-between">
-              <span>View Pricing Plans</span>
+            <div className="mt-4 pt-3 border-t border-emerald-500/20 text-[11px] font-mono text-emerald-400 flex items-center justify-between">
+              <span>Cornell Notes</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </div>
           </Link>
         </div>
       </div>
 
-      {/* 6. Comprehensive Educational FAQ Section */}
+      {/* 6. Comprehensive Educational FAQ Section (聚焦 Video to Notes) */}
       <div className="max-w-4xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-800 text-zinc-300 border border-zinc-700 mb-4">
           <HelpCircle className="w-3.5 h-3.5 text-zinc-400" />
-          <span>KNOWLEDGE BASE & FAQ</span>
+          <span>KNOWLEDGE BASE &amp; FAQ</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-6">
-          Frequently Asked Questions on AI Video Quiz Generation
+          Frequently Asked Questions on Video to Notes
         </h2>
 
         <div className="space-y-4">
@@ -439,10 +339,10 @@ export default function SeoGeoContentSection() {
       <div className="max-w-4xl mx-auto p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800 text-center">
         <div className="flex items-center justify-center gap-2 text-xs font-semibold text-zinc-300 mb-2">
           <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>Global Compliance & Privacy Assurance</span>
+          <span>Global Compliance &amp; Privacy Assurance</span>
         </div>
         <p className="text-xs text-zinc-500 max-w-2xl mx-auto leading-relaxed">
-          YouTube to Quiz AI operates strictly in compliance with YouTube Terms of Service by processing publicly available subtitles and authorized user transcripts. We do not store copyrighted video files. Payments are processed with bank-level encryption via Waffo Pancake.
+          VideoToQuiz operates strictly in compliance with YouTube Terms of Service by processing publicly available subtitles and authorized user transcripts. We do not store copyrighted video files. Payments are processed with bank-level encryption via Waffo Pancake.
         </p>
       </div>
     </section>
