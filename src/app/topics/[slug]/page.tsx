@@ -51,12 +51,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: item.metaDesc,
       url: `https://videotoquiz.com/topics/${item.slug}`,
       siteName: 'VideoToQuiz',
+      images: [
+        {
+          url: 'https://videotoquiz.com/og-preview.png',
+          width: 1200,
+          height: 630,
+          alt: `${normalizedTitle}`,
+        },
+      ],
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title: normalizedTitle,
       description: item.metaDesc,
+      images: ['https://videotoquiz.com/og-preview.png'],
     },
   };
 }

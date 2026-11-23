@@ -34,12 +34,21 @@ export const metadata: Metadata = {
     description: 'Explore our suite of AI video study tools: Video to Quiz, Video to Anki Flashcards, YouTube to Notes, and Cornell Notes Generator.',
     url: 'https://videotoquiz.com/tools',
     siteName: 'VideoToQuiz',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'AI Video Study Tools Directory — VideoToQuiz',
+      },
+    ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Video Study Tools Directory | VideoToQuiz',
     description: 'Explore our suite of AI video study tools: Video to Quiz, Video to Anki Flashcards, YouTube to Notes, and Cornell Notes Generator.',
+    images: ['https://videotoquiz.com/og-preview.png'],
   },
 };
 

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { FileText, CheckCircle2, BookOpen, Sparkles, HelpCircle, ArrowRight, Printer, Download } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Cornell Notes Generator — AI Video to Cornell Notes Maker',
+  title: 'Cornell Notes Generator — VideoToQuiz',
   description: 'Create professional Cornell notes from any video automatically. Structured with Cues, Notes, and Summary sections. Export to PDF or Markdown for free.',
   keywords: [
     'cornell notes generator',
@@ -20,10 +20,25 @@ export const metadata: Metadata = {
     canonical: 'https://videotoquiz.com/cornell-notes-generator/',
   },
   openGraph: {
-    title: 'Cornell Notes Generator — AI Video to Cornell Notes Maker',
+    title: 'Cornell Notes Generator — VideoToQuiz',
     description: 'Create professional Cornell notes from any video automatically. Structured with Cues, Notes, and Summary sections. Export to PDF or Markdown for free.',
     url: 'https://videotoquiz.com/cornell-notes-generator/',
+    siteName: 'VideoToQuiz',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Cornell Notes Generator — VideoToQuiz',
+      },
+    ],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cornell Notes Generator — VideoToQuiz',
+    description: 'Create professional Cornell notes from any video automatically. Structured with Cues, Notes, and Summary sections. Export to PDF or Markdown for free.',
+    images: ['https://videotoquiz.com/og-preview.png'],
   },
 };
 

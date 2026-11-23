@@ -15,6 +15,21 @@ export const metadata: Metadata = {
     description: 'Explore interactive quizzes for MIT, Harvard, Khan Academy, Huberman Lab, and top educational YouTube channels.',
     url: 'https://videotoquiz.com/topics',
     siteName: 'VideoToQuiz',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'YouTube Lecture & Channel Quiz Directory — VideoToQuiz',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YouTube Lecture & Channel Quiz Directory | VideoToQuiz',
+    description: 'Explore interactive quizzes for MIT, Harvard, Khan Academy, Huberman Lab, and top educational YouTube channels.',
+    images: ['https://videotoquiz.com/og-preview.png'],
   },
 };
 

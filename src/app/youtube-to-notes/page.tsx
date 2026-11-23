@@ -24,12 +24,21 @@ export const metadata: Metadata = {
     description: 'Convert YouTube videos into structured study notes, key takeaways, and flashcards in seconds. Free AI YouTube to notes converter for lectures and tutorials.',
     url: 'https://videotoquiz.com/youtube-to-notes',
     siteName: 'VideoToQuiz',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'YouTube to Notes Converter — VideoToQuiz',
+      },
+    ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'YouTube to Notes Converter — VideoToQuiz',
     description: 'Convert YouTube videos into structured study notes, key takeaways, and flashcards in seconds. Free AI YouTube to notes converter for lectures and tutorials.',
+    images: ['https://videotoquiz.com/og-preview.png'],
   },
 };
 

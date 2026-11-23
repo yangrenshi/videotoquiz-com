@@ -6,17 +6,31 @@ import PublicPricingSection from '@/components/PublicPricingSection';
 import SeoGeoContentSection from '@/components/SeoGeoContentSection';
 
 export const metadata: Metadata = {
-  title: 'Video to Notes Generator — Turn Any Video into Study Notes | VideoToQuiz',
+  title: 'Video to Notes Generator | VideoToQuiz',
   description: 'The fastest AI video to notes generator. Convert any online lecture or video into structured study notes, Cornell summaries, and flashcards in seconds.',
   alternates: {
     canonical: 'https://videotoquiz.com/',
   },
   openGraph: {
-    title: 'Video to Notes Generator — Turn Any Video into Study Notes | VideoToQuiz',
+    title: 'Video to Notes Generator | VideoToQuiz',
     description: 'The fastest AI video to notes generator. Convert any online lecture or video into structured study notes, Cornell summaries, and flashcards in seconds.',
     url: 'https://videotoquiz.com/',
     siteName: 'VideoToQuiz',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Video to Notes Generator — VideoToQuiz',
+      },
+    ],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Video to Notes Generator | VideoToQuiz',
+    description: 'The fastest AI video to notes generator. Convert any online lecture or video into structured study notes, Cornell summaries, and flashcards in seconds.',
+    images: ['https://videotoquiz.com/og-preview.png'],
   },
 };
 
