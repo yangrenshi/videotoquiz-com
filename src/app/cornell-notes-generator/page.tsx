@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'video to cornell notes'
   ],
   alternates: {
-    canonical: 'https://videotoquiz.com/cornell-notes-generator/',
+    canonical: 'https://videotoquiz.com/cornell-notes-generator',
   },
   openGraph: {
     title: 'Cornell Notes Generator — VideoToQuiz',
     description: 'Create professional Cornell notes from any video automatically. Structured with Cues, Notes, and Summary sections. Export to PDF or Markdown for free.',
-    url: 'https://videotoquiz.com/cornell-notes-generator/',
+    url: 'https://videotoquiz.com/cornell-notes-generator',
     siteName: 'VideoToQuiz',
     images: [
       {

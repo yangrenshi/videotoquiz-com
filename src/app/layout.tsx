@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'VideoToQuiz Team', url: 'https://videotoquiz.com' }],
   metadataBase: new URL('https://videotoquiz.com'),
   alternates: {
-    canonical: 'https://videotoquiz.com/',
+    canonical: 'https://videotoquiz.com',
   },
   icons: {
     icon: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Video to Notes Generator | VideoToQuiz',
     description: 'The fastest AI video to notes generator. Turn videos into structured study notes, Cornell summaries, and Anki flashcards in 10s. Master any subject 10x faster.',
-    url: 'https://videotoquiz.com/',
+    url: 'https://videotoquiz.com',
     siteName: 'VideoToQuiz',
     images: [
       {
