@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     canonical: 'https://videotoquiz.com/contact',
   },
   openGraph: {
-    title: 'Contact Us | YouTube to Quiz AI Customer Support',
-    description: 'Get in touch with the YouTube to Quiz AI support team. Inquiries for customer support, billing assistance, and academic licensing.',
+    title: 'Contact Us | VideoToQuiz',
+    description: 'Get in touch with the VideoToQuiz support team for customer support, billing assistance, and feedback.',
     url: 'https://videotoquiz.com/contact',
     siteName: 'VideoToQuiz',
     type: 'website',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | YouTube to Quiz AI Customer Support',
-    description: 'Get in touch with the YouTube to Quiz AI support team. Inquiries for customer support, billing assistance, and academic licensing.',
+    title: 'Contact Us | VideoToQuiz',
+    description: 'Get in touch with the VideoToQuiz support team for customer support, billing assistance, and feedback.',
     images: ['https://videotoquiz.com/og-preview.png'],
   },
 };

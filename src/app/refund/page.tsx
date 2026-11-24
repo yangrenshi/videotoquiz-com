@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     canonical: 'https://videotoquiz.com/refund',
   },
   openGraph: {
-    title: 'Refund Policy | VideoToQuiz AI',
-    description: '30-day money-back guarantee and refund policy for VideoToQuiz AI.',
+    title: 'Refund Policy | VideoToQuiz',
+    description: '30-day money-back guarantee and refund policy for VideoToQuiz.',
     url: 'https://videotoquiz.com/refund',
     siteName: 'VideoToQuiz',
     type: 'website',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Refund Policy | VideoToQuiz AI',
-    description: '30-day money-back guarantee and refund policy for VideoToQuiz AI.',
+    title: 'Refund Policy | VideoToQuiz',
+    description: '30-day money-back guarantee and refund policy for VideoToQuiz.',
     images: ['https://videotoquiz.com/og-preview.png'],
   },
 };

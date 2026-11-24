@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     canonical: 'https://videotoquiz.com/privacy',
   },
   openGraph: {
-    title: 'Privacy Policy | VideoToQuiz AI',
-    description: 'Privacy Policy and GDPR compliance details for VideoToQuiz AI.',
+    title: 'Privacy Policy | VideoToQuiz',
+    description: 'Privacy Policy and GDPR compliance details for VideoToQuiz.',
     url: 'https://videotoquiz.com/privacy',
     siteName: 'VideoToQuiz',
     type: 'website',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Privacy Policy | VideoToQuiz AI',
-    description: 'Privacy Policy and GDPR compliance details for VideoToQuiz AI.',
+    title: 'Privacy Policy | VideoToQuiz',
+    description: 'Privacy Policy and GDPR compliance details for VideoToQuiz.',
     images: ['https://videotoquiz.com/og-preview.png'],
   },
 };

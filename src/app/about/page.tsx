@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     canonical: 'https://videotoquiz.com/about',
   },
   openGraph: {
-    title: 'About Us | YouTube to Quiz AI Educational Mission',
-    description: 'Learn how YouTube to Quiz AI empowers university students, engineers, and lifelong learners to master video lectures through active recall testing.',
+    title: 'About Us | VideoToQuiz',
+    description: 'Learn how VideoToQuiz empowers students and lifelong learners to master video lectures through active recall testing.',
     url: 'https://videotoquiz.com/about',
     siteName: 'VideoToQuiz',
     type: 'website',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Us | YouTube to Quiz AI Educational Mission',
-    description: 'Learn how YouTube to Quiz AI empowers university students, engineers, and lifelong learners to master video lectures through active recall testing.',
+    title: 'About Us | VideoToQuiz',
+    description: 'Learn how VideoToQuiz empowers students and lifelong learners to master video lectures through active recall testing.',
     images: ['https://videotoquiz.com/og-preview.png'],
   },
 };

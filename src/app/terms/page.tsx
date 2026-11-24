@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     canonical: 'https://videotoquiz.com/terms',
   },
   openGraph: {
-    title: 'Terms of Service | VideoToQuiz AI',
-    description: 'Terms of Service and legal policies for VideoToQuiz AI.',
+    title: 'Terms of Service | VideoToQuiz',
+    description: 'Terms of Service and legal policies for VideoToQuiz.',
     url: 'https://videotoquiz.com/terms',
     siteName: 'VideoToQuiz',
     type: 'website',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Terms of Service | VideoToQuiz AI',
-    description: 'Terms of Service and legal policies for VideoToQuiz AI.',
+    title: 'Terms of Service | VideoToQuiz',
+    description: 'Terms of Service and legal policies for VideoToQuiz.',
     images: ['https://videotoquiz.com/og-preview.png'],
   },
 };
