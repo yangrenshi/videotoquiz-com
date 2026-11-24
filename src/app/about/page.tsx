@@ -9,6 +9,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://videotoquiz.com/about',
   },
+  openGraph: {
+    title: 'About Us | YouTube to Quiz AI Educational Mission',
+    description: 'Learn how YouTube to Quiz AI empowers university students, engineers, and lifelong learners to master video lectures through active recall testing.',
+    url: 'https://videotoquiz.com/about',
+    siteName: 'VideoToQuiz',
+    type: 'website',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'About VideoToQuiz',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | YouTube to Quiz AI Educational Mission',
+    description: 'Learn how YouTube to Quiz AI empowers university students, engineers, and lifelong learners to master video lectures through active recall testing.',
+    images: ['https://videotoquiz.com/og-preview.png'],
+  },
 };
 
 export default function AboutPage() {

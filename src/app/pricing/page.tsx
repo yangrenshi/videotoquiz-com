@@ -11,9 +11,25 @@ export const metadata: Metadata = {
     canonical: 'https://videotoquiz.com/pricing',
   },
   openGraph: {
-    title: 'Pricing | VideoToQuiz AI',
-    description: 'Public prices with no login: free preview $0, Starter Credit Pack $4.99 one-time for 25 video quizzes, Pro Scholar Membership $9.99 per month for 200 quizzes.',
+    title: 'Pricing | $4.99 one-time pack · $9.99 monthly | VideoToQuiz',
+    description: 'Free preview $0, Starter Credit Pack $4.99 one-time for 25 video quizzes, Pro Scholar Membership $9.99 per month for 200 quizzes.',
     url: 'https://videotoquiz.com/pricing',
+    siteName: 'VideoToQuiz',
+    type: 'website',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'VideoToQuiz Pricing & Plans',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing | VideoToQuiz',
+    description: 'Free preview $0, Starter Credit Pack $4.99 one-time for 25 video quizzes, Pro Scholar Membership $9.99 per month for 200 quizzes.',
+    images: ['https://videotoquiz.com/og-preview.png'],
   },
 };
 

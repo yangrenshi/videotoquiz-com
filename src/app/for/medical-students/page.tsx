@@ -30,11 +30,20 @@ export const metadata: Metadata = {
     url: 'https://videotoquiz.com/for/medical-students',
     siteName: 'VideoToQuiz',
     type: 'article',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'AI Quiz Generator for Medical Students — VideoToQuiz',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Quiz Generator for Medical Students | VideoToQuiz',
     description: 'Convert heavy medical video lectures into active recall quizzes and Anki decks with timestamped rationales.',
+    images: ['https://videotoquiz.com/og-preview.png'],
   },
 };
 

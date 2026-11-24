@@ -9,6 +9,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://videotoquiz.com/terms',
   },
+  openGraph: {
+    title: 'Terms of Service | VideoToQuiz AI',
+    description: 'Terms of Service and legal policies for VideoToQuiz AI.',
+    url: 'https://videotoquiz.com/terms',
+    siteName: 'VideoToQuiz',
+    type: 'website',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'VideoToQuiz Terms of Service',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service | VideoToQuiz AI',
+    description: 'Terms of Service and legal policies for VideoToQuiz AI.',
+    images: ['https://videotoquiz.com/og-preview.png'],
+  },
 };
 
 export default function TermsPage() {

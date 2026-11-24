@@ -9,6 +9,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://videotoquiz.com/privacy',
   },
+  openGraph: {
+    title: 'Privacy Policy | VideoToQuiz AI',
+    description: 'Privacy Policy and GDPR compliance details for VideoToQuiz AI.',
+    url: 'https://videotoquiz.com/privacy',
+    siteName: 'VideoToQuiz',
+    type: 'website',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'VideoToQuiz Privacy Policy',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | VideoToQuiz AI',
+    description: 'Privacy Policy and GDPR compliance details for VideoToQuiz AI.',
+    images: ['https://videotoquiz.com/og-preview.png'],
+  },
 };
 
 export default function PrivacyPage() {

@@ -9,6 +9,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://videotoquiz.com/refund',
   },
+  openGraph: {
+    title: 'Refund Policy | VideoToQuiz AI',
+    description: '30-day money-back guarantee and refund policy for VideoToQuiz AI.',
+    url: 'https://videotoquiz.com/refund',
+    siteName: 'VideoToQuiz',
+    type: 'website',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'VideoToQuiz Refund Policy',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Refund Policy | VideoToQuiz AI',
+    description: '30-day money-back guarantee and refund policy for VideoToQuiz AI.',
+    images: ['https://videotoquiz.com/og-preview.png'],
+  },
 };
 
 export default function RefundPage() {

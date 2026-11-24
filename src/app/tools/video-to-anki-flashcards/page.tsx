@@ -42,12 +42,21 @@ export const metadata: Metadata = {
     url: 'https://videotoquiz.com/tools/video-to-anki-flashcards',
     siteName: 'VideoToQuiz',
     type: 'website',
+    images: [
+      {
+        url: 'https://videotoquiz.com/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Video to Anki Flashcards Generator — VideoToQuiz',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Video to Anki Flashcards Generator: Turn YouTube to Decks',
     description:
       'Convert YouTube videos into Anki flashcards instantly with AI. Extract key concepts into spaced-repetition decks (.apkg/csv) for 10x faster lecture mastery.',
+    images: ['https://videotoquiz.com/og-preview.png'],
   },
 };
 
