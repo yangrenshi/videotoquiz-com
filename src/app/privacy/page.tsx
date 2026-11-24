@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { ArrowLeft, Lock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | VideoToQuiz AI',
-  description: 'Privacy Policy and GDPR compliance details for VideoToQuiz AI.',
+  title: 'Privacy Policy | VideoToQuiz',
+  description: 'Privacy Policy and GDPR compliance details for VideoToQuiz.',
   alternates: {
     canonical: 'https://videotoquiz.com/privacy',
   },
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
     <div className="max-w-3xl mx-auto py-10 px-4">
       <Link href="/" className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white font-medium mb-6 transition-colors">
         <ArrowLeft className="w-3.5 h-3.5" />
-        <span>Back to VideoToQuiz AI / 返回首页</span>
+        <span>Back to VideoToQuiz / 返回首页</span>
       </Link>
 
       <div className="flex items-center gap-2 mb-2">

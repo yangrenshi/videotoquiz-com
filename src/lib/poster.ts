@@ -73,7 +73,7 @@ export function drawQuizScorePoster(
 
   ctx.fillStyle = '#94a3b8'; // Slate-400
   ctx.font = '16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-  ctx.fillText('YOUTUBE TO QUIZ AI • COGNITIVE RETENTION REPORT', width / 2, 140);
+  ctx.fillText('VIDEOTOQUIZ • COGNITIVE RETENTION REPORT', width / 2, 140);
 
   // 5. 视频标题 (智能换行)
   ctx.fillStyle = '#ffffff';
@@ -126,7 +126,7 @@ export function drawQuizScorePoster(
   ctx.font = '16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
   const min = Math.floor(summary.timeSpentSeconds / 60);
   const sec = summary.timeSpentSeconds % 60;
-  ctx.fillText(`Duration: ${min}m ${sec}s  •  Pace: ~${Math.round(summary.timeSpentSeconds / summary.total)}s per item  •  Verified by VideoToQuiz AI`, width / 2, 652);
+  ctx.fillText(`Duration: ${min}m ${sec}s  •  Pace: ~${Math.round(summary.timeSpentSeconds / summary.total)}s per item  •  Verified by VideoToQuiz`, width / 2, 652);
 
   // 9. 页脚与权威声明
   ctx.fillStyle = '#64748b';

@@ -1,8 +1,8 @@
-# VideoToQuiz AI (https://videotoquiz.com)
+# VideoToQuiz (https://videotoquiz.com)
 > AI-Powered Educational Intelligence: Convert YouTube Videos into Interactive Active Recall Quizzes & Flashcards.
 
 ## Overview
-VideoToQuiz AI is an ad-free educational platform that ingests public YouTube educational video transcripts and lectures to formulate structured, Bloom's Taxonomy-aligned multiple choice assessments and Anki flashcards.
+VideoToQuiz is an ad-free educational platform that ingests public YouTube educational video transcripts and lectures to formulate structured, Bloom's Taxonomy-aligned multiple choice assessments and Anki flashcards.
 
 ## Core Capabilities
 - **Transcript Extraction**: Fetches and parses synchronized YouTube video captions and user lecture transcripts.
@@ -30,12 +30,12 @@ VideoToQuiz AI is an ad-free educational platform that ingests public YouTube ed
 - Veritasium Science & Physics Quiz: https://videotoquiz.com/topics/veritasium-science-quiz
 
 ## Academic Grounding & Methodology
-VideoToQuiz AI is designed around empirical principles from cognitive educational psychology:
+VideoToQuiz is designed around empirical principles from cognitive educational psychology:
 1. **The Testing Effect (Roediger & Karpicke, 2006)**: Active retrieval practice strengthens long-term neural retention significantly over passive review.
 2. **Spacing & Interleaving (Ebbinghaus, 1885; Cepeda et al., 2006)**: Memory decay is interrupted when learners test their retention on spaced intervals.
 
 ## Contact & Organization
-- Organization: VideoToQuiz AI Team
+- Organization: VideoToQuiz Team
 - Official Website: https://videotoquiz.com
 - Contact Email: support@videotoquiz.com
 - Open Code Repository: https://github.com/yangrenshi/videotoquiz-com

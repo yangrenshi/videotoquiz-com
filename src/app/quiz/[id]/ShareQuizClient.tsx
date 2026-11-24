@@ -478,7 +478,7 @@ export default function ShareQuizClient({ shareId, initialQuiz }: ShareQuizClien
                 ⚡ Turn Your Own YouTube Video into a Quiz
               </h2>
               <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-6">
-                Studying for exams, technical interviews, or certifications? Paste any YouTube lecture, podcast, or tutorial link. VideoToQuiz AI instantly extracts high-yield concepts, generates active recall tests, and exports Anki flashcards in 30 seconds.
+                Studying for exams, technical interviews, or certifications? Paste any YouTube lecture, podcast, or tutorial link. VideoToQuiz instantly extracts high-yield concepts, generates active recall tests, and exports Anki flashcards in 30 seconds.
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">

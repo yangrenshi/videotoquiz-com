@@ -252,7 +252,7 @@ export default function PricingPage() {
               Medical Students Quiz Hub →
             </Link>
             <span className="text-zinc-600">·</span>
-            <Link href="/" className="text-xs font-semibold text-zinc-300 hover:underline">
+            <Link href="/video-to-quiz" className="text-xs font-semibold text-zinc-300 hover:underline">
               Try YouTube to Quiz Free →
             </Link>
           </div>

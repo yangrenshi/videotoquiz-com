@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { ArrowLeft, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | VideoToQuiz AI',
-  description: 'Terms of Service and legal policies for VideoToQuiz AI.',
+  title: 'Terms of Service | VideoToQuiz',
+  description: 'Terms of Service and legal policies for VideoToQuiz.',
   alternates: {
     canonical: 'https://videotoquiz.com/terms',
   },
@@ -37,7 +37,7 @@ export default function TermsPage() {
     <div className="max-w-3xl mx-auto py-10 px-4">
       <Link href="/" className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white font-medium mb-6 transition-colors">
         <ArrowLeft className="w-3.5 h-3.5" />
-        <span>Back to VideoToQuiz AI / 返回首页</span>
+        <span>Back to VideoToQuiz / 返回首页</span>
       </Link>
 
       <div className="flex items-center gap-2 mb-2">
@@ -50,16 +50,16 @@ export default function TermsPage() {
         <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
           <h2 className="text-base font-semibold text-zinc-100 mb-2">1. Agreement to Terms (条款接受)</h2>
           <p className="text-zinc-400">
-            By accessing or using VideoToQuiz AI (the "Service"), you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you may not access the Service.
+            By accessing or using VideoToQuiz (the "Service"), you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you may not access the Service.
             <br />
-            访问或使用 VideoToQuiz AI 即表示您同意受本服务条款约束。
+            访问或使用 VideoToQuiz 即表示您同意受本服务条款约束。
           </p>
         </section>
 
         <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
           <h2 className="text-base font-semibold text-zinc-100 mb-2">2. Description of Educational Service (服务说明)</h2>
           <p className="text-zinc-400">
-            VideoToQuiz AI is an artificial intelligence-assisted cognitive learning and testing utility designed to generate formative study quizzes and summaries from publicly available educational videos and lecture text.
+            VideoToQuiz is an artificial intelligence-assisted cognitive learning and testing utility designed to generate formative study quizzes and summaries from publicly available educational videos and lecture text.
             <br />
             本服务为 AI 辅助教育与认知测评工具，旨在从公开视频讲座与讲义文本中提炼知识点并生成自测习题。
           </p>
@@ -86,7 +86,7 @@ export default function TermsPage() {
         <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
           <h2 className="text-base font-semibold text-zinc-100 mb-2">5. Disclaimer and Liability (免责与责任)</h2>
           <p className="text-zinc-400">
-            The Service is provided as is and as available. AI-generated questions, answers, and explanations are study aids only. They are not guaranteed to be accurate, complete, or fit for any exam, and they are not professional, medical, legal, or financial advice. To the fullest extent allowed by law, VideoToQuiz AI is not liable for lost scores, lost study time, or indirect damages arising from use of the Service. Our total liability for a paid plan is limited to the amount you paid for that plan in the previous 30 days.
+            The Service is provided as is and as available. AI-generated questions, answers, and explanations are study aids only. They are not guaranteed to be accurate, complete, or fit for any exam, and they are not professional, medical, legal, or financial advice. To the fullest extent allowed by law, VideoToQuiz is not liable for lost scores, lost study time, or indirect damages arising from use of the Service. Our total liability for a paid plan is limited to the amount you paid for that plan in the previous 30 days.
             <br />
             服务按现状提供。AI 生成的题目、答案与解析只供学习参考，不保证准确、完整或适用于任何考试，也不构成专业、医疗、法律或投资建议。在法律允许的范围内，本服务不对因使用内容而产生的分数、时间或其他间接损失承担责任。付费方案下，我们的责任上限为您在此前 30 天内为该方案支付的金额。
           </p>

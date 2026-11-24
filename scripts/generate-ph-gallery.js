@@ -132,7 +132,7 @@ function getHtmlWrapper(content) {
   <div class="header-bar">
     <div class="brand">
       <div class="brand-icon">🎓</div>
-      <span>YouTube to Quiz AI</span>
+      <span>VideoToQuiz</span>
     </div>
     <div class="badge">PRODUCT HUNT EXCLUSIVE</div>
   </div>
@@ -226,7 +226,7 @@ const slides = [
             </div>
             <div>
               <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; margin-bottom: 6px;">
-                <span style="color: #34d399;">Active Recall with VideoToQuiz AI</span>
+                <span style="color: #34d399;">Active Recall with VideoToQuiz</span>
                 <span style="color: #34d399;">84% Retention</span>
               </div>
               <div style="width: 100%; height: 12px; background: #27272a; border-radius: 6px; overflow: hidden;">

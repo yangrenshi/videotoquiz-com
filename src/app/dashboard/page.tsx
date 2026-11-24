@@ -77,7 +77,7 @@ export default function DashboardPage() {
   // 导出 Flashcards
   const handleExportFlashcards = (quiz: SavedQuizRecord, e: React.MouseEvent) => {
     e.stopPropagation();
-    const markdown = `# ${quiz.title} - Study Flashcards\n\nSource: ${quiz.videoUrl || 'YouTube Video'}\nGenerated via VideoToQuiz AI\n\n` +
+    const markdown = `# ${quiz.title} - Study Flashcards\n\nSource: ${quiz.videoUrl || 'YouTube Video'}\nGenerated via VideoToQuiz\n\n` +
       quiz.data.questions.map((q, idx) => {
         const correctLetter = String.fromCharCode(65 + q.answerIndex);
         const optionsText = q.options.map((opt, optIdx) => `- [${String.fromCharCode(65 + optIdx)}] ${opt}`).join('\n');

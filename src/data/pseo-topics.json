@@ -10,7 +10,7 @@
     "metaTitle": "Andrew Huberman Lab Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Huberman Lab YouTube podcasts into interactive retention quizzes and Anki cards in seconds. Master neurobiology protocols with active recall.",
     "benefit": "Turn 2-hour neuroscience protocols on dopamine, sleep, and fitness into 5-minute active recall quizzes with timestamped citations.",
-    "definition": "The Huberman Lab Podcast hosted by Dr. Andrew Huberman delivers dense, peer-reviewed neurobiology and human performance protocols. Because each episode exceeds two hours, learners struggle with information overload. VideoToQuiz AI parses the episode transcript into structured self-tests on behavioral tools, neural circuits, and supplementation timings.",
+    "definition": "The Huberman Lab Podcast hosted by Dr. Andrew Huberman delivers dense, peer-reviewed neurobiology and human performance protocols. Because each episode exceeds two hours, learners struggle with information overload. VideoToQuiz parses the episode transcript into structured self-tests on behavioral tools, neural circuits, and supplementation timings.",
     "keyTopics": [
       "Dopamine baseline regulation and reward circuitry",
       "Circadian biology and morning sunlight exposure",
@@ -50,7 +50,7 @@
     "metaTitle": "CS50 by Harvard University Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Harvard CS50 lecture videos into active recall coding quizzes. Test your C, Python, algorithms & SQL understanding with instant AI explanations.",
     "benefit": "Accelerate your programming fundamentals by testing memory pointers, algorithms, and data structures directly from David Malan's lectures.",
-    "definition": "Harvard's CS50 is the gold standard introduction to computer science. VideoToQuiz AI evaluates David Malan's spoken explanations, code demos, and visual metaphors to formulate rigorous multiple-choice tests that solidify syntax, pointer arithmetic, and algorithmic complexity.",
+    "definition": "Harvard's CS50 is the gold standard introduction to computer science. VideoToQuiz evaluates David Malan's spoken explanations, code demos, and visual metaphors to formulate rigorous multiple-choice tests that solidify syntax, pointer arithmetic, and algorithmic complexity.",
     "keyTopics": [
       "Memory allocation, pointers, and segmentation faults in C",
       "Big-O runtime complexity and binary search",
@@ -90,7 +90,7 @@
     "metaTitle": "CrashCourse Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert fast-paced Crash Course World History videos into interactive quizzes and Anki cards. Retain key historical dates, treaties, and revolutions.",
     "benefit": "Turn John Green's 10-minute fast-talking historical overviews into structured multiple-choice tests that highlight primary causes and impacts.",
-    "definition": "Crash Course delivers rapid, highly informative animated overviews of human history, philosophy, and literature. Because details fly by in seconds, students frequently forget crucial geopolitical context. VideoToQuiz AI captures every salient fact and turns it into testable milestones.",
+    "definition": "Crash Course delivers rapid, highly informative animated overviews of human history, philosophy, and literature. Because details fly by in seconds, students frequently forget crucial geopolitical context. VideoToQuiz captures every salient fact and turns it into testable milestones.",
     "keyTopics": [
       "The Agricultural Revolution and early Mesopotamian civilizations",
       "The Silk Road and global trade integration",
@@ -110,7 +110,7 @@
     "metaTitle": "Stanford Online Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Generate practice quizzes from Stanford Online CS229, CS224N, and CS231N lectures. Test neural network architectures, backpropagation, and transformers.",
     "benefit": "Test your mastery of loss functions, matrix gradients, and attention mechanisms from Andrew Ng and Fei-Fei Li's foundational lectures.",
-    "definition": "Stanford Online provides graduate-level engineering and computer science curricula. Courses such as CS229 (Machine Learning) require deep mathematical precision. VideoToQuiz AI parses theoretical proofs and implementation tips into targeted practice questions.",
+    "definition": "Stanford Online provides graduate-level engineering and computer science curricula. Courses such as CS229 (Machine Learning) require deep mathematical precision. VideoToQuiz parses theoretical proofs and implementation tips into targeted practice questions.",
     "keyTopics": [
       "Gradient descent, convex optimization, and regularization",
       "Convolutional neural networks for computer vision",
@@ -130,7 +130,7 @@
     "metaTitle": "Lex Fridman Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert 3-hour Lex Fridman AI and physics podcast conversations into interactive quizzes. Test your grasp of quantum computing, robotics, and cosmology.",
     "benefit": "Condense 3-hour deep-dive dialogues with Nobel laureates and AI founders into 5 core conceptual questions that prove you retained the discussion.",
-    "definition": "Lex Fridman conducts lengthy, multi-hour interviews exploring artificial general intelligence, physics, history, and the human condition. VideoToQuiz AI isolates the guest's technical theories and philosophical arguments, generating an active recall quiz that tests core insights.",
+    "definition": "Lex Fridman conducts lengthy, multi-hour interviews exploring artificial general intelligence, physics, history, and the human condition. VideoToQuiz isolates the guest's technical theories and philosophical arguments, generating an active recall quiz that tests core insights.",
     "keyTopics": [
       "Artificial General Intelligence (AGI) timelines and safety",
       "Quantum computing and quantum error correction",
@@ -150,7 +150,7 @@
     "metaTitle": "3Blue1Brown Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Generate conceptual math quizzes from 3Blue1Brown YouTube videos. Test your intuition on linear algebra, calculus, neural networks, and Fourier series.",
     "benefit": "Verify whether you truly internalized the visual intuition behind Grant Sanderson's geometric transformations and calculus proofs.",
-    "definition": "Grant Sanderson's 3Blue1Brown illustrates mathematics through geometric animations. However, visual appreciation doesn't always translate into active recall. VideoToQuiz AI crafts conceptual questions directly from the visual arguments to cement mathematical understanding.",
+    "definition": "Grant Sanderson's 3Blue1Brown illustrates mathematics through geometric animations. However, visual appreciation doesn't always translate into active recall. VideoToQuiz crafts conceptual questions directly from the visual arguments to cement mathematical understanding.",
     "keyTopics": [
       "Linear transformations and determinants as area scaling factors",
       "The Essence of Calculus: limits, derivatives, and integrals",
@@ -170,7 +170,7 @@
     "metaTitle": "Veritasium Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert mind-bending Veritasium science videos into interactive quizzes. Test your scientific intuition on quantum mechanics, physics paradoxes, and logic.",
     "benefit": "Debunk stubborn physics misconceptions by testing your counter-intuitive scientific logic directly against Derek Muller's experiments.",
-    "definition": "Veritasium tackles profound questions in physics, mathematics, and cognitive science by directly confronting common misconceptions. VideoToQuiz AI transforms Derek Muller's thought experiments into diagnostic quizzes that confirm you understand the actual physical laws at play.",
+    "definition": "Veritasium tackles profound questions in physics, mathematics, and cognitive science by directly confronting common misconceptions. VideoToQuiz transforms Derek Muller's thought experiments into diagnostic quizzes that confirm you understand the actual physical laws at play.",
     "keyTopics": [
       "Electricity and Poynting vector energy transmission outside wires",
       "Quantum entanglement and Bell's inequality experiments",
@@ -210,7 +210,7 @@
     "metaTitle": "Osmosis Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Generate USMLE Step 1 and Step 2 practice quizzes from medical school YouTube lectures. Test pharmacology, pathology, anatomy, and clinical diagnostics.",
     "benefit": "Convert high-yield YouTube medicine tutorials into USMLE-style question banks with diagnostic rationales and differential diagnoses.",
-    "definition": "Medical students consume hundreds of hours of video from Osmosis, Dirty Medicine, and whiteboard educators to prepare for board examinations. VideoToQuiz AI identifies symptoms, drug mechanisms of action, and pathophysiological cascades to construct clinical vignette questions.",
+    "definition": "Medical students consume hundreds of hours of video from Osmosis, Dirty Medicine, and whiteboard educators to prepare for board examinations. VideoToQuiz identifies symptoms, drug mechanisms of action, and pathophysiological cascades to construct clinical vignette questions.",
     "keyTopics": [
       "Cardiovascular pathophysiology and ECG interpretation",
       "Autonomic pharmacology and receptor agonist/antagonist profiles",
@@ -230,7 +230,7 @@
     "metaTitle": "YaleCourses Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Yale Open Courses lectures on philosophy, psychology, and literature into interactive active recall tests. Solidify deep humanities understanding.",
     "benefit": "Solidify your understanding of Shelley Kagan on Death, Paul Bloom on Psychology, and European history lectures through active self-testing.",
-    "definition": "Yale Open Courses provides full semester recordings of legendary undergraduate courses. The philosophical arguments, existential debates, and historical theses require thoughtful synthesis. VideoToQuiz AI breaks long Yale lectures into bite-sized philosophical assessments.",
+    "definition": "Yale Open Courses provides full semester recordings of legendary undergraduate courses. The philosophical arguments, existential debates, and historical theses require thoughtful synthesis. VideoToQuiz breaks long Yale lectures into bite-sized philosophical assessments.",
     "keyTopics": [
       "Shelly Kagan's philosophical arguments on personal identity and mortality",
       "Paul Bloom's introduction to cognitive psychology and developmental stages",
@@ -250,7 +250,7 @@
     "metaTitle": "freeCodeCamp.org Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert freeCodeCamp coding courses into interactive multiple-choice tests. Test JavaScript, Python, web development, and database concepts in seconds.",
     "benefit": "Stop nodding along to 4-hour coding videos without retaining the syntax. Generate self-tests that evaluate whether you understand the code logic.",
-    "definition": "freeCodeCamp is YouTube's premier repository of 5-to-10 hour programming bootcamps. Viewers frequently succumb to tutorial hell by copying code without cognitive engagement. VideoToQuiz AI formulates concept checks on syntax edge cases, standard library functions, and architectural design patterns.",
+    "definition": "freeCodeCamp is YouTube's premier repository of 5-to-10 hour programming bootcamps. Viewers frequently succumb to tutorial hell by copying code without cognitive engagement. VideoToQuiz formulates concept checks on syntax edge cases, standard library functions, and architectural design patterns.",
     "keyTopics": [
       "JavaScript async/await, closures, and the prototypal chain",
       "Python data structures, list comprehensions, and generators",
@@ -270,7 +270,7 @@
     "metaTitle": "StatQuest with Josh Starmer Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Josh Starmer's StatQuest YouTube tutorials into interactive machine learning quizzes. Master p-values, PCA, random forests, and gradient boosting.",
     "benefit": "Clearly test your grasp of complex statistics formulas and algorithms broken down in Josh Starmer's step-by-step videos.",
-    "definition": "StatQuest breaks down complicated statistical models (PCA, logistic regression, gradient boosting) into intuitive visual steps. VideoToQuiz AI formulates exact conceptual questions that confirm you understand the trade-offs and mathematical mechanics behind the algorithms.",
+    "definition": "StatQuest breaks down complicated statistical models (PCA, logistic regression, gradient boosting) into intuitive visual steps. VideoToQuiz formulates exact conceptual questions that confirm you understand the trade-offs and mathematical mechanics behind the algorithms.",
     "keyTopics": [
       "P-values, hypothesis testing, and statistical significance",
       "Principal Component Analysis (PCA) dimensional reduction",
@@ -290,7 +290,7 @@
     "metaTitle": "The Organic Chemistry Tutor Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Practice organic chemistry, algebra & physics with auto-generated quizzes from The Organic Chemistry Tutor videos. Instant feedback & step-by-step solutions.",
     "benefit": "Transform hours of practice problem walkthroughs into an interactive exam simulator with instant scoring and step-by-step solutions.",
-    "definition": "The Organic Chemistry Tutor is the ultimate study savior for STEM college students preparing for finals and MCATs. VideoToQuiz AI extracts the underlying principles and problem patterns to build focused practice quizzes with immediate feedback.",
+    "definition": "The Organic Chemistry Tutor is the ultimate study savior for STEM college students preparing for finals and MCATs. VideoToQuiz extracts the underlying principles and problem patterns to build focused practice quizzes with immediate feedback.",
     "keyTopics": [
       "SN1 vs. SN2 nucleophilic substitution kinetics and stereochemistry",
       "Acid-base titration equilibria and Henderson-Hasselbalch",
@@ -310,7 +310,7 @@
     "metaTitle": "Mark Meldrum Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert finance lectures & CFA exam prep videos into interactive practice tests. Master financial analysis, ethics, and portfolio management with active recall.",
     "benefit": "Drill high-yield CFA formulas, ethical standards, and bond duration calculations directly from expert prep lectures in minutes.",
-    "definition": "Preparing for the Chartered Financial Analyst (CFA) exam requires over 300 hours of study per level. VideoToQuiz AI extracts key financial formulas, accounting conventions (IFRS vs. US GAAP), and valuation methodologies from YouTube prep videos into high-yield mock questions.",
+    "definition": "Preparing for the Chartered Financial Analyst (CFA) exam requires over 300 hours of study per level. VideoToQuiz extracts key financial formulas, accounting conventions (IFRS vs. US GAAP), and valuation methodologies from YouTube prep videos into high-yield mock questions.",
     "keyTopics": [
       "CFA Institute Code of Ethics and Professional Standards",
       "Financial statement analysis and working capital ratios",
@@ -370,7 +370,7 @@
     "metaTitle": "Numberphile Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Numberphile math videos into interactive active recall quizzes. Test your understanding of prime numbers, pi formulas, game theory, and infinity.",
     "benefit": "Transform recreational mathematics and deep number theory videos by Brady Haran into quick conceptual quizzes that test your geometric and algebraic intuition.",
-    "definition": "Numberphile presents fascinating explorations into prime patterns, unproven conjectures, and mathematical paradoxes. Passive viewing often leaves viewers amazed but unable to recall the core proof mechanisms. VideoToQuiz AI extracts the mathematical rules and counterexamples into rigorous self-tests.",
+    "definition": "Numberphile presents fascinating explorations into prime patterns, unproven conjectures, and mathematical paradoxes. Passive viewing often leaves viewers amazed but unable to recall the core proof mechanisms. VideoToQuiz extracts the mathematical rules and counterexamples into rigorous self-tests.",
     "keyTopics": [
       "The Riemann Hypothesis and prime distribution patterns",
       "Graham's number and extreme combinatorics bounds",
@@ -390,7 +390,7 @@
     "metaTitle": "Professor Leonard Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Professor Leonard calculus lectures into practice exams. Master limits, derivatives, integration techniques, and differential equations.",
     "benefit": "Turn 3-hour chalkboard college math lectures into high-yield problem sets that test exact calculus techniques right before your university midterms.",
-    "definition": "Professor Leonard is universally celebrated among college engineering and math students for his crystal-clear, comprehensive lecture series spanning Calculus I through III and Differential Equations. VideoToQuiz AI generates targeted problem questions that assess step-by-step calculus rules and graphical interpretations.",
+    "definition": "Professor Leonard is universally celebrated among college engineering and math students for his crystal-clear, comprehensive lecture series spanning Calculus I through III and Differential Equations. VideoToQuiz generates targeted problem questions that assess step-by-step calculus rules and graphical interpretations.",
     "keyTopics": [
       "Epsilon-delta definitions and limit evaluation laws",
       "The Fundamental Theorem of Calculus and substitution",
@@ -410,7 +410,7 @@
     "metaTitle": "DeepLearning.AI Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Andrew Ng DeepLearning.AI videos into interactive quizzes. Test your grasp of neural networks, gradient descent, and transformer architectures.",
     "benefit": "Verify your mathematical and architectural understanding of foundational AI concepts taught by Coursera co-founder Dr. Andrew Ng.",
-    "definition": "DeepLearning.AI by Andrew Ng provides the world's most accessible yet rigorous introduction to modern AI, deep learning, and generative models. VideoToQuiz AI turns Dr. Ng's intuitive whiteboard derivations into multiple-choice tests covering loss functions, batch normalization, and attention weights.",
+    "definition": "DeepLearning.AI by Andrew Ng provides the world's most accessible yet rigorous introduction to modern AI, deep learning, and generative models. VideoToQuiz turns Dr. Ng's intuitive whiteboard derivations into multiple-choice tests covering loss functions, batch normalization, and attention weights.",
     "keyTopics": [
       "Vectorized gradient descent and learning rate decay",
       "Convolutional neural network pooling and stride mechanics",
@@ -430,7 +430,7 @@
     "metaTitle": "NeetCode Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert NeetCode LeetCode solution videos into interactive algorithm quizzes. Master two pointers, dynamic programming, sliding window, and graph BFS/DFS.",
     "benefit": "Ensure you actually retained the optimal time-space complexity and pointer edge cases before stepping into Big Tech software engineering interviews.",
-    "definition": "NeetCode breaks down the famous Blind 75 and NeetCode 150 LeetCode problems with intuitive visual diagrams and Python implementations. VideoToQuiz AI formulates edge-case checks, Big-O comparisons, and recurrence relations to solidify your technical interview readiness.",
+    "definition": "NeetCode breaks down the famous Blind 75 and NeetCode 150 LeetCode problems with intuitive visual diagrams and Python implementations. VideoToQuiz formulates edge-case checks, Big-O comparisons, and recurrence relations to solidify your technical interview readiness.",
     "keyTopics": [
       "Sliding window and two-pointer pointer mechanics",
       "Dynamic programming memoization vs. tabulation tables",
@@ -450,7 +450,7 @@
     "metaTitle": "Web Dev Simplified Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Generate interactive web developer quizzes from Web Dev Simplified YouTube tutorials. Test React hooks, CSS flexbox, async JavaScript, and state patterns.",
     "benefit": "Rapidly test your understanding of tricky JavaScript async nuances, React hook lifecycle pitfalls, and modern CSS architecture.",
-    "definition": "Kyle Cook at Web Dev Simplified delivers pragmatic, distraction-free web development tutorials on React, modern TypeScript, and full-stack architecture. VideoToQuiz AI tests the subtle gotchas, re-rendering behaviors, and best practices explained across his coding guides.",
+    "definition": "Kyle Cook at Web Dev Simplified delivers pragmatic, distraction-free web development tutorials on React, modern TypeScript, and full-stack architecture. VideoToQuiz tests the subtle gotchas, re-rendering behaviors, and best practices explained across his coding guides.",
     "keyTopics": [
       "React useEffect dependency arrays and cleanup cycles",
       "CSS Grid vs. Flexbox layout alignment and responsive design",
@@ -470,7 +470,7 @@
     "metaTitle": "Corey Schafer Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Corey Schafer Python YouTube tutorials into interactive practice tests. Master object-oriented programming, decorators, generators, and virtual envs.",
     "benefit": "Solidify core Python idioms, dunder methods, and generator mechanics from the definitive Python tutorial channel on YouTube.",
-    "definition": "Corey Schafer's Python video series is widely regarded as the most thorough, foundational programming guide available online. VideoToQuiz AI translates his deep-dive explanations into self-assessment quizzes that reinforce scope rules, class inheritance, and file I/O idioms.",
+    "definition": "Corey Schafer's Python video series is widely regarded as the most thorough, foundational programming guide available online. VideoToQuiz translates his deep-dive explanations into self-assessment quizzes that reinforce scope rules, class inheritance, and file I/O idioms.",
     "keyTopics": [
       "Python decorators, first-class functions, and closures",
       "Object-Oriented Programming, inheritance, and dunder methods",
@@ -490,7 +490,7 @@
     "metaTitle": "Computerphile Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Computerphile computer science videos into interactive quizzes. Test your grasp of RSA encryption, SQL injection, hashing algorithms, and sorting.",
     "benefit": "Test your grasp of computer security exploits, cryptographic protocols, and algorithm architectures explained by University of Nottingham professors.",
-    "definition": "Computerphile features academic experts explaining the inner workings of internet protocols, buffer overflows, encryption keys, and computer history. VideoToQuiz AI creates practice assessments that verify you understand the mathematical principles behind modern cybersecurity.",
+    "definition": "Computerphile features academic experts explaining the inner workings of internet protocols, buffer overflows, encryption keys, and computer history. VideoToQuiz creates practice assessments that verify you understand the mathematical principles behind modern cybersecurity.",
     "keyTopics": [
       "RSA public key cryptography and modular exponentiation",
       "SQL injection vulnerabilities and prepared statements",
@@ -510,7 +510,7 @@
     "metaTitle": "Ben Eater Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Ben Eater 8-bit breadboard computer videos into digital logic quizzes. Test CPU registers, ALU wiring, machine code execution, and bus architectures.",
     "benefit": "Test your knowledge of digital logic gates, clock modules, and microcode instructions directly from the ultimate breadboard computer build series.",
-    "definition": "Ben Eater builds a functional 8-bit computer from scratch using discrete logic chips and breadboards. His series provides unparalleled insight into CPU clock modules, instruction registers, and memory architectures. VideoToQuiz AI generates tests that confirm your grasp of low-level hardware interactions.",
+    "definition": "Ben Eater builds a functional 8-bit computer from scratch using discrete logic chips and breadboards. His series provides unparalleled insight into CPU clock modules, instruction registers, and memory architectures. VideoToQuiz generates tests that confirm your grasp of low-level hardware interactions.",
     "keyTopics": [
       "555 timer astable multivibrator clock circuit mechanics",
       "Arithmetic Logic Unit (ALU) adder and subtractor logic",
@@ -530,7 +530,7 @@
     "metaTitle": "Two Minute Papers Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Two Minute Papers YouTube videos into rapid AI research quizzes. Test your knowledge on diffusion models, neural rendering, robotics, and NeRF.",
     "benefit": "Retain the key theoretical breakthroughs, latent space operations, and rendering formulas covered in Dr. Károly Zsolnai-Fehér's rapid research summaries.",
-    "definition": "Two Minute Papers covers breakthrough research papers in computer graphics, generative AI, fluid simulation, and neural rendering. VideoToQuiz AI tests the fundamental methodologies and innovations behind the visual results shown in each concise paper review.",
+    "definition": "Two Minute Papers covers breakthrough research papers in computer graphics, generative AI, fluid simulation, and neural rendering. VideoToQuiz tests the fundamental methodologies and innovations behind the visual results shown in each concise paper review.",
     "keyTopics": [
       "Neural Radiance Fields (NeRF) and volumetric rendering",
       "Latent diffusion models and score-based sampling techniques",
@@ -550,7 +550,7 @@
     "metaTitle": "SmarterEveryDay Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Destin Sandlin's SmarterEveryDay YouTube videos into physics quizzes. Test aerodynamics, high-speed fluid dynamics, helicopters, and space telemetry.",
     "benefit": "Test whether you actually understand the aerodynamics, laminar flow, and engineering tradeoffs demonstrated through high-speed camera experiments.",
-    "definition": "Destin Sandlin at SmarterEveryDay explores rocket science, helicopter mechanics, deep-sea submarines, and fluid mechanics through slow-motion cameras and scientific curiosity. VideoToQuiz AI transforms these demonstrations into intuitive engineering tests.",
+    "definition": "Destin Sandlin at SmarterEveryDay explores rocket science, helicopter mechanics, deep-sea submarines, and fluid mechanics through slow-motion cameras and scientific curiosity. VideoToQuiz transforms these demonstrations into intuitive engineering tests.",
     "keyTopics": [
       "Helicopter swashplate aerodynamics and gyroscopic precession",
       "Laminar flow vs. turbulent fluid transition parameters",
@@ -570,7 +570,7 @@
     "metaTitle": "MinutePhysics Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn MinutePhysics whiteboard animations into interactive physics quizzes. Test your grasp of relativity, wave-particle duality, gravity, and dark matter.",
     "benefit": "Quickly verify your conceptual grasp of relativity, quantum mechanics, and planetary motion explained through Henry Reich's hand-drawn animations.",
-    "definition": "MinutePhysics delivers rapid, hand-drawn explanations of foundational and modern physics concepts in just a few minutes. VideoToQuiz AI builds concise conceptual quizzes that verify you absorbed the physics principles rather than just following the engaging drawings.",
+    "definition": "MinutePhysics delivers rapid, hand-drawn explanations of foundational and modern physics concepts in just a few minutes. VideoToQuiz builds concise conceptual quizzes that verify you absorbed the physics principles rather than just following the engaging drawings.",
     "keyTopics": [
       "Special relativity time dilation and Lorentz contraction",
       "Wave-particle duality and the double-slit experiment",
@@ -590,7 +590,7 @@
     "metaTitle": "Ali Abdaal Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Ali Abdaal's evidence-based study technique videos into practice quizzes. Master active recall, spaced repetition, Parkinson's law, and time blocking.",
     "benefit": "Assess your mastery of evidence-based study protocols, active recall systems, and cognitive retention frameworks shared by former Cambridge doctor Ali Abdaal.",
-    "definition": "Ali Abdaal built a massive following by teaching scientifically proven study frameworks including spaced repetition, Cornell notes, and active recall. VideoToQuiz AI creates practice assessments on these learning strategies, helping you apply the meta-learning techniques directly.",
+    "definition": "Ali Abdaal built a massive following by teaching scientifically proven study frameworks including spaced repetition, Cornell notes, and active recall. VideoToQuiz creates practice assessments on these learning strategies, helping you apply the meta-learning techniques directly.",
     "keyTopics": [
       "The testing effect and active recall vs. passive rereading",
       "Spaced repetition schedules and Ebbinghaus forgetting curve",
@@ -610,7 +610,7 @@
     "metaTitle": "SciShow Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert SciShow YouTube videos into interactive science tests and flashcards. Retain biology, human physiology, astronomy, and chemistry phenomena fast.",
     "benefit": "Turn fascinating daily science explainers into rapid-fire recall tests that solidify your understanding of human biology and natural phenomena.",
-    "definition": "SciShow hosted by Hank Green explores unexpected questions in chemistry, biology, geology, and medicine. VideoToQuiz AI identifies the physiological mechanisms and chemical interactions described in each episode, turning curiosity into cemented factual knowledge.",
+    "definition": "SciShow hosted by Hank Green explores unexpected questions in chemistry, biology, geology, and medicine. VideoToQuiz identifies the physiological mechanisms and chemical interactions described in each episode, turning curiosity into cemented factual knowledge.",
     "keyTopics": [
       "Human endocrine hormones and metabolic feedback loops",
       "Gut microbiome biodiversity and immunological defense",
@@ -630,7 +630,7 @@
     "metaTitle": "CrashCourse Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Instantly turn any Crash Course Biology video into interactive AP Bio & MCAT practice quizzes. Free active recall testing with explanations & 1-click Anki export.",
     "benefit": "Drill high-yield AP Biology and MCAT cellular concepts directly from Hank Green's fast-paced Crash Course Biology series with instant feedback.",
-    "definition": "Crash Course Biology provides an essential visual roadmap for students preparing for high school AP exams and college biology. VideoToQuiz AI parses the energetic animations and biochemical explanations into precise questions on cellular respiration, genetic inheritance, and evolution.",
+    "definition": "Crash Course Biology provides an essential visual roadmap for students preparing for high school AP exams and college biology. VideoToQuiz parses the energetic animations and biochemical explanations into precise questions on cellular respiration, genetic inheritance, and evolution.",
     "keyTopics": [
       "Glycolysis, Krebs cycle, and oxidative phosphorylation in ATP",
       "DNA replication forks, helicase, and DNA polymerase III",
@@ -650,7 +650,7 @@
     "metaTitle": "Derek Banas Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Derek Banas Learn in One Video tutorials into comprehensive code tests. Retain syntax and rules for Python, C++, Java, JavaScript, and Kotlin fast.",
     "benefit": "Verify your syntax mastery and algorithmic understanding after watching Derek Banas's famous 2-hour crash courses on complete programming languages.",
-    "definition": "Derek Banas is legendary for condensing entire programming languages and design patterns into single, fast-paced video tutorials. Because the syntax flows rapidly, learners easily forget language idioms. VideoToQuiz AI tests the language keywords, data types, and functions covered in the video.",
+    "definition": "Derek Banas is legendary for condensing entire programming languages and design patterns into single, fast-paced video tutorials. Because the syntax flows rapidly, learners easily forget language idioms. VideoToQuiz tests the language keywords, data types, and functions covered in the video.",
     "keyTopics": [
       "Object-oriented inheritance, interfaces, and polymorphism",
       "Primitive data types, type casting, and pointer references",
@@ -670,7 +670,7 @@
     "metaTitle": "Tech With Tim Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Tech With Tim YouTube coding tutorials into interactive Python quizzes. Test your grasp of Pygame, machine learning models, Django, and APIs easily.",
     "benefit": "Transform hands-on Python project tutorials and Pygame walkthroughs into knowledge tests that check if you understand the underlying architecture.",
-    "definition": "Tim Ruscica (Tech With Tim) produces popular practical tutorials covering Python fundamentals, neural networks from scratch, Django web apps, and game development. VideoToQuiz AI tests the architectural design choices, loop mechanics, and library functions used throughout his projects.",
+    "definition": "Tim Ruscica (Tech With Tim) produces popular practical tutorials covering Python fundamentals, neural networks from scratch, Django web apps, and game development. VideoToQuiz tests the architectural design choices, loop mechanics, and library functions used throughout his projects.",
     "keyTopics": [
       "Pygame main event loops, sprite collisions, and framerates",
       "NEAT evolutionary algorithm neural networks in Python",
@@ -690,7 +690,7 @@
     "metaTitle": "The Cherno Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert The Cherno C++ and game engine YouTube series into technical quizzes. Master raw pointers, smart pointers, memory layouts, and OpenGL rendering.",
     "benefit": "Test your understanding of low-level C++ memory management, smart pointers, and graphics rendering pipelines taught by an ex-EA Frostbite engine developer.",
-    "definition": "Yan Chernikov (The Cherno) offers the most detailed deep-dive series on modern C++ (C++11 through C++20) and custom 2D/3D game engine architecture on YouTube. VideoToQuiz AI generates rigorous quizzes that verify your understanding of heap allocation, virtual tables, and GPU buffer layouts.",
+    "definition": "Yan Chernikov (The Cherno) offers the most detailed deep-dive series on modern C++ (C++11 through C++20) and custom 2D/3D game engine architecture on YouTube. VideoToQuiz generates rigorous quizzes that verify your understanding of heap allocation, virtual tables, and GPU buffer layouts.",
     "keyTopics": [
       "Raw pointers, reference mechanics, and memory address offsets",
       "std::unique_ptr vs. std::shared_ptr control block overhead",
@@ -710,7 +710,7 @@
     "metaTitle": "freeCodeCamp.org Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn freeCodeCamp 10-hour full stack YouTube courses into interactive quizzes. Test HTML5, CSS3, JavaScript ES6+, Node.js, and SQL database architecture.",
     "benefit": "Stop feeling passive during massive 8-to-12 hour coding bootcamps by converting course milestones into quick active recall quizzes.",
-    "definition": "freeCodeCamp publishes comprehensive multi-hour course marathons covering full-stack web development. While students often watch passively for hours, retention drops precipitously without testing. VideoToQuiz AI extracts technical checkpoints from the video to verify coding proficiency.",
+    "definition": "freeCodeCamp publishes comprehensive multi-hour course marathons covering full-stack web development. While students often watch passively for hours, retention drops precipitously without testing. VideoToQuiz extracts technical checkpoints from the video to verify coding proficiency.",
     "keyTopics": [
       "HTML5 semantic tags and accessibility ARIA standards",
       "CSS Flexbox, Grid, and responsive viewport media queries",
@@ -730,7 +730,7 @@
     "metaTitle": "Jordan B Peterson Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Jordan Peterson University of Toronto psychology lectures into quizzes. Test Big Five personality traits, Jungian archetypes, and Piaget's stages.",
     "benefit": "Test your grasp of clinical psychology models, Piagetian cognitive development, and the Big Five personality framework from university lecture archives.",
-    "definition": "Dr. Jordan B. Peterson's University of Toronto lectures on Personality and Its Transformations synthesize 20th-century psychometric models, evolutionary biology, and psychoanalysis. VideoToQuiz AI formulates thoughtful self-assessments that test your understanding of empirical traits and behavioral theories.",
+    "definition": "Dr. Jordan B. Peterson's University of Toronto lectures on Personality and Its Transformations synthesize 20th-century psychometric models, evolutionary biology, and psychoanalysis. VideoToQuiz formulates thoughtful self-assessments that test your understanding of empirical traits and behavioral theories.",
     "keyTopics": [
       "Big Five Aspect Scale: Neuroticism, Extraversion, Openness",
       "Jean Piaget's stages of cognitive development and assimilation",
@@ -750,7 +750,7 @@
     "metaTitle": "Traversy Media Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Brad Traversy's web development crash courses into interactive quizzes. Test your grasp of JavaScript, Next.js, Tailwind CSS, and MongoDB APIs.",
     "benefit": "Reinforce web development fundamentals after watching Brad Traversy's iconic crash courses on frontend frameworks and backend databases.",
-    "definition": "Brad Traversy is celebrated for his straightforward, no-nonsense crash courses covering every web stack from vanilla JavaScript to full MERN stacks. VideoToQuiz AI isolates the key programming conventions and configuration steps, creating fast multiple-choice questions to confirm full comprehension.",
+    "definition": "Brad Traversy is celebrated for his straightforward, no-nonsense crash courses covering every web stack from vanilla JavaScript to full MERN stacks. VideoToQuiz isolates the key programming conventions and configuration steps, creating fast multiple-choice questions to confirm full comprehension.",
     "keyTopics": [
       "JavaScript DOM manipulation and event listener propagation",
       "REST API architecture using Express middleware and routing",
@@ -770,7 +770,7 @@
     "metaTitle": "Harvard University Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Harvard University Justice with Michael Sandel lectures into moral philosophy quizzes. Test your understanding of utilitarianism, Kant, and Rawls.",
     "benefit": "Challenge your moral reasoning and ethical theories directly from Professor Michael Sandel's legendary Harvard course dialogues.",
-    "definition": "Harvard's Justice course taught by Professor Michael Sandel invites students to evaluate tough moral dilemmas through the lenses of Aristotle, Kant, Bentham, and John Rawls. VideoToQuiz AI creates conceptual ethical scenario quizzes that test which philosophical principles justify specific societal actions.",
+    "definition": "Harvard's Justice course taught by Professor Michael Sandel invites students to evaluate tough moral dilemmas through the lenses of Aristotle, Kant, Bentham, and John Rawls. VideoToQuiz creates conceptual ethical scenario quizzes that test which philosophical principles justify specific societal actions.",
     "keyTopics": [
       "Jeremy Bentham and John Stuart Mill's Utilitarianism",
       "Immanuel Kant's Categorical Imperative and moral duty",
@@ -790,7 +790,7 @@
     "metaTitle": "BBC Science Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Professor Brian Cox BBC astrophysics lectures into practice quizzes. Test your grasp of the Big Bang, entropy, space-time, and quantum physics.",
     "benefit": "Verify your understanding of stellar evolution, cosmological timescales, and the second law of thermodynamics from Professor Brian Cox's televised lectures.",
-    "definition": "Professor Brian Cox brings the awe and mathematical elegance of the cosmos to television screens worldwide. From the arrow of time to the expansion of the universe, VideoToQuiz AI translates his lyrical descriptions of physics into precise questions that ensure you retained the astrophysics principles.",
+    "definition": "Professor Brian Cox brings the awe and mathematical elegance of the cosmos to television screens worldwide. From the arrow of time to the expansion of the universe, VideoToQuiz translates his lyrical descriptions of physics into precise questions that ensure you retained the astrophysics principles.",
     "keyTopics": [
       "The Second Law of Thermodynamics and the arrow of time",
       "Stellar fusion cycles, supernova nucleosynthesis, and pulsars",
@@ -810,7 +810,7 @@
     "metaTitle": "Bro Code Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Bro Code comprehensive programming videos into practice quizzes. Test your understanding of loops, OOP, data structures, and conditional logic.",
     "benefit": "Test your mastery of coding syntax, loops, and data structures taught in Bro Code's entertaining, ultra-clear multi-hour programming masterclasses.",
-    "definition": "Bro Code delivers humorous, visual, and highly structured beginner-to-advanced programming tutorials across C, Python, Java, and JavaScript. VideoToQuiz AI extracts syntax rules, control flows, and core algorithmic concepts to provide immediate self-assessments after every chapter.",
+    "definition": "Bro Code delivers humorous, visual, and highly structured beginner-to-advanced programming tutorials across C, Python, Java, and JavaScript. VideoToQuiz extracts syntax rules, control flows, and core algorithmic concepts to provide immediate self-assessments after every chapter.",
     "keyTopics": [
       "Variables, primitive types, and explicit memory casting",
       "Control flow loops (for, while, do-while) and nested logic",
@@ -830,7 +830,7 @@
     "metaTitle": "Ninja Nerd Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Ninja Nerd medicine & anatomy lectures into high-yield NCLEX/USMLE quizzes with instant answer keys. Boost clinical retention & export flashcards for free.",
     "benefit": "Test your understanding of high-yield medical school physiology pathways and organ system pathologies drawn by Zach Murphy on Ninja Nerd's whiteboard.",
-    "definition": "Ninja Nerd is widely considered the gold standard for medical, nursing, and PA students studying detailed physiological mechanisms, pharmacology pathways, and clinical pathologies. VideoToQuiz AI translates the intricate whiteboard pathways into rigorous clinical practice questions.",
+    "definition": "Ninja Nerd is widely considered the gold standard for medical, nursing, and PA students studying detailed physiological mechanisms, pharmacology pathways, and clinical pathologies. VideoToQuiz translates the intricate whiteboard pathways into rigorous clinical practice questions.",
     "keyTopics": [
       "Cardiovascular hemodynamics and cardiac action potentials",
       "Renal nephron countercurrent multiplier and fluid regulation",
@@ -850,7 +850,7 @@
     "metaTitle": "NetworkChuck Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn NetworkChuck YouTube tutorials into interactive networking quizzes. Test CCNA subnetting, TCP/IP headers, Linux bash commands, and Docker basics.",
     "benefit": "Drill CIDR subnetting calculations, TCP/IP handshakes, and Linux terminal operations directly from NetworkChuck's high-energy IT walkthroughs.",
-    "definition": "Chuck Keith (NetworkChuck) makes complex IT networking, Linux server administration, and cybersecurity concepts intuitive and exciting. VideoToQuiz AI formulates practical scenarios on IP subnet masks, port forwarding, and Linux permission flags to ensure IT certification readiness.",
+    "definition": "Chuck Keith (NetworkChuck) makes complex IT networking, Linux server administration, and cybersecurity concepts intuitive and exciting. VideoToQuiz formulates practical scenarios on IP subnet masks, port forwarding, and Linux permission flags to ensure IT certification readiness.",
     "keyTopics": [
       "IPv4 CIDR subnetting and host bit calculation formulas",
       "The OSI 7-layer model vs. TCP/IP 4-layer protocol stack",
@@ -870,7 +870,7 @@
     "metaTitle": "ElectroBOOM Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Turn Mehdi Sadaghdar's ElectroBOOM videos into electronics quizzes. Test Ohm's Law, AC vs DC circuits, inductors, transformers, and electrical safety.",
     "benefit": "Test your electrical engineering knowledge behind Mehdi Sadaghdar's hilarious and shocking circuit experiments and teardowns.",
-    "definition": "Mehdi Sadaghdar at ElectroBOOM demonstrates real-world electrical engineering principles through humorous hands-on experiments. VideoToQuiz AI highlights the core circuit theory, electromagnetic induction formulas, and safety rules demonstrated in each episode.",
+    "definition": "Mehdi Sadaghdar at ElectroBOOM demonstrates real-world electrical engineering principles through humorous hands-on experiments. VideoToQuiz highlights the core circuit theory, electromagnetic induction formulas, and safety rules demonstrated in each episode.",
     "keyTopics": [
       "Ohm's Law, Kirchhoff's current and voltage laws (KCL/KVL)",
       "Alternating Current (AC) RMS voltage vs. Direct Current (DC)",
@@ -890,7 +890,7 @@
     "metaTitle": "Real Engineering Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Real Engineering YouTube documentaries into technical quizzes. Test your knowledge on aerodynamics, semiconductor fabrication, and jet engines.",
     "benefit": "Retain the deep engineering calculations, materials science tradeoffs, and thermodynamics demonstrated in Brian McManus's documentary videos.",
-    "definition": "Real Engineering provides meticulously researched documentary analyses of structural engineering, aerospace propulsion, renewable energy, and microchips. VideoToQuiz AI creates practice assessments on thermal efficiency, lift-to-drag ratios, and mechanical stress distributions.",
+    "definition": "Real Engineering provides meticulously researched documentary analyses of structural engineering, aerospace propulsion, renewable energy, and microchips. VideoToQuiz creates practice assessments on thermal efficiency, lift-to-drag ratios, and mechanical stress distributions.",
     "keyTopics": [
       "Bernoulli's principle vs. Newton's third law in wing lift",
       "Turbofan jet engine bypass ratios and thermal efficiency",
@@ -910,7 +910,7 @@
     "metaTitle": "Zero To Mastery Quiz Generator — Make Video Quizzes & Tests | VideoToQuiz",
     "metaDesc": "Convert Zero To Mastery programming tutorials into interactive quizzes. Test your grasp of JavaScript engines, Python, system design, and algorithms.",
     "benefit": "Test your comprehension of frontend frameworks, backend microservices, and system architecture taught in Andrei Neagoie's flagship tutorials.",
-    "definition": "Zero To Mastery (ZTM) led by Andrei Neagoie trains self-taught developers for modern tech careers with pragmatic courses on full-stack web, Python, and system architecture. VideoToQuiz AI turns these lessons into structured tests that verify conceptual retention.",
+    "definition": "Zero To Mastery (ZTM) led by Andrei Neagoie trains self-taught developers for modern tech careers with pragmatic courses on full-stack web, Python, and system architecture. VideoToQuiz turns these lessons into structured tests that verify conceptual retention.",
     "keyTopics": [
       "V8 JavaScript engine call stack, memory heap, and garbage collection",
       "Asynchronous programming with async/await and Web APIs",

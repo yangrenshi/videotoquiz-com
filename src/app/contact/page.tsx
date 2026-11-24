@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { Mail, Clock, ShieldCheck, MapPin, MessageSquare } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | YouTube to Quiz AI Customer Support',
-  description: 'Get in touch with the YouTube to Quiz AI support team. Inquiries for customer support, billing assistance, and academic licensing.',
+  title: 'Contact Us | VideoToQuiz Customer Support',
+  description: 'Get in touch with the VideoToQuiz support team. Inquiries for customer support, billing assistance, and academic licensing.',
   alternates: {
     canonical: 'https://videotoquiz.com/contact',
   },

@@ -302,7 +302,7 @@ export default function VideoToQuizPage() {
           <div className="space-y-2">
             <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">Feature Benchmark</span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              YouTube to Quiz AI vs. Traditional Note-Taking &amp; Generic Quiz Tools
+              VideoToQuiz vs. Traditional Note-Taking &amp; Generic Quiz Tools
             </h2>
             <p className="text-sm text-zinc-400 leading-relaxed">
               A granular comparison detailing why specialized video-to-quiz architecture outperforms traditional video summaries and manual flashcard creation.
@@ -314,7 +314,7 @@ export default function VideoToQuizPage() {
               <thead>
                 <tr className="border-b border-zinc-800 bg-zinc-950 text-xs font-semibold uppercase tracking-wider text-zinc-400">
                   <th className="py-3.5 px-5">Capability / Metric</th>
-                  <th className="py-3.5 px-4 text-zinc-100 bg-zinc-800/40 font-bold">YouTube to Quiz AI</th>
+                  <th className="py-3.5 px-4 text-zinc-100 bg-zinc-800/40 font-bold">VideoToQuiz</th>
                   <th className="py-3.5 px-4 text-zinc-500 font-medium">Standard Note Summarizers</th>
                   <th className="py-3.5 px-4 text-zinc-500 font-medium">Manual Flashcard Decks</th>
                 </tr>

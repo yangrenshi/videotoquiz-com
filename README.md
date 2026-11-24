@@ -1,4 +1,4 @@
-# VideoToQuiz AI (videotoquiz.com)
+# VideoToQuiz (videotoquiz.com)
 
 Transform any YouTube video into interactive study quizzes, multiple-choice tests, and structured flashcards in seconds using AI.
 

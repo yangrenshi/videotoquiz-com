@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { ArrowLeft, RefreshCw, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Refund Policy | VideoToQuiz AI',
-  description: '30-day money-back guarantee and refund policy for VideoToQuiz AI.',
+  title: 'Refund Policy | VideoToQuiz',
+  description: '30-day money-back guarantee and refund policy for VideoToQuiz.',
   alternates: {
     canonical: 'https://videotoquiz.com/refund',
   },
@@ -37,7 +37,7 @@ export default function RefundPage() {
     <div className="max-w-3xl mx-auto py-10 px-4">
       <Link href="/" className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white font-medium mb-6 transition-colors">
         <ArrowLeft className="w-3.5 h-3.5" />
-        <span>Back to VideoToQuiz AI / 返回首页</span>
+        <span>Back to VideoToQuiz / 返回首页</span>
       </Link>
 
       <div className="flex items-center gap-2 mb-2">
@@ -50,7 +50,7 @@ export default function RefundPage() {
         <section className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
           <h2 className="text-base font-semibold text-zinc-100 mb-2">1. 30-Day Money-Back Guarantee (30天无理由退款承诺)</h2>
           <p className="text-zinc-400">
-            We want you to be completely satisfied with VideoToQuiz AI. If our tool fails to generate an accurate quiz for your educational lecture, or if you are dissatisfied with our service for any reason within 30 days of purchase, you are entitled to a full refund.
+            We want you to be completely satisfied with VideoToQuiz. If our tool fails to generate an accurate quiz for your educational lecture, or if you are dissatisfied with our service for any reason within 30 days of purchase, you are entitled to a full refund.
             <br />
             我们承诺：购买后 30 天内，若本站生成的题目未能达到您的学习预期，或因任何原因不满意，均可申请 100% 全额无理由退款。
           </p>

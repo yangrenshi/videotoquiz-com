@@ -63,7 +63,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
           url: 'https://videotoquiz.com/og-image.png',
           width: 1200,
           height: 630,
-          alt: `VideoToQuiz AI - ${videoTitle}`,
+          alt: `VideoToQuiz - ${videoTitle}`,
         },
       ],
     },

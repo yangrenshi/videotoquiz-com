@@ -43,9 +43,15 @@ export default function PublicPricingSection({
 }) {
   return (
     <section id="pricing" className="w-full max-w-5xl mx-auto px-4 py-10 scroll-mt-24">
-      <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight text-center">
-        Pricing
-      </h2>
+      {placement === 'page' ? (
+        <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight text-center">
+          Pricing
+        </h1>
+      ) : (
+        <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight text-center">
+          Pricing
+        </h2>
+      )}
       <p className="mt-3 text-sm text-zinc-300 text-center max-w-2xl mx-auto leading-relaxed">
         Free preview is $0. The Starter Credit Pack is $4.99 one-time for 25 video quizzes.
         Pro Scholar Membership is $9.99 per month for 200 quizzes. No login is required to read these prices.

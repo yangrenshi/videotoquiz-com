@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Dashboard | VideoToQuiz AI',
+  title: 'Dashboard | VideoToQuiz',
   description: 'Your personal learning dashboard, quiz history, and credits.',
   alternates: {
     canonical: 'https://videotoquiz.com/dashboard',

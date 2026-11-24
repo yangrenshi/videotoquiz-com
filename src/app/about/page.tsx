@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { GraduationCap, BrainCircuit, Target, ShieldCheck, Mail, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us | YouTube to Quiz AI Educational Mission',
-  description: 'Learn how YouTube to Quiz AI empowers university students, engineers, and lifelong learners to master video lectures through active recall testing.',
+  title: 'About Us | VideoToQuiz',
+  description: 'Learn how VideoToQuiz empowers university students, engineers, and lifelong learners to master video lectures through active recall testing.',
   alternates: {
     canonical: 'https://videotoquiz.com/about',
   },
@@ -45,7 +45,7 @@ export default function AboutPage() {
           Transforming Passive Video Watching into Active Mastery
         </h1>
         <p className="text-sm text-zinc-300 leading-relaxed font-normal">
-          YouTube to Quiz AI is engineered by educational technologists and cognitive science researchers dedicated to solving the &quot;illusion of competence&quot; in digital learning.
+          VideoToQuiz is engineered by educational technologists and cognitive science researchers dedicated to solving the &quot;illusion of competence&quot; in digital learning.
         </p>
       </div>
 

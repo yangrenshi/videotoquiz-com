@@ -1,5 +1,5 @@
 /**
- * Cloudflare D1 REST API Client for VideoToQuiz AI
+ * Cloudflare D1 REST API Client for VideoToQuiz
  * 运行在 Vercel Serverless / Node.js 服务端，通过 Cloudflare 官方 REST 接口秒级读写 D1 数据库
  */
 

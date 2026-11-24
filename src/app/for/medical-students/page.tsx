@@ -191,7 +191,7 @@ export default function MedicalStudentsPage() {
                   <th className="p-3 sm:p-4">Study Dimension</th>
                   <th className="p-3 sm:p-4">Passive Video Re-watching</th>
                   <th className="p-3 sm:p-4">Manual Flashcard Creation</th>
-                  <th className="p-3 sm:p-4 text-emerald-400 bg-emerald-950/20">VideoToQuiz AI</th>
+                  <th className="p-3 sm:p-4 text-emerald-400 bg-emerald-950/20">VideoToQuiz</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-800/60 bg-zinc-950/40 font-normal">

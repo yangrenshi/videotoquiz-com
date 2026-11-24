@@ -175,7 +175,7 @@ export default function VideoToAnkiToolPage() {
         <div className="space-y-4">
           <div className="text-center max-w-xl mx-auto">
             <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              Manual Card Making vs. VideoToQuiz AI Anki Generator
+              Manual Card Making vs. VideoToQuiz Anki Generator
             </h2>
             <p className="text-xs text-zinc-400 mt-1">
               See why university students and self-taught developers save 8+ study hours every week.
@@ -188,7 +188,7 @@ export default function VideoToAnkiToolPage() {
                 <tr>
                   <th className="py-3.5 px-4 font-semibold">Comparison Metric</th>
                   <th className="py-3.5 px-4 font-semibold text-zinc-400">Manual Note Taking</th>
-                  <th className="py-3.5 px-4 font-semibold text-amber-400">VideoToQuiz AI</th>
+                  <th className="py-3.5 px-4 font-semibold text-amber-400">VideoToQuiz</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-800 text-zinc-300">
