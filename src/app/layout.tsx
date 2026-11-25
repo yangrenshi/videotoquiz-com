@@ -167,8 +167,16 @@ export default function RootLayout({
         )}
         {/* PVUV.ai 流量统计（内置 Bot 识别与清洗） */}
         <Script
-          src="https://in.pvuv.ai/f.js"
+          id="pvuv-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.pvuv=window.pvuv||function(){(window.pvuv.q=window.pvuv.q||[]).push(arguments)}`,
+          }}
+        />
+        <Script
+          src="https://www.pvuv.ai/f.js"
           data-site={process.env.NEXT_PUBLIC_PVUV_SITE_ID || "PzJpAmsA"}
+          data-api="https://in.pvuv.ai"
           strategy="afterInteractive"
         />
       </head>
